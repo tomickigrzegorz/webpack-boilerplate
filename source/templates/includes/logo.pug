@@ -1,0 +1,6 @@
+mixin logo(clickCheck, path, file)
+    if clickCheck
+        a(href="/")
+            img(src=(path + file),alt='Fotograf Warszawa, Lublin, Chełm')
+    else
+        img(src=(path + file),alt='Fotograf Warszawa, Lublin, Chełm')

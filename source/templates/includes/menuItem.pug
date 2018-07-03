@@ -1,0 +1,5 @@
+mixin menuItem(page)
+    .header-menu
+        a(class=(page === 'home') ? 'active' : '' href='./', title='HOME') home
+        a(class=(page === 'about') ? 'active' : '' href='./o-mnie.html', title='O MNIE') o mnie
+        a(class=(page === 'contact') ? 'active' : '' href='./kontakt.html', title='KONTAKT') kontakt

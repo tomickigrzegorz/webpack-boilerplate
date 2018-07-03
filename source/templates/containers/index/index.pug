@@ -1,0 +1,60 @@
+block variables
+- var path = self.htmlWebpackPlugin.options
+- var pathToFile = (path.mode == 'development') ? "../../../source/" : ""
+- var logoFile = "images/fotograf-slubny-warszawa-lublin-chelm.svg";
+- var zoomIn = "images/zoom.svg";
+
+doctype html
+html(lang="pl", dir="ltr")
+
+    include ./../../includes/head.pug
+
+    include ./../../includes/logo.pug
+    include ./../../includes/menuItem.pug
+
+    head
+        +head(path.file)
+
+    body
+
+        svg(xmlns="http://www.w3.org/2000/svg", style="display: none")
+            symbol(id="zoom",viewBox="0 0 80 80",fill="#FFFFFF")
+                path(d="M51.6 57.28c-5.361 4.196-12.2 6.729-19.631 6.729-17.673 0-32-14.327-32-32s14.327-32 32-32c17.673 0 32 14.327 32 32 0 7.431-2.533 14.27-6.782 19.701l.053-.07 21.4 21.32-5.68 5.68-21.32-21.36zM32 56c13.255 0 24-10.745 24-24S45.255 8 32 8 8 18.745 8 32s10.745 24 24 24zm-4-28v-8h8v8h8v8h-8v8h-8v-8h-8v-8h8z")
+
+        header.container.header
+            .header-logo.text-center
+                +logo(false, pathToFile, logoFile)
+            nav.header-nav.text-center
+                +menuItem("home")
+
+        .container
+            .parallax-thumbnail(style="background-image: url('"+ pathToFile + path.file.body.parallax +"')")
+                .please-scroll
+                    span.mouse
+                        span
+                    p przewiń mnie
+
+            .text-center.text-uppercase.heading-title #{path.file.body.textBefore}
+
+            //- glowna galeria 
+            .container.flex-centered
+                .gallery.columns
+                    each val, i in path.file.body.gridGallery
+                        .grid.column.col-3
+                            figure(class="effect-goliath",data-name=val.url)
+                                img(src=(pathToFile+val.image),alt=val.alt,class="img-responsive")
+                                figcaption
+                                    h2= val.eve
+                                    p= val.alt
+                                    div(class="zoom")
+                                        svg() 
+                                            use(xlink:href="#zoom")
+
+            .text-center.text-uppercase.heading-title
+                a(href=path.file.body.textAfter[0].url, rel="author noopener", target="_blank") #{path.file.body.textAfter[0].text}
+
+            #modal.modal
+
+            include ./../../includes/backToTop.pug
+            
+        include ./../../includes/footer.pug

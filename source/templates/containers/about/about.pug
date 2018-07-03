@@ -1,0 +1,30 @@
+block variables
+- var path = self.htmlWebpackPlugin.options
+- var pathToFile = (path.mode == 'development') ? "../../../source/" : ""
+- var logoFile = "images/fotograf-slubny-warszawa-lublin-chelm.svg";
+
+doctype html
+html(lang="pl", dir="ltr")
+
+    include ./../../includes/head.pug
+
+    include ./../../includes/logo.pug
+    include ./../../includes/menuItem.pug
+
+    head
+        +head(path.file)
+
+    body
+
+        header.container.header
+            .header-logo.text-center
+                +logo(true ,pathToFile, logoFile)
+            nav.header-nav.text-center
+                +menuItem("about")
+
+        main
+            h1 O mnie
+
+            include ./../../includes/backToTop.pug
+
+        include ./../../includes/footer.pug

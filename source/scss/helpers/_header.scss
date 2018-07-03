@@ -1,0 +1,22 @@
+.header-logo {
+    margin-top: 20px;
+    img {
+        max-width: 250px;
+        @media (max-width: $size-sm) {
+            max-width: 190px;
+        }
+    }
+}
+
+.header-menu {
+    a {
+        text-decoration: none;
+        font-size: $font-size-lg;
+        font-weight: 600;
+        margin-right: 10px;
+        text-transform: uppercase;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
