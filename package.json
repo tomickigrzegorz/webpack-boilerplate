@@ -3,15 +3,21 @@
   "version": "1.0.0",
   "description": "webpack multiple entry and output",
   "main": "index.js",
+  "keywords": [
+    "webpack",
+    "pug",
+    "scss",
+    "babel",
+    "axios"
+  ],
   "scripts": {
-    "clean": "rimraf dist",
     "dev": "webpack-dev-server --config ./webpack/webpack.config.dev.js --progress --open",
     "prod": "webpack --config ./webpack/webpack.config.prod.js -p",
-    "json": "node ./list_images.js",
-    "serve": "http-server ./dist -c-1 -p 8081 -o"
+    "serve": "http-server ./dist -c-1 -p 8081 -o",
+    "json": "node ./list_images.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Grzegorz Tomicki",
+  "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^8.6.4",
     "babel-core": "^6.26.3",
