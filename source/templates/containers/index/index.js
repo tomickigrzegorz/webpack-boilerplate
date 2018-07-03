@@ -3,6 +3,7 @@ import smoothscroll from "smoothscroll-polyfill"; // https://github.com/iamdusta
 import axios from "axios";
 import "./index.scss";
 import "../../helpers/scrollTop";
+import "../../helpers/shareButton";
 
 smoothscroll.polyfill();
 

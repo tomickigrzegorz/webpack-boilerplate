@@ -1,0 +1,83 @@
+
+#share-button {
+    position: fixed;
+    right: 0;
+    top: 0;
+    .share-button {
+        overflow: hidden;
+        .share-icon {
+            fill: #FFF;
+            border: 0;
+        }
+        .share-btn {
+            cursor: pointer;
+            display: block;
+            overflow: hidden;
+            transition: all .2s ease-in-out;
+            background-color: transparent;
+            .share-btn__hidden {
+                position: absolute;
+                clip: rect(1px,1px,1px,1px);
+                padding: 0;
+                border: 0;
+                overflow: hidden;
+            }
+
+            .share-btn__wrapper {
+                position: absolute;
+            }
+            &.btn-facebook {
+                background-color: $share-facebook;
+            }
+            &.btn-twitter {
+                background-color: $share-twitter;
+            }
+            &.btn-google {
+                background-color: $share-google;
+            }
+            &.btn-print {
+                background-color: $share-print;
+            }
+        }
+        &:hover > div {
+            opacity: 0.5;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+
+@media (min-width : 320px) {
+    // @screen-ss 320px
+
+    #share-button {
+        .share-button {
+            margin-left: -4px;
+            .share-btn {
+                margin: 0.2rem 0.4rem 0;
+            }
+            .share-icon, .share-btn {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+
+}
+
+@media (min-width : 992px) {
+    // @screen-md 992px
+
+    #share-button {
+        top: 172px;
+        .share-button {
+            .share-icon, .share-btn {
+                width: 42px;
+                height: 42px;
+            }
+        }
+    }
+}
