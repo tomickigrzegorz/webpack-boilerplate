@@ -35,9 +35,6 @@
             &.btn-google {
                 background-color: $share-google;
             }
-            &.btn-print {
-                background-color: $share-print;
-            }
         }
         &:hover > div {
             opacity: 0.5;
@@ -46,13 +43,11 @@
             }
         }
     }
+
 }
-
-
 
 @media (min-width : 320px) {
     // @screen-ss 320px
-
     #share-button {
         .share-button {
             margin-left: -4px;
@@ -65,14 +60,12 @@
             }
         }
     }
-
 }
 
 @media (min-width : 992px) {
     // @screen-md 992px
-
     #share-button {
-        top: 172px;
+        top: 171px;
         .share-button {
             .share-icon, .share-btn {
                 width: 42px;
