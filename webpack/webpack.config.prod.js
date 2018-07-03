@@ -9,7 +9,7 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin') // 
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin'); // https://github.com/dustinjackson/html-webpack-inline-source-plugin
 // const UglifyJsPlugin = require('uglifyjs-webpack-plugin'); // https://github.com/webpack-contrib/uglifyjs-webpack-plugin
 
-const PUBLIC_PATH = 'https://grzegorztomicki.com/';
+const PUBLIC_PATH = 'http://grzegorztomicki.com/';
 
 const mod = require('./entry.js');
 
@@ -58,7 +58,7 @@ const config = {
                     use: [{
                             loader: 'css-loader',
                             options: {
-                                minimize: true || { /* CSSNano Options */ }
+                                minimize: true
                             }
                         },
                         {
@@ -127,7 +127,9 @@ const config = {
             staticFileGlobsIgnorePatterns: [
                 /\.map$/,
                 /manifest\.json$/,
+                /css/,
                 /gallery/,
+                /data/
             ],
         }),
         new webpack.DefinePlugin({

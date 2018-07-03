@@ -44,10 +44,7 @@ const config = {
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [{
-                            loader: 'css-loader',
-                            // options: {
-                            //     minimize: false || { /* CSSNano Options */ }
-                            // }
+                            loader: 'css-loader'
                         },
                         {
                             loader: 'postcss-loader',
