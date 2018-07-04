@@ -1,0 +1,281 @@
+// Component transition
+@mixin control-transition() {
+    transition: all .2s ease;
+} // Component focus shadow
+@mixin control-shadow($color: $primary-color) {
+    box-shadow: 0 0 0 .1rem rgba($color, .2);
+}
+
+// Forms
+.form-group {
+    &:not(:last-child) {
+        margin-bottom: $layout-spacing;
+    }
+}
+
+fieldset {
+    margin-bottom: $layout-spacing-lg;
+} // Form element: Label
+.form-label {
+    display: block;
+    line-height: $line-height;
+    padding: $control-padding-y + $border-width 0;
+} // Form element: Input
+.form-input {
+    @include control-transition();
+    appearance: none;
+    background: $bg-color-light;
+    background-image: none;
+    border: $border-width solid $border-color-dark;
+    border-radius: $border-radius;
+    color: $body-font-color;
+    display: block;
+    font-size: $font-size;
+    height: $control-size;
+    line-height: $line-height;
+    max-width: 100%;
+    outline: none;
+    padding: $control-padding-y $control-padding-x;
+    position: relative;
+    width: 100%;
+    &:focus {
+        border-color: red;
+    }
+    &::placeholder {
+        color: $gray-color;
+    }
+    &.input-lg {
+        font-size: $font-size-lg;
+        height: $control-size-lg;
+        padding: $control-padding-y-lg $control-padding-x-lg;
+    }
+} // Form element: Textarea
+textarea.form-input {
+    height: auto;
+    resize: vertical;
+} // Form element: Input hint
+.form-input-hint {
+    color: $gray-color;
+    font-size: $font-size-sm;
+    margin-top: $unit-1;
+    .has-success &,
+    .is-success+& {
+        color: $success-color;
+    }
+    .has-error &,
+    .is-error+& {
+        color: $error-color;
+    }
+} // Form validation states
+.form-input,
+.form-select {
+    .has-success &,
+    &.is-success {
+        border-color: $success-color;
+        &:focus {
+            @include control-shadow($success-color);
+        }
+    }
+    .has-error &,
+    &.is-error {
+        border-color: $error-color;
+        &:focus {
+            @include control-shadow($error-color);
+        }
+    }
+} // validation based on :placeholder-shown (Edge doesn't support it yet)
+.form-input {
+    &:not(:placeholder-shown) {
+        &:invalid {
+            border-color: $error-color;
+            &:focus {
+                @include control-shadow($error-color);
+            }
+            &+.form-input-hint {
+                color: $error-color;
+            }
+        }
+    }
+} // Form disabled and readonly
+.form-input,
+.form-select {
+    &:disabled,
+    &.disabled {
+        background-color: $bg-color-dark;
+        cursor: not-allowed;
+        opacity: .5;
+    }
+}
+
+.form-input {
+    &[readonly] {
+        background-color: $bg-color;
+    }
+}
+
+input {
+    &:disabled,
+    &.disabled {
+        &+.form-icon {
+            background: $bg-color-dark;
+            cursor: not-allowed;
+            opacity: .5;
+        }
+    }
+}
+
+.form-switch {
+    input {
+        &:disabled,
+        &.disabled {
+            &+.form-icon::before {
+                background: $bg-color-light;
+            }
+        }
+    }
+} // Form horizontal
+.form-horizontal {
+    padding: $layout-spacing 0;
+    .form-group {
+        display: flex;
+        flex-wrap: wrap;
+    }
+} // Form inline
+.form-inline {
+    display: inline-block;
+}
+
+// Button variant mixin
+@mixin button-variant($color: $primary-color) {
+    background: $color;
+    border-color: darken($color, 3%);
+    color: $light-color;
+    &:focus {
+        @include control-shadow($color);
+    }
+    &:focus,
+    &:hover {
+        background: darken($color, 2%);
+        border-color: darken($color, 5%);
+        color: $light-color;
+    }
+    &:active,
+    &.active {
+        background: darken($color, 7%);
+        border-color: darken($color, 10%);
+        color: $light-color;
+    }
+    &.loading {
+        &::after {
+            border-bottom-color: $light-color;
+            border-left-color: $light-color;
+        }
+    }
+} // Buttons
+
+$button-primary-color: #e4e4e4;
+$button-primary-color-dark: #d6d6d6;
+
+.btn {
+    @include control-transition();
+    appearance: none;
+    background: $bg-color-light;
+    border: $border-width solid $primary-color;
+    border-radius: $border-radius;
+    color: $primary-color;
+    cursor: pointer;
+    display: inline-block;
+    font-size: $font-size;
+    height: $control-size;
+    line-height: $line-height;
+    outline: none;
+    padding: $control-padding-y $control-padding-x;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    &:focus {
+        @include control-shadow();
+    }
+    &:focus,
+    &:hover {
+        background: $secondary-color;
+        border-color: $primary-color-dark;
+        text-decoration: none;
+    }
+    &:active,
+    &.active {
+        background: $primary-color-dark;
+        border-color: darken($primary-color-dark, 5%);
+        color: $light-color;
+        text-decoration: none;
+        &.loading {
+            &::after {
+                border-bottom-color: $light-color;
+                border-left-color: $light-color;
+            }
+        }
+    }
+    &[disabled],
+    &:disabled,
+    &.disabled {
+        cursor: default;
+        opacity: .5;
+        pointer-events: none;
+    } // Button Primary
+    &.btn-primary {
+        background: $button-primary-color;
+        border-color: $button-primary-color-dark;
+        color: #000;
+        &:focus,
+        &:hover {
+            background: darken($button-primary-color, 10%);
+            border-color: darken($button-primary-color-dark, 15%);
+            color: #000;
+        }
+        &:active,
+        &.active {
+            background: darken($primary-color-dark, 4%);
+            border-color: darken($primary-color-dark, 7%);
+            color: $light-color;
+        }
+        &.loading {
+            &::after {
+                border-bottom-color: $light-color;
+                border-left-color: $light-color;
+            }
+        }
+    } // Button Block
+    &.btn-block {
+        display: block;
+        width: 100%;
+    }
+}
+
+.form-info {
+    max-width: 500px;
+    margin: 0 auto;
+    form {
+        padding: 20px;
+    }
+    button {
+        padding: 20px;
+        line-height: 4px;
+        @media (max-width: 840px) {
+            width: 100%;
+        }
+    }
+}
+
+.reverse {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+
+.connect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}

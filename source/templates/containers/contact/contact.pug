@@ -23,7 +23,36 @@ html(lang="pl", dir="ltr")
                 +menuItem("contact")
 
         main
-            h1 Kontakt
+            .container
+                .text-info
+                    h1 kontakt
+                    .contents.text-center 
+                        !=path.file.body.mainText
+
+            .container.grid-lg
+                .columns
+                    .column.hide-md
+                        img(src=""+pathToFile+path.file.body.image+"", class="img-responsive", alt="Napisz emaila")
+                    .column.form-info
+                        form
+                            .form-group
+                                label(class="form-label", for="name") Imię i naziwsko
+                                input(class="form-input input-lg", type="text", name="imie-i-nazwisko", id="name")
+                            .form-group
+                                label(class="form-label", for="email") Twoj adres email
+                                input(class="form-input input-lg", type="email", name="email", id="email")
+                            .form-group
+                                label(class="form-label", for="data") Data Ślubu
+                                input(class="form-input input-lg", type="text", name="data-slubu", id="data")
+                            .form-group
+                                label(class="form-label", for="place") Miejscowość, w której odbędzie się ślub
+                                input(class="form-input input-lg", type="text", name="miejsce-slubu", id="place")
+                            .form-group
+                                label(class="form-label", for="text") Treść wiadomości (pole opcjonalne)
+                                textarea(class="form-input", id="text", rows="3")
+                            .form-group
+                                button(class="btn btn-primary") WYŚLIJ
+ 
 
             include ./../../includes/backToTop.pug
 

@@ -17,7 +17,7 @@ body {
     background: $body-bg;
     color: $body-font-color;
     font-family: $body-font-family;
-    font-size: $font-size;
+    font-size: $font-size-lg;
     overflow-x: hidden;
     text-rendering: optimizeLegibility;
 }
@@ -105,5 +105,16 @@ footer {
     }
     &:hover {
         opacity: 1;
+    }
+}
+
+.text-info {
+    text-align: center;
+    padding: 20px;
+    h1 {
+        font-size: $unit-7;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin: 1rem 0 1rem;
     }
 }

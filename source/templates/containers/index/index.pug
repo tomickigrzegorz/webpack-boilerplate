@@ -44,8 +44,9 @@ html(lang="pl", dir="ltr")
                             figure(class="effect-goliath",data-name=val.url)
                                 img(src=(pathToFile+val.image),alt=val.alt,class="img-responsive")
                                 figcaption
-                                    h2= val.eve
-                                    p= val.alt
+                                    p
+                                        span= val.eve
+                                        =val.alt
                                     div(class="zoom")
                                         svg() 
                                             use(xlink:href="#zoom")

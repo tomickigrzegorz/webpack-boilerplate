@@ -11,7 +11,6 @@ shareButton.prototype.init = function () {
  * @private
  */
 shareButton.prototype.renderHTML = function () {
-    var listingIdRoi = "";
     var buttonPlace = document.getElementById("share-button");
     var item = {
         facebook: {
@@ -48,7 +47,6 @@ shareButton.prototype.renderHTML = function () {
 
         </div>
     `;
-
 
     if(buttonPlace) {
         buttonPlace.innerHTML = html;

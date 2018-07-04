@@ -23,7 +23,15 @@ html(lang="pl", dir="ltr")
                 +menuItem("about")
 
         main
-            h1 O mnie
+            .container
+                .text-info
+                    h1 o mnie
+            .container.grid-lg
+                .columns
+                    .column
+                        img(src=""+pathToFile+path.file.body.image+"", class="img-responsive hide-md", alt="O mnie")
+                    .column.text-center.text-info
+                        !=path.file.body.mainText
 
             include ./../../includes/backToTop.pug
 

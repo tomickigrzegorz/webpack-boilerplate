@@ -18,5 +18,9 @@
         &:last-child {
             margin-right: 0;
         }
+        &.active {
+            color: #000;
+            font-weight: bolder;
+        }
     }
 }
