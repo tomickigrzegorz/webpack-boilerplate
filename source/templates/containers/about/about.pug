@@ -7,7 +7,7 @@ doctype html
 html(lang="pl", dir="ltr")
 
     include ./../../includes/head.pug
-
+    include ./../../includes/header.pug
     include ./../../includes/logo.pug
     include ./../../includes/menuItem.pug
 
@@ -16,11 +16,7 @@ html(lang="pl", dir="ltr")
 
     body
 
-        header.container.header
-            .header-logo.text-center
-                +logo(true ,pathToFile, logoFile)
-            nav.header-nav.text-center
-                +menuItem("about")
+        +header("about", true)
 
         main
             .container
@@ -28,7 +24,7 @@ html(lang="pl", dir="ltr")
                     h1 o mnie
             .container.grid-lg
                 .columns
-                    .column
+                    .column.hide-md
                         img(src=""+pathToFile+path.file.body.image+"", class="img-responsive hide-md", alt="O mnie")
                     .column.text-center.text-info
                         !=path.file.body.mainText

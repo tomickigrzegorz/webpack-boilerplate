@@ -6,10 +6,10 @@
         position: relative;
         padding: 0.1rem;
         flex-grow: 1;
-        @media (max-width: 488px) {
+        @media (max-width: 470px) {
             width: 100%;
         }
-        @media (min-width: 489px) {
+        @media (min-width: 471px) {
             width: calc(100% * (1/2) - 10px - 1px)
         }
         @media (min-width: 890px) {

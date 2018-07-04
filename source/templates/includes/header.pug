@@ -1,0 +1,6 @@
+mixin header(place,logo)
+    header.container
+        .header-logo.text-center
+            +logo(logo, pathToFile, logoFile)
+        .header-nav.text-center
+            +menuItem(place)

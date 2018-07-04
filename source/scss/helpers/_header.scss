@@ -1,5 +1,8 @@
-.header-logo {
+header {
     margin-top: 20px;
+}
+
+.header-logo {
     img {
         max-width: 250px;
         @media (max-width: $size-sm) {
@@ -8,7 +11,7 @@
     }
 }
 
-.header-menu {
+.header-nav {
     a {
         text-decoration: none;
         font-size: $font-size-lg;

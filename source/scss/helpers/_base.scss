@@ -1,5 +1,5 @@
 // Base
-// @import url(https://fonts.googleapis.com/css?family=Titillium+Web:200,400,700,900);
+
 *,
 *::before,
 *::after {
@@ -42,6 +42,14 @@ a {
     text-align: center;
 }
 
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
 .img-responsive {
     display: block;
     height: auto;
@@ -62,7 +70,7 @@ a {
 }
 
 footer {
-    color: $gray-color-dark;
+    margin-top: 30px;
     .cookie {
         font-size: $unit-3;
     }
