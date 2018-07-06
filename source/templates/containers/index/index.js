@@ -1,11 +1,11 @@
 import "babel-polyfill";
-import smoothscroll from "smoothscroll-polyfill"; // https://github.com/iamdustan/smoothscroll
 import axios from "axios";
+import smoothscroll from "smoothscroll-polyfill"; // https://github.com/iamdustan/smoothscroll
 import "./index.scss";
-import "../../../scss/helpers/_gallery.scss";
-import "../../../scss/helpers/_parallax.scss";
-import "../../helpers/scrollTop";
-import "../../helpers/shareButton";
+import "../../../scss/modules/_gallery.scss";
+import "../../../scss/modules/_parallax.scss";
+import "../modules/scrollTop";
+import "../modules/shareButton";
 
 smoothscroll.polyfill();
 

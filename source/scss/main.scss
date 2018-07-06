@@ -1,11 +1,11 @@
 // Variables and mixins
-@import "./helpers/variable";
-@import "./helpers/mixins";
+@import "./modules/variable";
+@import "./modules/mixins";
 
-@import "./helpers/normalize";
-@import "./helpers/base";
+@import "./modules/normalize";
+@import "./modules/base";
 
-@import "./helpers/layout";
-@import "./helpers/header";
-@import "./helpers/scrollToPlace";
-@import "./helpers/shareButtons";
+@import "./modules/layout";
+@import "./modules/header";
+@import "./modules/scrollToPlace";
+@import "./modules/shareButtons";

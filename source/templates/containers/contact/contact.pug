@@ -28,9 +28,9 @@ html(lang="pl", dir="ltr")
             .container.grid-lg
                 .columns
                     .column.hide-md
-                        img(src=""+pathToFile+path.file.body.image+"", class="img-responsive", alt="Napisz emaila")
+                        img(src=""+pathToFile+path.file.body.image+"", class="img-responsive img-shadow", alt="Napisz emaila")
                     .column.form-info
-                        form
+                        form(method="post", class="validation", autocomplete="on")
                             .form-group
                                 label(class="form-label", for="name") Imię i naziwsko
                                 input(class="form-input input-lg", type="text", name="imie-i-nazwisko", id="name")

@@ -1,4 +1,4 @@
-import "../../helpers/shareButton";
+import "../modules/shareButton";
 
 import './about.scss';
 
