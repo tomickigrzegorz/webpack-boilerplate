@@ -2,13 +2,6 @@
     {
         "items": {
             "path":"images/gallery/ania-i-kamil-slub/",
-            "img":"IMG_0378.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/ania-i-kamil-slub/",
             "img":"IMG_1332.jpg",
             "alt":""
         }
@@ -17,6 +10,13 @@
         "items": {
             "path":"images/gallery/ania-i-kamil-slub/",
             "img":"IMG_1504.jpg",
+            "alt":""
+        }
+    },
+    {
+        "items": {
+            "path":"images/gallery/ania-i-kamil-slub/",
+            "img":"IMG_0378.jpg",
             "alt":""
         }
     },

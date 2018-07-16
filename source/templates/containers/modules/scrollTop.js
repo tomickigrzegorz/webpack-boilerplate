@@ -10,6 +10,7 @@
     backToTop.addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelector('header').scrollIntoView({
+            block: 'start',
             behavior: 'smooth'
         });
     });
