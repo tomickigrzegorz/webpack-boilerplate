@@ -10,16 +10,19 @@ fs.readdir(`./source/images/gallery/${nameGallery}/`, function (err, files) {
     if (err)
         throw err;
     for (let index in files) {
-        let path = `{"path":"images/gallery/${nameGallery}/","img":"${files[index]}","alt":""}`;
-        test.push("\r\n\t\t\t" + path);
+        let path = `
+    {
+        "items": {
+            "path":"images\/gallery\/${nameGallery}\/",
+            "img":"${files[index]}",
+            "alt":""
+        }
+    }`;
+        test.push("" + path);
     }
 
-    const template = (
-`{
-   "nameGallery": "${nameGallery}",
-    "items": [${test}
-    ]
-}`);
+    const template = (`[${test}
+]`);
 
     fs.writeFile(`./source/data/${name}.json`, template, function (err) {});
 });

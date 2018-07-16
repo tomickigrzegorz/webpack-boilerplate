@@ -1,16 +1,79 @@
-{
-   "nameGallery": "monika-i-pawel-slub",
-    "items": [
-			{"path":"images/gallery/monika-i-pawel-slub/","img":"IMG_2459.jpg","alt":""},
-			{"path":"images/gallery/monika-i-pawel-slub/","img":"IMG_2462.jpg","alt":""},
-			{"path":"images/gallery/monika-i-pawel-slub/","img":"IMG_2469.jpg","alt":""},
-			{"path":"images/gallery/monika-i-pawel-slub/","img":"IMG_2493.jpg","alt":""},
-			{"path":"images/gallery/monika-i-pawel-slub/","img":"IMG_2515.jpg","alt":""},
-			{"path":"images/gallery/monika-i-pawel-slub/","img":"IMG_2575.jpg","alt":""},
-			{"path":"images/gallery/monika-i-pawel-slub/","img":"IMG_2579.jpg","alt":""},
-			{"path":"images/gallery/monika-i-pawel-slub/","img":"IMG_2753.jpg","alt":""},
-			{"path":"images/gallery/monika-i-pawel-slub/","img":"IMG_2816.jpg","alt":""},
-			{"path":"images/gallery/monika-i-pawel-slub/","img":"IMG_2836.jpg","alt":""},
-			{"path":"images/gallery/monika-i-pawel-slub/","img":"IMG_2895.jpg","alt":""}
-    ]
-}
+[
+    {
+        "items": {
+            "path":"images/gallery/monika-i-pawel-slub/",
+            "img":"IMG_2459.jpg",
+            "alt":""
+        }
+    },
+    {
+        "items": {
+            "path":"images/gallery/monika-i-pawel-slub/",
+            "img":"IMG_2462.jpg",
+            "alt":""
+        }
+    },
+    {
+        "items": {
+            "path":"images/gallery/monika-i-pawel-slub/",
+            "img":"IMG_2469.jpg",
+            "alt":""
+        }
+    },
+    {
+        "items": {
+            "path":"images/gallery/monika-i-pawel-slub/",
+            "img":"IMG_2493.jpg",
+            "alt":""
+        }
+    },
+    {
+        "items": {
+            "path":"images/gallery/monika-i-pawel-slub/",
+            "img":"IMG_2515.jpg",
+            "alt":""
+        }
+    },
+    {
+        "items": {
+            "path":"images/gallery/monika-i-pawel-slub/",
+            "img":"IMG_2575.jpg",
+            "alt":""
+        }
+    },
+    {
+        "items": {
+            "path":"images/gallery/monika-i-pawel-slub/",
+            "img":"IMG_2579.jpg",
+            "alt":""
+        }
+    },
+    {
+        "items": {
+            "path":"images/gallery/monika-i-pawel-slub/",
+            "img":"IMG_2753.jpg",
+            "alt":""
+        }
+    },
+    {
+        "items": {
+            "path":"images/gallery/monika-i-pawel-slub/",
+            "img":"IMG_2816.jpg",
+            "alt":""
+        }
+    },
+    {
+        "items": {
+            "path":"images/gallery/monika-i-pawel-slub/",
+            "img":"IMG_2836.jpg",
+            "alt":""
+        }
+    },
+    {
+        "items": {
+            "path":"images/gallery/monika-i-pawel-slub/",
+            "img":"IMG_2895.jpg",
+            "alt":""
+        }
+    }
+]
