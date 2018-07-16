@@ -1,154 +1,207 @@
-class Validation {
-  constructor(options) {
+class FormValidate {
+  constructor(form, options) {
+    this.form = form;
     this.options = options;
   }
 
-  rules() {
+  init() {
+    this.prepareElements();
+    this.bindSubmit();
+  }
 
-    Object.keys(this.options.rules).map(elements => {
+  prepareElements() {
+    const defaultOptions = {
+      classError: 'error'
+    };
+    this.options = Object.assign({}, defaultOptions, this.options);
+    this.form.setAttribute('novalidate', 'novalidate');
 
-      let valueLength = document.getElementById(elements).value.length;
+    const elements = this.form.querySelectorAll('[required]');
 
-      let op = {
-        element: elements,
-        required: this.options.rules[elements]['required'],
-        minLenMes: this.options.messages[elements]['minlength'],
-        minLenVar: this.options.rules[elements]['minlength'],
-        maxLenMes: this.options.messages[elements]['maxlength'],
-        maxLenVar: this.options.rules[elements]['maxlength']
+    [...elements].forEach(element => {
+
+      if (element.nodeName.toUpperCase() == 'INPUT') {
+        const type = element.type.toUpperCase();
+
+        if (type == 'TEXT') {
+          element.addEventListener('input', e => {
+            this.testInputText(e.target);
+          });
+        }
+        if (type == 'EMAIL') {
+          element.addEventListener('input', e => {
+            this.testInputEmail(e.target);
+          });
+        }
+        if (type == 'URL') {
+          element.addEventListener('input', e => {
+            this.testInputURL(e.target);
+          });
+        }
+        if (type == 'CHECKBOX') {
+          element.addEventListener('click', () => {
+            this.testInputCheckbox(e.target);
+          });
+        }
+        if (type == 'RADIO') {
+          element.addEventListener('click', () => {
+            this.testInputCheckbox(e.target);
+          });
+        }
       }
-
-      this.getLengthVal(op);
-
+      if (element.nodeName.toUpperCase() == 'TEXTAREA') {
+        element.addEventListener('input', e => {
+          this.testInputText(e.target);
+        });
+      }
+      if (element.nodeName.toUpperCase() == 'SELECT') {
+        element.addEventListener('change', e => {
+          this.testInputSelect(e.target);
+        });
+      }
     });
+  };
 
-  }
+  showFieldValidation(input, inputIsValid) {
+    if (!inputIsValid) {
+      input.parentElement.classList.add(this.options.classError);
+    } else {
+      input.parentElement.classList.remove(this.options.classError);
+    }
+  };
 
-  getLengthVal(op) {
-    let valElement = document.getElementById(op.element);
-    return valElement.value = valElement.value.trim();
-    // let lengthValue = document.getElementById(op.element).value;
-    // return lengthValue = lengthValue.trim().length;
-  }
+  testInputText(input) {
+    let inputIsValid = true;
+    const pattern = input.getAttribute('pattern');
 
-  onkeyup(op) {
-    ["keyup", "onkeypress"].forEach(event => {
-      document.getElementById(op.element).addEventListener(event, e => {
-        let valueLength = e.target.value.trim().length;
-        this.element(op, valueLength);
-      }, false);
+    if (pattern !== null) {
+      const reg = new RegExp(pattern, 'gi');
+      if (!reg.test(input.value)) {
+        inputIsValid = false;
+      }
+    } else {
+      if (input.value === '') {
+        inputIsValid = false;
+      }
+    }
+
+    if (inputIsValid) {
+      this.showFieldValidation(input, true);
+      return true;
+    } else {
+      this.showFieldValidation(input, false);
+      return false;
+    }
+  };
+
+  testInputEmail(input) {
+    const mailReg = new RegExp('^[0-9a-zA-Z_.-]+@[0-9a-zA-Z.-]+\.[a-zA-Z]{2,3}$', 'gi');
+
+    if (!mailReg.test(input.value)) {
+      this.showFieldValidation(input, false);
+      return false;
+    } else {
+      this.showFieldValidation(input, true);
+      return true;
+    }
+  };
+
+  testInputURL(input) {
+    const urlReg = new RegExp('^https?:\/\/.+', 'i');
+    if (!urlReg.test(input.value)) {
+      this.showFieldValidation(input, false);
+      return false;
+    } else {
+      this.showFieldValidation(input, true);
+      return true;
+    }
+  };
+
+  testInputSelect(select) {
+    if (select.options[select.selectedIndex].value == '' || select.options[select.selectedIndex].value == '-1') {
+      this.showFieldValidation(select, false);
+      return false;
+    } else {
+      this.showFieldValidation(select, true);
+      return true;
+    }
+  };
+
+  testInputCheckbox(input) {
+    const name = input.getAttribute('name');
+    const group = input.form.querySelectorAll('input[name="' + name + '"]:checked');
+
+    if (group.length) {
+      this.showFieldValidation(input, true);
+      return true;
+    } else {
+      this.showFieldValidation(input, false);
+      return false;
+    }
+  };
+
+
+  bindSubmit() {
+    this.form.addEventListener('submit', e => {
+      e.preventDefault();
+
+      let formIsValidated = true;
+      const elements = this.form.querySelectorAll('[required]');
+
+      [...elements].forEach(element => {
+        if (element.nodeName.toUpperCase() == 'INPUT') {
+          const type = element.type.toUpperCase();
+
+          if (type == 'EMAIL') {
+            if (!this.testInputEmail(element)) {
+              formIsValidated = false;
+            }
+          }
+          if (type == 'URL') {
+            if (!this.testInputURL(element)) {
+              formIsValidated = false;
+            }
+          }
+          if (type == 'TEXT') {
+            if (!this.testInputText(element)) {
+              formIsValidated = false;
+            }
+          }
+          if (type == 'CHECKBOX') {
+            if (!this.testInputCheckbox(element)) {
+              formIsValidated = false;
+            }
+          }
+          if (type == 'RADIO') {
+            if (!this.testInputCheckbox(element)) {
+              formIsValidated = false;
+            }
+          }
+        }
+
+
+        if (element.nodeName.toUpperCase() == 'TEXTAREA') {
+          if (!this.testInputText(element)) {
+            formIsValidated = false;
+          }
+        }
+        if (element.nodeName.toUpperCase() == 'SELECT') {
+          if (!this.testInputSelect(element)) {
+            formIsValidated = false;
+          }
+        }
+      });
+
+      if (formIsValidated) {
+        e.target.submit();
+      } else {
+        return false;
+      }
     });
-  }
+  };
 
-  element(op, valueLength) {
+};
 
-    let errorId = document.getElementById(`${op.element}-error`);
-    // console.log(`${op.element}, ${op.minLenMes}, ${op.minLenVar}, ${op.maxLenMes}, ${op.maxLenVar}, ${valueLength}`)
-    console.log(`${valueLength}, ${op.minLenVar}, ${op.maxLenVar}`)
-
-
-
-    if (errorId) {
-      if (valueLength > op.minLenVar && valueLength < op.maxLenVar) {
-        this.removeElement(op.element);
-      }
-    }
-
-    if (!errorId) {
-
-      if (valueLength < op.minLenVar) {
-        this.addElement(op.element, op.minLenMes);
-      }
-      if (valueLength > op.maxLenVar) {
-        this.addElement(op.element, op.maxLenMes);
-      }
-    }
-
-  }
-
-  removeElement(element) {
-    let elementRemove = document.getElementById(`${element}-error`);
-    elementRemove.parentNode.removeChild(elementRemove);
-    document.getElementById(element).classList.remove('error');
-  }
-
-  addElement(elements, message) {
-    let element = document.getElementById(elements);
-    let newElement = document.createElement('div');
-    newElement.setAttribute('id', `${elements}-error`);
-    newElement.setAttribute('class', 'error-label');
-    newElement.textContent = message;
-  
-    element.parentNode.insertBefore(newElement, element.nextSibling);
-    element.classList.add('error');
-  }
-
-  limitText(op) {
-    let element = document.getElementById(op.element).value;
-    if (element.length > op.maxLenVar) {
-      element = element.substring(0, op.maxLenVar);
-    }
-  }
-
-  emailValidate(email) {
-    let mail = document.getElementById(email).value;
-    let emailPattern = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    return emailPattern.test(mail); 
-  }
-
-  onButtonSubmit(op) {
-    let input = document.getElementById(op.element).value;
-    console.log(`${op.element} ${input.length}`);
-  }
-
-}
-
-const options = {
-  'rules': {
-    'name': {
-      'required': true,
-      'minlength': 5,
-      'maxlength': 20
-    },
-    'email': {
-      'required': true,
-      'minlength': 3,
-      'maxlength': 100
-    },
-    'date': {
-      'required': true
-    },
-    'place': {
-      'required': true,
-      'minlength': 5,
-      'maxlength': 50
-    }
-  },
-  'messages': {
-    'name': {
-      'required': "Podaj imię i nazwisko",
-      'minlength': "Pole musi zawierać więcej niż 5 znaków",
-      'maxlength': "Pole nie może zawierać więcej niż 20 znaków"
-    },
-    'email': {
-      'required': "Podaj e-mail",
-      'minlength': "Pole musi zawierać więcej niż 2 znaki",
-      'maxlength': "Pole nie może zawierać więcej niż 100 znaków"
-    },
-    'date': {
-      'required': "Podaj datę ślubu"
-    },
-    'place': {
-      'required': 'Podaj miejscowość',
-      'minlength': "Pole musi zawierać więcej niż 5 znaków",
-      'maxlength': "Pole nie może zawierać więcej niż 50 znaków"
-    }
-  }
-}
-
-let validation = document.querySelector('.validation');
-validation.addEventListener('submit', e => {
-  e.preventDefault();
-  const run = new Validation(options);
-  run.rules();
+document.addEventListener("DOMContentLoaded", () => {
+  const form = new FormValidate(document.querySelector('.form')).init();
 });

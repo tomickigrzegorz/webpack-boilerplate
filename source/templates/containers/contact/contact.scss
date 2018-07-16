@@ -273,8 +273,32 @@ $button-primary-color-dark: #d6d6d6;
     font-size: $font-size;
 }
 
-input {
-    &.error {
-        border: 1px solid red;
+
+// error
+.form {
+    .error {
+        color: #DB083E;
+        input[type=text],
+        input[type="url"],
+        input[type="email"],
+        textarea,
+        select {
+            color: #DB083E;
+            border-color: #DB083E;
+            background-position: calc(100% - 10px) center;
+            padding-right: 40px;
+        }
+        textarea {
+            background-position: calc(100% - 10px) 10px;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            border-color: #DB083E;
+            background: #FFEDED;
+        }
+        select {
+            background-image: none;
+            padding-right:4px;
+        }
     }
 }
