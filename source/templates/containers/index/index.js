@@ -40,6 +40,7 @@ class HomePage {
         document.querySelector('.please-scroll').addEventListener('click', function (e) {
             e.preventDefault();
             document.querySelector('.gallery').scrollIntoView({
+                block: 'start',
                 behavior: 'smooth'
             });
         });
@@ -70,15 +71,15 @@ class HomePage {
     }
 
     galleryJson(jsonFile) {
-        let jsonPath = this.detectMode() + `/data/${jsonFile}.json`;
+        let jsonPath = this.detectMode() + `data/${jsonFile}.json`;
         axios.get(jsonPath)
-            .then(response => this.galleryBuild(response.data.items));
+            .then(response => this.galleryBuild(response.data));
     }
 
     galleryBuild(arrayItems) {
         let modalPlace = document.getElementById('modal');
         for (let key of arrayItems) {
-            modalPlace.innerHTML += (`<img src="` + this.detectMode() + `${key.path}${key.img}" class="img-responsive gallery-items"/>`)
+            modalPlace.innerHTML += (`<img src="` + this.detectMode() + `${key.items.path}${key.items.img}" class="img-responsive gallery-items"/>`)
         }
     }
 

@@ -9,8 +9,8 @@ class ShareButton {
     }
 
     renderHTML() {
-        var buttonPlace = document.getElementById(this.options);
-        var item = {
+        const buttonPlace = document.getElementById(this.options);
+        const item = {
             facebook: {
                 name: 'facebook',
                 svg: '<svg xmlns="http://www.w3.org/2000/svg" class="share-icon share-icon-facebook" viewBox="0 0 27 27"><g><path d="M 22 5.16 c -0.406 -0.054 -1.806 -0.16 -3.43 -0.16 c -3.4 0 -5.733 1.825 -5.733 5.17 v 2.882 H 9 v 3.913 h 3.837 V 27 h 4.604 V 16.965 h 3.823 l 0.587 -3.913 h -4.41 v -2.5 c 0 -1.123 0.347 -1.903 2.198 -1.903 H 22 V 5.16 Z" /></g></svg>',
@@ -29,7 +29,7 @@ class ShareButton {
         };
     
     
-        var html = `
+        const html = `
             <div class="share-button">
                 <div title="${item.facebook.title}" data-share="${item.facebook.name}" class="share-btn btn-facebook">
                     <span class="share-btn__wrapper">${item.facebook.svg}</span>
@@ -53,7 +53,6 @@ class ShareButton {
 
     eventButton() {
 
-        var me = this;
         const buttonShare = document.getElementsByClassName("share-btn");
         const winWidth = 520;
         const winHeight = 320;
@@ -103,11 +102,11 @@ class ShareButton {
 
     getDescription() {
 
-        var description
+        let description
             , content
             , meta = document.getElementsByTagName('meta');
     
-        for (var x = 0, y = meta.length; x < y; x++) {
+        for (let x = 0, y = meta.length; x < y; x++) {
             if (meta[x].name.toLowerCase() == "description") {
                 description = meta[x];
             }
