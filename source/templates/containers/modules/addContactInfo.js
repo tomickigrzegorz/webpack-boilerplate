@@ -1,4 +1,4 @@
-export default function addPhoneAndEmail() {
+function addPhoneAndEmail() {
     const plaseToSet = document.querySelector('.phone-and-email');
     const templateHtml = `
         <div class="container grid-xs">
@@ -17,3 +17,5 @@ export default function addPhoneAndEmail() {
     `;
     return plaseToSet.innerHTML = templateHtml;
 }
+
+export default addPhoneAndEmail;

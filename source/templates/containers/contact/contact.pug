@@ -30,22 +30,22 @@ html(lang="pl", dir="ltr")
                     .column.hide-md
                         img(src=""+pathToFile+path.file.body.image+"", class="img-responsive img-shadow", alt="Napisz emaila")
                     .column.form-info
-                        form(method="post", class="form", autocomplete="on")
+                        form(class="form", autocomplete="off", method="post")
                             .form-group
-                                label(class="form-label", for="name") Imię i naziwsko
-                                input(class="form-input input-lg", type="text", placeholder="imię i nazwisko", name="name", id="name", required)
+                                label(class="form-label", for="imie-i-nazwisko") Imię i naziwsko
+                                input(class="form-input input-lg", type="text", placeholder="imię i nazwisko", name="imie-i-nazwisko", id="name", required)
                             .form-group
-                                label(class="form-label", for="email") Twoj adres email
-                                input(class="form-input input-lg", type="email", placeholder="example@example.com", name="email", id="email", required)
+                                label(class="form-label", for="twoj-email") Twoj adres email
+                                input(class="form-input input-lg", type="email", placeholder="example@example.com", name="twoj-email", id="email", required)
                             .form-group
-                                label(class="form-label", for="date") Data Ślubu
-                                input(class="form-input input-lg", type="text", pattern="^\\d{2}.\\d{2}.\\d{4}$", placeholder="dd.mm.rrrr" , name="date", id="date", required)
+                                label(class="form-label", for="data-wydarzenia") Data Ślubu
+                                input(class="form-input input-lg", type="text", pattern="(^(((0[1-9]|[12][0-8])[\.](0[1-9]|1[012]))|((29|30|31)[\.](0[13578]|1[02]))|((29|30)[\.](0[4,6,9]|11)))[\.](19|[2-9][0-9])\\d\\d$)|(^29[\.]02[\.](19|[2-9][0-9])(00|04|08|12|16|20|24|28|32|36|40|44|48|52|56|60|64|68|72|76|80|84|88|92|96)$)", placeholder="dd.mm.rrrr" , name="data-wydarzenia", id="date", required)
                             .form-group
-                                label(class="form-label", for="place") Miejscowość, w której odbędzie się ślub
-                                input(class="form-input input-lg", type="text", placeholder="miejscowość", name="place", id="place", required)
+                                label(class="form-label", for="miejsce-wydarzenia") Miejscowość, w której odbędzie się ślub
+                                input(class="form-input input-lg", type="text", placeholder="miejscowość", name="miejsce-wydarzenia", id="place", required)
                             .form-group
-                                label(class="form-label", for="text") Treść wiadomości (pole opcjonalne)
-                                textarea(class="form-input", id="text", rows="3")
+                                label(class="form-label", for="tresc-wiadomosci") Treść wiadomości (pole opcjonalne)
+                                textarea(class="form-input", id="text", name="tresc-wiadomosci", rows="3")
                             .form-group
                                 input(type="submit", class="btn btn-primary button", value="WYŚLIJ")
 

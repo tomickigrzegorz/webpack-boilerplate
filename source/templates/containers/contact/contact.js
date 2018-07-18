@@ -1,8 +1,10 @@
+import "babel-polyfill";
 import addContactInfo from '../modules/addContactInfo';
-import Validation from '../modules/validation';
+import '../modules/validation';
 
 import "../modules/shareButton";
 import './contact.scss';
+import './validation.scss';
 
 addContactInfo();
 
