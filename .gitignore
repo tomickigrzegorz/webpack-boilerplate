@@ -2,5 +2,7 @@
 .idea
 node_modules
 dist
+old
+mail.php
 package-lock.json
 logo.afdesign
