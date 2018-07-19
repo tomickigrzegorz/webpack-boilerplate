@@ -115,7 +115,7 @@ const config = {
         new CopyWebpackPlugin([
             { from: 'source/assets/', to: 'assets/' },
             { from: 'source/data/', to: 'data/' },
-            { from: 'source/images/favico.ico', to: './' },
+            { from: 'source/images/favicon.ico', to: './' },
             { from: 'source/images/', to: 'images/', ignore: [ 'logo.afdesign' ] }
         ]),
         new SWPrecacheWebpackPlugin({
