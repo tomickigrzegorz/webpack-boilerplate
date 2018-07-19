@@ -1,3 +1,4 @@
+import "../../../scss/modules/_shareButtons.scss"
 class ShareButton {
     constructor(options) {
         this.options = options;
@@ -34,11 +35,9 @@ class ShareButton {
                 <div title="${item.facebook.title}" data-share="${item.facebook.name}" class="share-btn btn-facebook">
                     <span class="share-btn__wrapper">${item.facebook.svg}</span>
                 </div>
-    
                 <div title="${item.twitter.title}" data-share="${item.twitter.name}" class="share-btn btn-twitter">
                     <span class="share-btn__wrapper">${item.twitter.svg}</span>
                 </div>
-    
                 <div title="${item.google.title}" data-share="${item.google.name}" class="share-btn btn-google">
                     <span class="share-btn__wrapper">${item.google.svg}</span>
                 </div>

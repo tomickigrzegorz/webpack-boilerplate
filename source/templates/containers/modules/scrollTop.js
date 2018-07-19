@@ -1,3 +1,5 @@
+import "../../../scss/modules/_scrollToPlace.scss"
+
 ;(function scrollTop() {
 
     const backToTop = document.querySelector('.back-to-top');

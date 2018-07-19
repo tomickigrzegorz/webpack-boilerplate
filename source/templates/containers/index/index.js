@@ -1,6 +1,7 @@
 import "babel-polyfill";
 import axios from "axios";
 import smoothscroll from "smoothscroll-polyfill"; // https://github.com/iamdustan/smoothscroll
+// import "../modules/preload";
 import "./index.scss";
 import "../../../scss/modules/_gallery.scss";
 import "../../../scss/modules/_parallax.scss";

@@ -1,4 +1,5 @@
 import axios from "axios";
+import '../../../scss/modules/_validation.scss';
 class FormValidate {
     constructor(form) {
         this.form = form;
