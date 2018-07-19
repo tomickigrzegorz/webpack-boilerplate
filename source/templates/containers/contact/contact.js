@@ -7,5 +7,3 @@ import './contact.scss';
 import './validation.scss';
 
 addContactInfo();
-
-console.log('contact');
