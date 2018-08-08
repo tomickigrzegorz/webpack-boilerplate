@@ -151,7 +151,6 @@ class FormValidate {
                     const type = element.type.toUpperCase();
 
                     if (type == 'EMAIL') {
-                        0
                         if (!this.testInputEmail(element)) {
                             formIsValidated = false;
                         }

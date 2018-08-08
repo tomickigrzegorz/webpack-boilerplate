@@ -22,12 +22,12 @@ html(lang="pl", dir="ltr")
             .container
                 .text-info
                     h1 o mnie
-            .container.grid-lg
-                .columns
-                    .column.hide-md
-                        img(src=""+pathToFile+path.file.body.image+"", class="img-responsive hide-md img-shadow", alt="O mnie")
-                    .column.text-center.text-info
-                        !=path.file.body.mainText
+                    .container.grid-lg
+                        .columns
+                            .column.hide-md
+                                img(src=""+pathToFile+path.file.body.image+"", class="img-responsive hide-md img-shadow", alt="O mnie")
+                            .column.text-center
+                                !=path.file.body.mainText
 
             include ./../../includes/backToTop.pug
 
