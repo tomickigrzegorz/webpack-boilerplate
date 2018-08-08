@@ -79,7 +79,13 @@ class HomePage {
     galleryBuild(arrayItems) {
         let modalPlace = document.getElementById('modal');
         for (let key of arrayItems) {
-            modalPlace.innerHTML += (`<img src="` + this.detectMode() + `${key.items.path}${key.items.img}" class="img-responsive gallery-items"/>`)
+            modalPlace.innerHTML += (`
+                <picture>
+                    <source srcset="` + this.detectMode() + `${key.items.path}${key.items.img.replace('jpg','webp')}" type="image/webp" class="img-responsive gallery-items">
+                    <source srcset="` + this.detectMode() + `${key.items.path}${key.items.img}" type="image/jpeg" class="img-responsive gallery-items">
+                    <img src="` + this.detectMode() + `${key.items.path}${key.items.img}" class="img-responsive gallery-items"/>
+                </picture>
+            `)
         }
     }
 

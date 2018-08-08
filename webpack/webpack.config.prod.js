@@ -119,7 +119,7 @@ const config = {
             { from: 'source/images/', to: 'images/', ignore: [ 'logo.afdesign' ] }
         ]),
         new SWPrecacheWebpackPlugin({
-            cacheId: 'my-project-name',
+            cacheId: 'gt',
             dontCacheBustUrlsMatching: /\.\w{8}\./,
             filename: 'service-worker.js',
             minify: true,
