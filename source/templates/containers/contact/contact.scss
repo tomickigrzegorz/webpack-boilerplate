@@ -13,9 +13,6 @@
     }
 }
 
-fieldset {
-    margin-bottom: $layout-spacing-lg;
-} // Form element: Label
 .form-label {
     display: block;
     line-height: $line-height;
@@ -54,19 +51,7 @@ textarea.form-input {
     height: auto;
     resize: vertical;
 } // Form element: Input hint
-.form-input-hint {
-    color: $gray-color;
-    font-size: $font-size-sm;
-    margin-top: $unit-1;
-    .has-success &,
-    .is-success+& {
-        color: $success-color;
-    }
-    .has-error &,
-    .is-error+& {
-        color: $error-color;
-    }
-} // Form validation states
+
 .form-input,
 .form-select {
     .has-success &,
@@ -114,54 +99,6 @@ input {
     }
 }
 
-.form-switch {
-    input {
-        &:disabled,
-        &.disabled {
-            &+.form-icon::before {
-                background: $bg-color-light;
-            }
-        }
-    }
-} // Form horizontal
-.form-horizontal {
-    padding: $layout-spacing 0;
-    .form-group {
-        display: flex;
-        flex-wrap: wrap;
-    }
-} // Form inline
-.form-inline {
-    display: inline-block;
-}
-
-// Button variant mixin
-@mixin button-variant($color: $primary-color) {
-    background: $color;
-    border-color: darken($color, 3%);
-    color: $light-color;
-    &:focus {
-        @include control-shadow($color);
-    }
-    &:focus,
-    &:hover {
-        background: darken($color, 2%);
-        border-color: darken($color, 5%);
-        color: $light-color;
-    }
-    &:active,
-    &.active {
-        background: darken($color, 7%);
-        border-color: darken($color, 10%);
-        color: $light-color;
-    }
-    &.loading {
-        &::after {
-            border-bottom-color: $light-color;
-            border-left-color: $light-color;
-        }
-    }
-} // Buttons
 
 $button-primary-color: #e4e4e4;
 $button-primary-color-dark: #d6d6d6;
@@ -240,24 +177,6 @@ $button-primary-color-dark: #d6d6d6;
     &.btn-block {
         display: block;
         width: 100%;
-    }
-}
-
-.form-info {
-    max-width: 500px;
-    margin: 0 auto;
-    form {
-        padding: 20px;
-    }
-    button {
-        padding: 20px;
-        line-height: 4px;
-        @media (max-width: 840px) {
-            width: 100%;
-        }
-    }
-    h2 {
-        color: #ff6600;
     }
 }
 
