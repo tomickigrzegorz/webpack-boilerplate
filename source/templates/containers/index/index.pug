@@ -25,7 +25,7 @@ html(lang="pl", dir="ltr")
 
 
 
-        .container
+        .container.main
             .parallax-thumbnail.img-shadow(style="background-image: url('"+ pathToFile + path.file.body.parallax +"')")
                 .please-scroll
                     span.mouse
@@ -55,8 +55,8 @@ html(lang="pl", dir="ltr")
             .text-center.text-uppercase.heading-title
                 a(href=path.file.body.textAfter[0].url, rel="author noopener", target="_blank") #{path.file.body.textAfter[0].text}
 
-            #modal.modal
-
             include ./../../includes/backToTop.pug
             
+        #modal.modal
+        
         include ./../../includes/footer.pug

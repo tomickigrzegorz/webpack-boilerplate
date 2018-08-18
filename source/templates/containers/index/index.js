@@ -90,7 +90,9 @@ class HomePage {
     }
 
     balleryCloseButton() {
-        let buttonModal = `<div id="close-modal" class="text-center">zamknij</div>`;
+        let buttonModal = `
+            <div id="close-modal" class="text-center">zamknij</div>
+        `;
         document.getElementById('modal').innerHTML = buttonModal;
 
         this.galleryClose('close-modal', 'modal-show');
