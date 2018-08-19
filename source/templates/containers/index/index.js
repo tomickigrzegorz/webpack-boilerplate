@@ -54,20 +54,28 @@ class HomePage {
                 e.preventDefault();
                 document.getElementById('modal').style.display = 'block';
                 document.body.classList.add("modal-show");
-                this.balleryCloseButton();
+                this.galleryClose('modal', 'modal-show', 'close-modal');
                 this.galleryJson(dateName);
             })
         }
-        this.galleryClose('modal', 'modal-show');
+
     }
 
-    galleryClose(modal, modalShow) {
-        document.getElementById(modal).addEventListener('click', function (e) {
-            e.preventDefault();
-            document.body.classList.remove(modalShow);
-            this.style.display = "none";
-            this.textContent = '';
-        })
+    galleryClose(modal, modalShow, closeModal) {
+        this.galleryCloseButton();
+        let elements = document.querySelectorAll(`#${modal}, #${closeModal}`);
+        for (let i = 0; i < elements.length; i++) {
+            elements[i].addEventListener('click', function (e) {
+                e.preventDefault();
+                let divCloseModal = document.getElementById(closeModal);
+                let divModal = document.getElementById(modal);
+                if (e.target == divModal || e.target == divCloseModal) {
+                    document.body.classList.remove(modalShow);
+                    divModal.style.display = "none";
+                    divModal.textContent = '';
+                }
+            });
+        }
     }
 
     galleryJson(jsonFile) {
@@ -78,24 +86,24 @@ class HomePage {
 
     galleryBuild(arrayItems) {
         let modalPlace = document.getElementById('modal');
+        let pathTo = this.detectMode();
         for (let key of arrayItems) {
             modalPlace.innerHTML += (`
                 <picture>
-                    <source srcset="` + this.detectMode() + `${key.items.path}${key.items.img.replace('jpg','webp')}" type="image/webp" class="img-responsive gallery-items">
-                    <source srcset="` + this.detectMode() + `${key.items.path}${key.items.img}" type="image/jpeg" class="img-responsive gallery-items">
-                    <img src="` + this.detectMode() + `${key.items.path}${key.items.img}" class="img-responsive gallery-items"/>
+                    <source srcset="${pathTo}${key.items.path}${key.items.img.replace('jpg', 'webp')}" type="image/webp" class="img-responsive gallery-items">
+                    <source srcset="${pathTo}${key.items.path}${key.items.img}" type="image/jpeg" class="img-responsive gallery-items">
+                    <img src="${pathTo}${key.items.path}${key.items.img}" class="img-responsive gallery-items"/>
                 </picture>
             `)
         }
     }
 
-    balleryCloseButton() {
+    galleryCloseButton() {
         let buttonModal = `
-            <div id="close-modal" class="text-center">zamknij</div>
+            <div id="close-modal" class="close-modal" class="text-center">zamknij</div>
         `;
         document.getElementById('modal').innerHTML = buttonModal;
 
-        this.galleryClose('close-modal', 'modal-show');
     }
 
 }
@@ -104,5 +112,4 @@ const options = {
     'scrollPosHeihgt': 200
 }
 
-const home = new HomePage(options);
-home.init();
+new HomePage(options).init();
