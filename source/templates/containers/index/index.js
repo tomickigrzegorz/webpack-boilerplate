@@ -87,12 +87,15 @@ class HomePage {
     galleryBuild(arrayItems) {
         let modalPlace = document.getElementById('modal');
         let pathTo = this.detectMode();
-        for (let key of arrayItems) {
+
+        for (let key in arrayItems) {
+            let img = arrayItems[key].items.img;
+            let pathImg = arrayItems[key].items.path;
             modalPlace.innerHTML += (`
                 <picture>
-                    <source srcset="${pathTo}${key.items.path}${key.items.img.replace('jpg', 'webp')}" type="image/webp" class="img-responsive gallery-items">
-                    <source srcset="${pathTo}${key.items.path}${key.items.img}" type="image/jpeg" class="img-responsive gallery-items">
-                    <img src="${pathTo}${key.items.path}${key.items.img}" class="img-responsive gallery-items"/>
+                    <source srcset="${pathTo}${pathImg}${img.replace('jpg', 'webp')}" type="image/webp" class="img-responsive gallery-items">
+                    <source srcset="${pathTo}${pathImg}${img}" type="image/jpeg" class="img-responsive gallery-items">
+                    <img src="${pathTo}${pathImg}${img}" class="img-responsive gallery-items"/>
                 </picture>
             `)
         }

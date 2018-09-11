@@ -11,11 +11,11 @@ const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin
 
 const PUBLIC_PATH = 'http://grzegorztomicki.com/';
 
-const mod = require('./entry.js');
+const entry = require('./entry.js');
 
-const entryHtmlPlugins = Object.keys(mod.html).map((entryName) => {
+const entryHtmlPlugins = Object.keys(entry.html).map((entryName) => {
     return new HtmlWebpackPlugin({
-        filename: `${mod.html[entryName]}.html`,
+        filename: `${entry.html[entryName]}.html`,
         template: `./source/templates/containers/${entryName}/${entryName}.pug`,
         path: path.join(__dirname, "../dist/"),
         chunks: [entryName],
@@ -31,15 +31,17 @@ const entryHtmlPlugins = Object.keys(mod.html).map((entryName) => {
     })
 });
 
+const output = {
+    path: path.resolve(__dirname, "../dist"),
+    filename: "vendor/js/[name].[hash].js",
+    publicPath: "./"
+}
+
 const config = {
-    devtool: 'none',
+    devtool: "none",
     mode: "production",
-    entry: mod.entry,
-    output: {
-        path: path.resolve(__dirname, "../dist"),
-        filename: "vendor/js/[name].[hash].js",
-        publicPath: "./"
-    },
+    entry: entry.site,
+    output: output,
     module: {
         rules: [
             {

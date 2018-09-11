@@ -4,7 +4,7 @@ module.exports.html = {
     'contact': 'kontakt'
 };
 
-module.exports.entry = {
+module.exports.site = {
     'index': ['./source/templates/containers/index/index.js'],
     'about': ['./source/templates/containers/about/about.js'],
     'contact': ['./source/templates/containers/contact/contact.js']
