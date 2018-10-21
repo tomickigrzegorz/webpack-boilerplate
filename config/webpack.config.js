@@ -184,14 +184,14 @@ module.exports = (env, argv) => {
         )
       )
       .concat(prodPlugin(new HtmlWebpackInlineSourcePlugin(), argv))
-    // .concat(
-    //   prodPlugin(
-    //     new BundleAnalyzerPlugin({
-    //       openAnalyzer: true
-    //     }),
-    //     argv
-    //   )
-    // )
+      .concat(
+        prodPlugin(
+          new BundleAnalyzerPlugin({
+            openAnalyzer: true
+          }),
+          argv
+        )
+      )
   };
 };
 
