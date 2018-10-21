@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 import '../../../scss/modules/_validation.scss';
 class FormValidate {
     constructor(form) {
@@ -210,13 +210,13 @@ class FormValidate {
 
         let config = {
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Type': 'application/x-www-form-urlencoded'
             }
-        }
+        };
         axios.post('mail.php', data, config)
             .then(response => {
                 document.querySelector('.form').remove();
-                document.querySelector('.form-info').innerHTML = '<h2>Dziękuję.<br>Postaram się jak najszybciej odpowiedzieć.</h2>'
+                document.querySelector('.form-info').innerHTML = '<h2>Dziękuję.<br>Postaram się jak najszybciej odpowiedzieć.</h2>';
             })
             .catch(error => {
                 let text = document.createTextNode('Wystąpił jakiś błąd proszę wysłać ponownie formularz');
@@ -228,7 +228,7 @@ class FormValidate {
 };
 
 document.addEventListener('readystatechange', () => {
-    if (document.readyState == "complete") {
+    if (document.readyState == 'complete') {
         const contact = new FormValidate(document.querySelector('.form'));
         contact.init();
     }

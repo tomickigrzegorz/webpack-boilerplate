@@ -1,4 +1,4 @@
-import "../../../scss/modules/_shareButtons.scss"
+import '../../../scss/modules/_shareButtons.scss';
 class ShareButton {
     constructor(options) {
         this.options = options;
@@ -28,8 +28,8 @@ class ShareButton {
                 title: 'Udostępnij w serwisie Google+. Strona otworzy się w nowym oknie.'
             }
         };
-    
-    
+
+
         const html = `
             <div class="share-button">
                 <div title="${item.facebook.title}" data-share="${item.facebook.name}" class="share-btn btn-facebook">
@@ -44,30 +44,30 @@ class ShareButton {
     
             </div>
         `;
-    
-        if(buttonPlace) {
+
+        if (buttonPlace) {
             buttonPlace.innerHTML = html;
         }
     };
 
     eventButton() {
 
-        const buttonShare = document.getElementsByClassName("share-btn");
+        const buttonShare = document.getElementsByClassName('share-btn');
         const winWidth = 520;
         const winHeight = 320;
         const winTop = (screen.height / 2) - (winHeight / 2);
         const winLeft = (screen.width / 2) - (winWidth / 2);
-    
+
         for (let item of buttonShare) {
             let typeSocial = item.getAttribute('data-share');
             item.addEventListener('click', e => {
                 e.preventDefault();
-                if(typeSocial === 'print') {
+                if (typeSocial === 'print') {
                     window.print();
                 } else {
                     window.open(this.showShareLink(typeSocial), 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
                 }
-            })
+            });
         }
 
     };
@@ -75,20 +75,20 @@ class ShareButton {
     showShareLink(typeSocial) {
 
         let url;
-    
-        switch(typeSocial) {
-            case "facebook":
-                url = "https://www.facebook.com/sharer/sharer.php?u=" + this.getUrl() + "&p=" + this.getDescription();
+
+        switch (typeSocial) {
+            case 'facebook':
+                url = 'https://www.facebook.com/sharer/sharer.php?u=' + this.getUrl() + '&p=' + this.getDescription();
                 break;
-            case "twitter":
-                url = "http://twitter.com/share?text=" + this.getTitle() + "&url=" + this.getUrl();
+            case 'twitter':
+                url = 'http://twitter.com/share?text=' + this.getTitle() + '&url=' + this.getUrl();
                 break;
-            case "google":
-                url = "https://plus.google.com/share?url=" + this.getUrl();
+            case 'google':
+                url = 'https://plus.google.com/share?url=' + this.getUrl();
                 break;
         }
         return url;
-    
+
     };
 
     getUrl() {
@@ -104,17 +104,16 @@ class ShareButton {
         let description
             , content
             , meta = document.getElementsByTagName('meta');
-    
+
         for (let x = 0, y = meta.length; x < y; x++) {
-            if (meta[x].name.toLowerCase() == "description") {
+            if (meta[x].name.toLowerCase() == 'description') {
                 description = meta[x];
             }
         }
-        content = description.content.replace(/ /g, "%20");
+        content = description.content.replace(/ /g, '%20');
         return content;
     };
 
 }
 
-let sharebutton = new ShareButton("share-button");
-sharebutton.init();
+new ShareButton('share-button').init();

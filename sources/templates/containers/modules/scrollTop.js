@@ -1,6 +1,6 @@
-import "../../../scss/modules/_scrollToPlace.scss"
+import '../../../scss/modules/_scrollToPlace.scss';
 
-;(function scrollTop() {
+(function scrollTop() {
 
     const backToTop = document.querySelector('.back-to-top');
 

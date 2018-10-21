@@ -1,8 +1,9 @@
-const gulp = require('gulp');
-const webp = require('gulp-webp');
+const gulp = require("gulp");
+const webp = require("gulp-webp");
 
-gulp.task('img', () =>
-    gulp.src('./source/images/**/*.jpg')
-        .pipe(webp({quality: 60}))
-        .pipe(gulp.dest('./source/images/'))
+gulp.task("img", () =>
+  gulp
+    .src("./sources/images/**/*.jpg")
+    .pipe(webp({ quality: 60 }))
+    .pipe(gulp.dest("./sources/images/"))
 );

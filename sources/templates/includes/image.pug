@@ -1,0 +1,3 @@
+mixin image(path)
+    - var pathToFile = (path.mode == 'development') ? "../../../sources/" : ""
+    img(src=(pathToFile + path))

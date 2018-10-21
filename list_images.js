@@ -1,16 +1,16 @@
 const fs = require("fs");
 
-const nameGallery = (process.argv[2] !== '') ? process.argv[2] : "agnieszka-i-andrzej-plener"
+const nameGallery =
+  process.argv[2] !== "" ? process.argv[2] : "agnieszka-i-andrzej-plener";
 
 const name = nameGallery;
 
 const test = [];
 
-fs.readdir(`./source/images/gallery/${nameGallery}/`, function (err, files) {
-    if (err)
-        throw err;
-    for (let index in files) {
-        let path = `
+fs.readdir(`./sources/images/gallery/${nameGallery}/`, function(err, files) {
+  if (err) throw err;
+  for (let index in files) {
+    let path = `
     {
         "items": {
             "path":"images\/gallery\/${nameGallery}\/",
@@ -18,11 +18,11 @@ fs.readdir(`./source/images/gallery/${nameGallery}/`, function (err, files) {
             "alt":""
         }
     }`;
-        test.push("" + path);
-    }
+    test.push("" + path);
+  }
 
-    const template = (`[${test}
-]`);
+  const template = `[${test}
+]`;
 
-    fs.writeFile(`./source/data/${name}.json`, template, function (err) {});
+  fs.writeFile(`./sources/data/${name}.json`, template, function(err) {});
 });

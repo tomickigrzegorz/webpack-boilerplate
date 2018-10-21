@@ -5,6 +5,7 @@ header {
 .header-logo {
     img {
         max-width: 250px;
+
         @media (max-width: $size-sm) {
             max-width: 190px;
         }
@@ -18,10 +19,12 @@ header {
         font-weight: 600;
         margin-right: 10px;
         text-transform: uppercase;
-        color: lighter(#000, 30%);
+        color: lighten(#000, 30%);
+
         &:last-child {
             margin-right: 0;
         }
+
         &.active {
             color: #000;
             font-weight: bolder;
