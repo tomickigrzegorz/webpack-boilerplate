@@ -14,7 +14,8 @@
     "dev": "webpack-dev-server --config ./config/webpack.config.js --mode development --open",
     "prod": "webpack --config ./config/webpack.config.js --mode production",
     "serve": "http-server ./dist -c-1 -p 8081 -o",
-    "json": "node ./list_images.js",
+    "sitemap": "node ./helpers/sitemap.js",
+    "json": "node ./helpers/list_images.js",
     "webp": "gulp img"
   },
   "author": "Grzegorz Tomicki",

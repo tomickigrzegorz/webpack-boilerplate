@@ -1,142 +1,142 @@
 [
-    {
-        "items": {
-            "path":"images/gallery/marlena-i-przemek-slub/",
-            "img":"IMG_9434.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/marlena-i-przemek-slub/",
-            "img":"IMG_9485.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/marlena-i-przemek-slub/",
-            "img":"IMG_9499.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/marlena-i-przemek-slub/",
-            "img":"IMG_9611.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/marlena-i-przemek-slub/",
-            "img":"IMG_9620.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/marlena-i-przemek-slub/",
-            "img":"IMG_9622.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/marlena-i-przemek-slub/",
-            "img":"IMG_9661.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/marlena-i-przemek-slub/",
-            "img":"IMG_9679.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/marlena-i-przemek-slub/",
-            "img":"IMG_9761.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/marlena-i-przemek-slub/",
-            "img":"IMG_0090.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/marlena-i-przemek-slub/",
-            "img":"IMG_0153.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/marlena-i-przemek-slub/",
-            "img":"IMG_0361.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/marlena-i-przemek-slub/",
-            "img":"IMG_0368.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/marlena-i-przemek-slub/",
-            "img":"IMG_0369.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/marlena-i-przemek-slub/",
-            "img":"IMG_0378.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/marlena-i-przemek-slub/",
-            "img":"IMG_0453.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/marlena-i-przemek-slub/",
-            "img":"IMG_0508.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/marlena-i-przemek-slub/",
-            "img":"IMG_7550.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/marlena-i-przemek-slub/",
-            "img":"IMG_7615.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/marlena-i-przemek-slub/",
-            "img":"IMG_9852.jpg",
-            "alt":""
-        }
+  {
+    "items": {
+      "path": "images/gallery/marlena-i-przemek-slub/",
+      "img": "IMG_9434.jpg",
+      "alt": ""
     }
+  },
+  {
+    "items": {
+      "path": "images/gallery/marlena-i-przemek-slub/",
+      "img": "IMG_9485.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/marlena-i-przemek-slub/",
+      "img": "IMG_9499.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/marlena-i-przemek-slub/",
+      "img": "IMG_9611.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/marlena-i-przemek-slub/",
+      "img": "IMG_9620.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/marlena-i-przemek-slub/",
+      "img": "IMG_9622.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/marlena-i-przemek-slub/",
+      "img": "IMG_9661.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/marlena-i-przemek-slub/",
+      "img": "IMG_9679.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/marlena-i-przemek-slub/",
+      "img": "IMG_9761.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/marlena-i-przemek-slub/",
+      "img": "IMG_0090.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/marlena-i-przemek-slub/",
+      "img": "IMG_0153.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/marlena-i-przemek-slub/",
+      "img": "IMG_0361.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/marlena-i-przemek-slub/",
+      "img": "IMG_0368.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/marlena-i-przemek-slub/",
+      "img": "IMG_0369.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/marlena-i-przemek-slub/",
+      "img": "IMG_0378.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/marlena-i-przemek-slub/",
+      "img": "IMG_0453.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/marlena-i-przemek-slub/",
+      "img": "IMG_0508.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/marlena-i-przemek-slub/",
+      "img": "IMG_7550.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/marlena-i-przemek-slub/",
+      "img": "IMG_7615.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/marlena-i-przemek-slub/",
+      "img": "IMG_9852.jpg",
+      "alt": ""
+    }
+  }
 ]

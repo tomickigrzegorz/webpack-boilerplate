@@ -1,100 +1,198 @@
 [
-    {
-        "items": {
-            "path":"images/gallery/agnieszka-i-andrzej-plener/",
-            "img":"IMG_6479.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/agnieszka-i-andrzej-plener/",
-            "img":"IMG_6514.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/agnieszka-i-andrzej-plener/",
-            "img":"IMG_6519.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/agnieszka-i-andrzej-plener/",
-            "img":"IMG_6533.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/agnieszka-i-andrzej-plener/",
-            "img":"IMG_6545.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/agnieszka-i-andrzej-plener/",
-            "img":"IMG_6550.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/agnieszka-i-andrzej-plener/",
-            "img":"IMG_6554.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/agnieszka-i-andrzej-plener/",
-            "img":"IMG_6571.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/agnieszka-i-andrzej-plener/",
-            "img":"IMG_6590.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/agnieszka-i-andrzej-plener/",
-            "img":"IMG_6610.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/agnieszka-i-andrzej-plener/",
-            "img":"IMG_6621.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/agnieszka-i-andrzej-plener/",
-            "img":"IMG_6649.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/agnieszka-i-andrzej-plener/",
-            "img":"IMG_6673.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/agnieszka-i-andrzej-plener/",
-            "img":"IMG_6735.jpg",
-            "alt":""
-        }
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6479.jpg",
+      "alt": ""
     }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6479.webp",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6514.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6514.webp",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6519.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6519.webp",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6533.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6533.webp",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6545.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6545.webp",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6550.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6550.webp",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6554.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6554.webp",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6571.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6571.webp",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6590.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6590.webp",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6610.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6610.webp",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6621.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6621.webp",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6649.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6649.webp",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6673.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6673.webp",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6735.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/agnieszka-i-andrzej-plener/",
+      "img": "IMG_6735.webp",
+      "alt": ""
+    }
+  }
 ]

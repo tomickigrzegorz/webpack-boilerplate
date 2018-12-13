@@ -1,86 +1,86 @@
 [
-    {
-        "items": {
-            "path":"images/gallery/dorota-i-piotrek-slub/",
-            "img":"IMG_1102.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/dorota-i-piotrek-slub/",
-            "img":"IMG_1165.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/dorota-i-piotrek-slub/",
-            "img":"IMG_1188.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/dorota-i-piotrek-slub/",
-            "img":"IMG_1243.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/dorota-i-piotrek-slub/",
-            "img":"IMG_1255.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/dorota-i-piotrek-slub/",
-            "img":"IMG_1275.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/dorota-i-piotrek-slub/",
-            "img":"IMG_1301.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/dorota-i-piotrek-slub/",
-            "img":"IMG_1421.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/dorota-i-piotrek-slub/",
-            "img":"IMG_1781.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/dorota-i-piotrek-slub/",
-            "img":"IMG_2013.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/dorota-i-piotrek-slub/",
-            "img":"IMG_2239.jpg",
-            "alt":""
-        }
-    },
-    {
-        "items": {
-            "path":"images/gallery/dorota-i-piotrek-slub/",
-            "img":"IMG_2247.jpg",
-            "alt":""
-        }
+  {
+    "items": {
+      "path": "images/gallery/dorota-i-piotrek-slub/",
+      "img": "IMG_1102.jpg",
+      "alt": ""
     }
+  },
+  {
+    "items": {
+      "path": "images/gallery/dorota-i-piotrek-slub/",
+      "img": "IMG_1165.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/dorota-i-piotrek-slub/",
+      "img": "IMG_1188.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/dorota-i-piotrek-slub/",
+      "img": "IMG_1243.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/dorota-i-piotrek-slub/",
+      "img": "IMG_1255.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/dorota-i-piotrek-slub/",
+      "img": "IMG_1275.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/dorota-i-piotrek-slub/",
+      "img": "IMG_1301.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/dorota-i-piotrek-slub/",
+      "img": "IMG_1421.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/dorota-i-piotrek-slub/",
+      "img": "IMG_1781.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/dorota-i-piotrek-slub/",
+      "img": "IMG_2013.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/dorota-i-piotrek-slub/",
+      "img": "IMG_2239.jpg",
+      "alt": ""
+    }
+  },
+  {
+    "items": {
+      "path": "images/gallery/dorota-i-piotrek-slub/",
+      "img": "IMG_2247.jpg",
+      "alt": ""
+    }
+  }
 ]
