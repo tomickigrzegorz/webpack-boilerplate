@@ -8,48 +8,66 @@ const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlWebpackInlineSourcePlugin = require("html-webpack-inline-source-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
 
 const PUBLIC_PATH = "http://www.grzegorztomicki.pl/";
 
 const entry = require("./entry.js");
 
+const optimization = {
+  splitChunks: {
+    cacheGroups: {
+      commons: {
+        test: /[\\/]node_modules[\\/]/,
+        name: "vendors",
+        chunks: "all"
+      }
+    }
+  }
+};
+
 module.exports = (env, argv) => {
   const type =
     argv.mode === "production"
       ? {
-        pathToDist: "../dist",
-        mode: "production",
-        minify: {
-          minify: true,
-          removeComments: true,
-          collapseWhitespace: true,
-          removeScriptTypeAttributes: true
+          pathToDist: "../dist",
+          mode: "production",
+          minify: {
+            minify: true,
+            removeComments: true,
+            collapseWhitespace: true,
+            removeScriptTypeAttributes: true
+          }
         }
-      }
       : {
-        pathToDist: "dist",
-        mode: "development",
-        minify: false
-      };
+          pathToDist: "dist",
+          mode: "development",
+          minify: false
+        };
 
   const entryHtmlPlugins = Object.keys(entry.html).map(entryName => {
-    const newEntryName = entryName === 'contact' ? 'kontakt' : entryName === 'about' ? 'o-mnie' : 'index';
+    const newEntryName =
+      entryName === "contact"
+        ? "kontakt"
+        : entryName === "about"
+        ? "o-mnie"
+        : "index";
     return new HtmlWebPackPlugin({
       filename: `${newEntryName}.html`,
       template: `./sources/templates/containers/${entryName}/${entryName}.pug`,
       file: require(`../sources/templates/containers/${entryName}/${entryName}.json`),
       chunks: [entryName],
       minify: type.minify,
-      mode: type.mode,
-      inlineSource: ".(css)$"
+      mode: type.mode
+      // inlineSource: ".(css)$"
       // inlineSource: '.(js|css)$',
     });
   });
 
   const output = {
-    path: path.resolve(__dirname, "../dist"),
-    filename: "vendor/js/[name].[hash].js"
+    filename: "vendor/js/[name].[chunkhash].bundle.js",
+    path: path.resolve(__dirname, "../dist")
   };
 
   return {
@@ -128,7 +146,7 @@ module.exports = (env, argv) => {
         }
       ]
     },
-    optimization: {},
+    optimization: optimization,
     plugins: [
       prodPlugin(
         new CleanWebpackPlugin("dist", {
@@ -171,19 +189,22 @@ module.exports = (env, argv) => {
       ),
       prodPlugin(new OptimizeCssAssetsPlugin(), argv),
       new webpack.DefinePlugin({
-        PRODUCTION: argv.mode === "development" ? JSON.stringify(false) : JSON.stringify(true)
+        PRODUCTION:
+          argv.mode === "development"
+            ? JSON.stringify(false)
+            : JSON.stringify(true)
       })
     ]
       .concat(entryHtmlPlugins)
-      .concat(
-        prodPlugin(
-          new ScriptExtHtmlWebpackPlugin({
-            defaultAttribute: "async"
-          }),
-          argv
-        )
-      )
-      .concat(prodPlugin(new HtmlWebpackInlineSourcePlugin(), argv))
+      // .concat(
+      //   prodPlugin(
+      //     new ScriptExtHtmlWebpackPlugin({
+      //       defaultAttribute: "async"
+      //     }),
+      //     argv
+      //   )
+      // )
+      // .concat(prodPlugin(new HtmlWebpackInlineSourcePlugin(), argv))
       .concat(
         prodPlugin(
           new BundleAnalyzerPlugin({
@@ -200,9 +221,9 @@ function devProdOption(dev, prod, argv) {
 }
 
 function prodPlugin(plugin, argv) {
-  return argv.mode === "production" ? plugin : () => { };
+  return argv.mode === "production" ? plugin : () => {};
 }
 
 function devPlugin(plugin, argv) {
-  return argv.mode === "development" ? plugin : () => { };
+  return argv.mode === "development" ? plugin : () => {};
 }
