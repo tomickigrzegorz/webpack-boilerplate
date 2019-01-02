@@ -44,7 +44,7 @@ class HomePage {
   scrollToGallery() {
     document
       .querySelector('.please-scroll')
-      .addEventListener('click', function (e) {
+      .addEventListener('click', function(e) {
         e.preventDefault();
         document.querySelector('.gallery').scrollIntoView({
           block: 'start',
@@ -71,7 +71,7 @@ class HomePage {
     this.galleryCloseButton();
     let elements = document.querySelectorAll(`#${modal}, #${closeModal}`);
     for (let i = 0; i < elements.length; i++) {
-      elements[i].addEventListener('click', function (e) {
+      elements[i].addEventListener('click', function(e) {
         e.preventDefault();
         let divCloseModal = document.getElementById(closeModal);
         let divModal = document.getElementById(modal);
@@ -98,7 +98,10 @@ class HomePage {
       let pathImg = arrayItems[key].items.path;
       modalPlace.innerHTML += `
                 <picture>
-                    <source srcset="${pathTo}${pathImg}${img.replace('jpg', 'webp')}" type="image/webp" class="img-responsive gallery-items">
+                    <source srcset="${pathTo}${pathImg}${img.replace(
+        'jpg',
+        'webp'
+      )}" type="image/webp" class="img-responsive gallery-items">
                     <source srcset="${pathTo}${pathImg}${img}" type="image/jpeg" class="img-responsive gallery-items">
                     <img src="${pathTo}${pathImg}${img}" class="img-responsive gallery-items"/>
                 </picture>
