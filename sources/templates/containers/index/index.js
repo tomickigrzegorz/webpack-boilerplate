@@ -7,7 +7,7 @@ import '../../../scss/modules/_gallery.scss';
 import '../../../scss/modules/_parallax.scss';
 import '../modules/scrollTop';
 import '../modules/shareButton';
-import '../modules/snow';
+// import '../modules/snow';
 
 smoothscroll.polyfill();
 
