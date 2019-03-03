@@ -1,5 +1,6 @@
 .history
 .idea
+.htaccess
 node_modules
 dist
 old
