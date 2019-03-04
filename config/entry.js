@@ -1,5 +1,5 @@
 module.exports.html = {
-  index: "./sources/templates/containers/index/index.js",
-  about: "./sources/templates/containers/about/about.js",
-  contact: "./sources/templates/containers/contact/contact.js"
+  index: "./sources/js/index.js",
+  about: "./sources/js/about.js",
+  contact: "./sources/js/contact.js"
 };

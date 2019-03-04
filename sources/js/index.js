@@ -1,24 +1,24 @@
-import '@babel/polyfill';
+// import '@babel/polyfill';
 import axios from 'axios';
-import smoothscroll from 'smoothscroll-polyfill';
-// https://github.com/iamdustan/smoothscroll
-import './index.scss';
-import '../../../scss/modules/_gallery.scss';
-import '../../../scss/modules/_parallax.scss';
-import '../modules/scrollTop';
-import '../modules/shareButton';
-// import '../modules/snow';
+import './modules/smoothScroll';
+import './modules/shareButton';
+import './modules/footer';
+import './modules/backToTop';
 
-smoothscroll.polyfill();
+import '../../sources/scss/modules/_index.scss';
+import '../../sources/scss/modules/_shareButtons.scss';
+import '../../sources/scss/modules/_modal.scss';
+
+// console.log('index');
 
 class HomePage {
-  constructor(options) {
-    this.options = options;
+  constructor(option) {
+    this.className = option.className;
+    this.scrollPosHeihgt = option.scrollPosHeihgt;
   }
 
   init() {
     this.hideMouse();
-    this.scrollToGallery();
     this.galleryInit();
   }
 
@@ -36,32 +36,20 @@ class HomePage {
     let windowWidth = window.innerWidth;
     let scrollPos = window.pageYOffset || document.documentElement.scrollTop;
     document.querySelector('.please-scroll').style.display =
-      scrollPos > options.scrollPosHeihgt || windowWidth < 1000
-        ? 'none'
-        : 'block';
-  }
-
-  scrollToGallery() {
-    document
-      .querySelector('.please-scroll')
-      .addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector('.gallery').scrollIntoView({
-          block: 'start',
-          behavior: 'smooth'
-        });
-      });
+      scrollPos > this.scrollPosHeihgt || windowWidth < 1000 ?
+      'none' :
+      'block';
   }
 
   galleryInit() {
-    let elements = document.querySelectorAll('.effect-goliath');
+    let elements = document.querySelectorAll(this.className);
     for (let item of elements) {
       let dateName = item.getAttribute('data-name');
       item.addEventListener('click', e => {
         e.preventDefault();
         document.getElementById('modal').style.display = 'block';
         document.body.classList.add('modal-show');
-        this.galleryClose('modal', 'modal-show', 'close-modal');
+        this.galleryClose('modal', 'modal-show', 'modal-close');
         this.galleryJson(dateName);
       });
     }
@@ -71,7 +59,7 @@ class HomePage {
     this.galleryCloseButton();
     let elements = document.querySelectorAll(`#${modal}, #${closeModal}`);
     for (let i = 0; i < elements.length; i++) {
-      elements[i].addEventListener('click', function(e) {
+      elements[i].addEventListener('click', function (e) {
         e.preventDefault();
         let divCloseModal = document.getElementById(closeModal);
         let divModal = document.getElementById(modal);
@@ -96,29 +84,19 @@ class HomePage {
     for (let key in arrayItems) {
       let img = arrayItems[key].items.img;
       let pathImg = arrayItems[key].items.path;
-      modalPlace.innerHTML += `
-                <picture>
-                    <source srcset="${pathTo}${pathImg}${img.replace(
-        'jpg',
-        'webp'
-      )}" type="image/webp" class="img-responsive gallery-items">
-                    <source srcset="${pathTo}${pathImg}${img}" type="image/jpeg" class="img-responsive gallery-items">
-                    <img src="${pathTo}${pathImg}${img}" class="img-responsive gallery-items"/>
-                </picture>
-            `;
+      modalPlace.innerHTML += `<picture><source srcset="${pathTo}${pathImg}${img.replace('jpg', 'webp')}" type="image/webp" class="img-responsive gallery-items"><source srcset="${pathTo}${pathImg}${img}" type="image/jpeg" class="img-responsive gallery-items"><img src="${pathTo}${pathImg}${img}" class="img-responsive gallery-items"/></picture>`;
     }
   }
 
   galleryCloseButton() {
-    let buttonModal = `
-            <div id="close-modal" class="close-modal class="text-center">zamknij</div>
-        `;
+    let buttonModal = '<div id="modal-close" class="modal-close" class="text-center">zamknij</div>';
     document.getElementById('modal').innerHTML = buttonModal;
   }
 }
 
-const options = {
+const option = {
+  className: '.effect-goliath',
   scrollPosHeihgt: 200
 };
 
-new HomePage(options).init();
+new HomePage(option).init();

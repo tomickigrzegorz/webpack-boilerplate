@@ -1,5 +1,5 @@
 import axios from 'axios';
-import '../../../scss/modules/_validation.scss';
+
 class FormValidate {
     constructor(form) {
         this.form = form;
@@ -233,10 +233,3 @@ document.addEventListener('readystatechange', () => {
         contact.init();
     }
 });
-
-
-// nie mozna tego uzyc jezeli mamy async ustawione
-// document.addEventListener("DOMContentLoaded", function() {
-//   const contact = new FormValidate(document.querySelector('.form'));
-//   contact.init();
-// });

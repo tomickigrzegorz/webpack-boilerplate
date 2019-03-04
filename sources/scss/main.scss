@@ -1,9 +1,10 @@
-// Variables and mixins
-@import "./modules/variable";
+@import "./modules/font";
+@import "./modules/config";
 @import "./modules/mixins";
-
 @import "./modules/normalize";
-@import "./modules/base";
-
-@import "./modules/layout";
+@import "./modules/view";
 @import "./modules/header";
+@import "./modules/logo";
+@import "./modules/navigation";
+@import "./modules/footer";
+@import "./modules/backToTop";

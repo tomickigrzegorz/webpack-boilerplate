@@ -1,4 +1,3 @@
-import '../../../scss/modules/_shareButtons.scss';
 class ShareButton {
   constructor(options) {
     this.options = options;

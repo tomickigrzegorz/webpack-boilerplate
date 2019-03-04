@@ -1,175 +1,25 @@
-.gallery {
-    max-width: 1800px;
-    display: flex;
-    flex-wrap: wrap;
-    .column {
-        position: relative;
-        padding: 0.1rem;
-        flex-grow: 1;
-        @media (max-width: 470px) {
-            width: 100%;
-        }
-        @media (min-width: 471px) {
-            width: calc(100% * (1/2) - 1px)
-        }
-        @media (min-width: 890px) {
-            width: calc(100% * (1/4) - 1px)
-        }
-    }
+@import "./animation.scss";
+
+.items-content {
+  padding: 0 10px;
 }
 
-.grid {
-    position: relative;
-    clear: both;
-    margin: 0 auto;
-    padding: 1em 0 4em;
-    max-width: 1000px;
-    list-style: none;
-    text-align: center;
-    figure {
-        position: relative;
-        float: left;
-        overflow: hidden;
-        width: 100%;
-        margin: 0;
-        text-align: center;
-        cursor: pointer;
-        img {
-            position: relative;
-            display: block;
-            min-height: 100%;
-            max-width: 100%;
-        }
-        figcaption {
-            color: #fff;
-            text-transform: uppercase;
-            font-size: 1.25em;
-            backface-visibility: hidden;
-            span {
-                display: block;
-                text-transform: uppercase;
-                font-size: .5rem;
-                text-align: left;
-            }
-            &:before,
-            &:after {
-                pointer-events: none;
-            }
-        }
-    }
-}
+.items {
+  max-width: 1800px;
+  margin: auto;
 
-.grid figure figcaption,
-.grid figure figcaption>a {
-    position: absolute;
-    top: 0;
-    left: 0;
+  .item {
     width: 100%;
-    height: 100%;
-}
+    padding: 2px;
 
-.grid figure figcaption>a {
-    z-index: 1000;
-    text-indent: 200%;
-    white-space: nowrap;
-    font-size: 0;
-    opacity: 0;
-}
-
-.grid figure h2 {
-    word-spacing: -0.15em;
-    font-weight: 300;
-    span {
-        font-weight: 800;
+    @include breakpoint(470px) {
+      width: calc(50% - 4px);
     }
-}
 
-.grid figure h2,
-.grid figure p {
-    margin: 0;
-}
-
-.grid figure p {
-    letter-spacing: 1px;
-    font-size: 68.5%;
-}
-
-// effect
-figure.effect-goliath {
-    overflow: hidden;
-    cursor: pointer;
-    margin: 0;
-    background: #df4e4e;
-    img,
-    h2 {
-        transition: transform 0.35s;
+    @include breakpoint(890px) {
+      width: calc(25% - 4px);
     }
-    img {
-        backface-visibility: hidden;
-    }
-    h2,
-    p {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        padding: 20px;
-        text-transform: none;
-        font-size: 90%;
-        @media (min-width: 889px) {
-            opacity: 0;
-            transition: opacity 0.35s, transform 0.35s;
-            transform: translate3d(0, 50px, 0);
-        }
-    }
-    &:hover {
-        img {
-            @media (min-width: 889px) {
-                transform: translate3d(0, -80px, 0);
-            }
-        }
-        p,
-        h2 {
-            opacity: 1;
-            transform: translate3d(0, 0, 0);
-        }
-    }
-}
 
-figure.effect-goliath .zoom {
-    transform: translate(9999px);
-    opacity: 0;
-    z-index: 3;
-}
 
-figure.effect-goliath:hover .zoom {
-    transition: opacity 1s ease-out;
-    transform: translate(0);
-    opacity: 1;
-}
-
-figure.effect-goliath .zoom {
-    background-color: rgba(255, 0, 0, 0.1);
-    z-index: 2;
-}
-
-.zoom {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    svg {
-        position: absolute;
-        top: 0%;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        margin: auto;
-        width: 50px;
-        @media (max-width: 480px) {
-            width: 30px;
-        }
-    }
-}
-
-.gallery-items {
-    margin: 4px auto;
+  }
 }

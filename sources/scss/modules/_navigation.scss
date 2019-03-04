@@ -1,0 +1,30 @@
+.navigation {
+  a {
+    display: inline-block;
+    font-family: 'Roboto Condensed', sans-serif;
+    @include font-size(20);
+    color: $color-gray-dark;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 5px;
+    &::after {
+      content: '';
+      display: block;
+      margin-bottom: 5px;
+      width: 0;
+      height: 2px;
+      background: $color-burgund;
+      transition: width .3s;
+    }
+    &:hover::after {
+      width: 100%;
+    }
+    &.active {
+      font-weight: 700;
+      &::after {
+        width: 100%;
+        height: 2px;
+      }
+    }
+  }
+}
