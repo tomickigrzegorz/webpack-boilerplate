@@ -8,22 +8,25 @@ const name = nameGallery;
 
 const test = [];
 
-fs.readdir(`../sources/images/gallery/${nameGallery}/`, function(err, files) {
+fs.readdir(`./sources/images/gallery/${nameGallery}/`, function (err, files) {
   if (err) throw err;
   for (let index in files) {
-    let path = `
-    {
-        "items": {
-            "path":"images\/gallery\/${nameGallery}\/",
-            "img":"${files[index]}",
-            "alt":""
-        }
-    }`;
-    test.push('' + path);
+    let rest = files[index].split('.')[1];
+    if (rest === 'jpg') {
+      let path = `
+      {
+          "items": {
+              "path":"images\/gallery\/${nameGallery}\/",
+              "img":"${files[index]}",
+              "alt":""
+          }
+      }`;
+      test.push('' + path);
+    }
   }
 
   const template = `[${test}
 ]`;
 
-  fs.writeFile(`../sources/data/${name}.json`, template, function(err) {});
+  fs.writeFile(`./sources/data/${name}.json`, template, function (err) {});
 });
