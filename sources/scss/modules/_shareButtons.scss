@@ -4,6 +4,13 @@
   top: 195px;
 }
 
+.about,
+.contact {
+  #share-button {
+    top: 12px;
+  }
+}
+
 .share {
   &-button {
     overflow: hidden;

@@ -1,7 +1,11 @@
 @import "./animation.scss";
 
 .items-content {
-  padding: 0 10px;
+  padding: 0;
+
+  @include breakpoint(470px) {
+    padding: 0 5px;
+  }
 }
 
 .items {
@@ -19,7 +23,5 @@
     @include breakpoint(890px) {
       width: calc(25% - 4px);
     }
-
-
   }
 }
