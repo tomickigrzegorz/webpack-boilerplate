@@ -216,7 +216,7 @@ class FormValidate {
         axios.post('mail.php', data, config)
             .then(response => {
                 document.querySelector('.form').remove();
-                document.querySelector('.form-info').innerHTML = '<h2>Dziękuję.<br>Postaram się jak najszybciej odpowiedzieć.</h2>';
+                document.querySelector('.item-form').innerHTML = '<h2>Dziękuję.<br>Postaram się jak najszybciej odpowiedzieć.</h2>';
             })
             .catch(error => {
                 let text = document.createTextNode('Wystąpił jakiś błąd proszę wysłać ponownie formularz');
