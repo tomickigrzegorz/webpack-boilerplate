@@ -1,7 +1,10 @@
+import { docQuerySelector, docQuerySelectorAll } from '../helpers/elements';
+import { share } from '../helpers/constants.js';
+
+import '../../scss/modules/_shareButtons.scss';
+
 class ShareButton {
-  constructor(options) {
-    this.options = options;
-  }
+  constructor() { }
 
   init() {
     this.renderHTML();
@@ -9,7 +12,7 @@ class ShareButton {
   }
 
   renderHTML() {
-    const buttonPlace = document.getElementById(this.options);
+    const buttonPlace = docQuerySelector(share.classShare);
     const item = {
       facebook: {
         name: 'facebook',
@@ -41,14 +44,14 @@ class ShareButton {
   };
 
   eventButton() {
-    const buttonShare = document.getElementsByClassName('share-btn');
-    const winWidth = 520;
-    const winHeight = 320;
+    const buttonShare = docQuerySelectorAll(share.classShareBtn);
+    const winWidth = share.width;
+    const winHeight = share.height;
     const winTop = (screen.height / 2) - (winHeight / 2);
     const winLeft = (screen.width / 2) - (winWidth / 2);
 
     for (let item of buttonShare) {
-      let typeSocial = item.getAttribute('data-share');
+      let typeSocial = item.getAttribute(share.dataShare);
       item.addEventListener('click', e => {
         e.preventDefault();
         if (typeSocial === 'print') {
@@ -96,4 +99,4 @@ class ShareButton {
   };
 }
 
-new ShareButton('share-button').init();
+export default ShareButton;

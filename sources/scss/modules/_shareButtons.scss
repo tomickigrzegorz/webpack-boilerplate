@@ -1,4 +1,4 @@
-#share-button {
+.share-button {
   position: fixed;
   right: 12px;
   top: 195px;
@@ -6,7 +6,7 @@
 
 .about,
 .contact {
-  #share-button {
+  .share-button {
     top: 12px;
   }
 }

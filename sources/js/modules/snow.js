@@ -107,6 +107,6 @@ const options = {
   interval: 30 // falling speed
 };
 
-let snow = new Hohoho(options).draw();
+const snow = new Hohoho(options).draw();
 
 window.addEventListener('load', snow);

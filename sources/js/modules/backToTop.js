@@ -1,6 +1,8 @@
-const backToTop = document.querySelector('.back-to-top');
+import { docQuerySelector, scrollPos } from '../helpers/elements';
+import { classes, mouse } from '../helpers/constants.js';
+
+const backToTop = docQuerySelector(classes.classBackToTop);
 
 window.addEventListener('scroll', function () {
-  let scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-  backToTop.style.display = scrollPos > 200 ? 'block' : 'none';
+  backToTop.style.display = scrollPos() > mouse.scrollPosHeihgt ? 'block' : 'none';
 });

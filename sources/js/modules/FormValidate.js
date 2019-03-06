@@ -1,12 +1,13 @@
 import axios from 'axios';
+import {
+    docQuerySelector
+} from '../helpers/elements';
+import {
+    form
+} from '../helpers/constants';
 
 class FormValidate {
-    constructor(form) {
-        this.form = form;
-        this.options = {
-            classError: 'error'
-        };
-    }
+    constructor() { }
 
     init() {
         this.prepareElements();
@@ -14,9 +15,8 @@ class FormValidate {
     }
 
     prepareElements() {
-        this.form.setAttribute('novalidate', 'novalidate');
-        const elements = this.form.querySelectorAll('[required]');
-
+        docQuerySelector(form.formName).setAttribute('novalidate', 'novalidate');
+        const elements = docQuerySelector(form.formName).querySelectorAll('[required]');
         [...elements].forEach(element => {
 
             if (element.nodeName.toUpperCase() == 'INPUT') {
@@ -62,11 +62,9 @@ class FormValidate {
     };
 
     showFieldValidation(input, inputIsValid) {
-        if (!inputIsValid) {
-            input.parentElement.classList.add(this.options.classError);
-        } else {
-            input.parentElement.classList.remove(this.options.classError);
-        }
+        (!inputIsValid) ?
+            input.parentElement.classList.add(form.classError) :
+            input.parentElement.classList.remove(form.classError);
     };
 
     testInputText(input) {
@@ -140,11 +138,11 @@ class FormValidate {
     };
 
     bindSubmit() {
-        this.form.addEventListener('submit', e => {
+        docQuerySelector(form.formName).addEventListener('submit', e => {
             e.preventDefault();
 
             let formIsValidated = true;
-            const elements = this.form.querySelectorAll('[required]');
+            const elements = docQuerySelector(form.formName).querySelectorAll('[required]');
 
             [...elements].forEach(element => {
                 if (element.nodeName.toUpperCase() == 'INPUT') {
@@ -200,7 +198,7 @@ class FormValidate {
 
     sendMail() {
 
-        let data = {
+        const data = {
             'imie-i-nazwisko': document.getElementById('name').value,
             'twoj-email': document.getElementById('email').value,
             'data-wydarzenia': document.getElementById('date').value,
@@ -208,28 +206,23 @@ class FormValidate {
             'tresc-wiadomosci': document.getElementById('text').value
         };
 
-        let config = {
+        const config = {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         };
         axios.post('mail.php', data, config)
             .then(response => {
-                document.querySelector('.form').remove();
-                document.querySelector('.item-form').innerHTML = '<h2>Dziękuję.<br>Postaram się jak najszybciej odpowiedzieć.</h2>';
+                docQuerySelector(form.formName).remove();
+                docQuerySelector(form.classItemForm).innerHTML = '<h2>Dziękuję.<br>Postaram się jak najszybciej odpowiedzieć.</h2>';
             })
             .catch(error => {
                 let text = document.createTextNode('Wystąpił jakiś błąd proszę wysłać ponownie formularz');
-                let child = document.querySelector('.form');
+                let child = docQuerySelector(form.formName);
                 child.parentNode.insertBefore(text, child);
             });
     }
 
 };
 
-document.addEventListener('readystatechange', () => {
-    if (document.readyState == 'complete') {
-        const contact = new FormValidate(document.querySelector('.form'));
-        contact.init();
-    }
-});
+export default FormValidate;
