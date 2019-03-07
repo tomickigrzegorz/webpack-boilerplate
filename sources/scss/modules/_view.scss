@@ -69,15 +69,12 @@ textarea {
 
 .flex {
   display: flex;
-
   &-center {
     align-items: center;
   }
-
   &-row {
     flex-direction: column;
   }
-
   &-wrap {
     flex-wrap: wrap;
   }
