@@ -3,7 +3,7 @@ import ShareButton from './modules/ShareButton';
 import dateFooter from './modules/Footer';
 dateFooter();
 
-import '../scss/modules/_about.scss';
+import '../scss/about.scss';
 
 window.addEventListener('load', () => {
   new ShareButton().init();

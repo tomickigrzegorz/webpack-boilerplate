@@ -6,7 +6,7 @@ import FormValidate from './modules/FormValidate';
 import dateFooter from './modules/Footer';
 dateFooter();
 
-import '../scss/modules/_contact.scss';
+import '../scss/contact.scss';
 
 addContactInfo();
 

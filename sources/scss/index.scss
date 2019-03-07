@@ -1,6 +1,6 @@
-@import './global';
-@import './gallery';
-@import './parallax';
+@import './modules/global';
+@import './modules/gallery';
+@import './modules/parallax';
 .home {
   h1 {
     text-transform: uppercase;

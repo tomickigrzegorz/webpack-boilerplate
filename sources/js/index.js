@@ -7,7 +7,7 @@ import Gallery from './modules/Gallery';
 import './modules/BackToTop';
 import dateFooter from './modules/Footer';
 dateFooter();
-import '../scss/modules/_index.scss';
+import '../scss/index.scss';
 
 
 

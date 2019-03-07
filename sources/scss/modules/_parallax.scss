@@ -4,8 +4,7 @@
   background-position: center center;
   background-attachment: scroll;
   background-size: cover;
-  background-image: url('../../images/parallax/images.jpg');
-
+  background-image: url('../images/parallax/images.jpg');
   @include breakpoint(xl) {
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -18,17 +17,14 @@
     opacity: 1;
     top: 29%;
   }
-
   15% {
     opacity: 1;
     top: 50%;
   }
-
   50% {
     opacity: 0;
     top: 50%;
   }
-
   100% {
     opacity: 0;
     top: 29%;
@@ -43,7 +39,6 @@
   bottom: 20px;
   text-align: center;
   cursor: pointer;
-
   &>* {
     display: inline-block;
     line-height: 18px;
@@ -51,23 +46,19 @@
     font-weight: normal;
     color: $color-white;
     letter-spacing: 2px;
-
     &:hover,
     &:focus,
     &:active {
       color: $color-white;
       opacity: 0.8;
     }
-
     &.active {
       opacity: 0.8;
     }
   }
-
   @include breakpoint(lg) {
     display: block;
   }
-
   .mouse {
     position: relative;
     display: block;
@@ -76,7 +67,6 @@
     margin: 0 auto 10px;
     border: 3px solid $color-white;
     border-radius: 23px;
-
     &>* {
       position: absolute;
       display: block;
