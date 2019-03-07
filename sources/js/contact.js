@@ -3,13 +3,12 @@ import addContactInfo from './modules/AddContactInfo';
 import ShareButton from './modules/ShareButton';
 import FormValidate from './modules/FormValidate';
 
-import './modules/Footer';
+import dateFooter from './modules/Footer';
+dateFooter();
 
-import '../../sources/scss/modules/_contact.scss';
+import '../scss/modules/_contact.scss';
 
 addContactInfo();
-// console.log('contat');
-
 
 window.addEventListener('load', () => {
   new ShareButton().init();

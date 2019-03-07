@@ -1,8 +1,7 @@
+@import './global';
 @import './form';
-
 .info {
   margin-bottom: 20px;
-
   .phone {
     a {
       color: $color-gray-darken;
@@ -10,7 +9,6 @@
       position: relative;
       display: block;
       height: 30px;
-
       &:hover {
         text-decoration: underline;
         color: $color-burgund;

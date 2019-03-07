@@ -1,10 +1,9 @@
 // import '@babel/polyfill';
 import ShareButton from './modules/ShareButton';
-import './modules/Footer';
+import dateFooter from './modules/Footer';
+dateFooter();
 
-import '../../sources/scss/modules/_about.scss';
-
-// console.log('about');
+import '../scss/modules/_about.scss';
 
 window.addEventListener('load', () => {
   new ShareButton().init();

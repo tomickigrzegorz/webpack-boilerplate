@@ -5,9 +5,11 @@ import HideShowMouse from './modules/HideShowMouse';
 import Gallery from './modules/Gallery';
 
 import './modules/BackToTop';
-import './modules/Footer';
+import dateFooter from './modules/Footer';
+dateFooter();
+import '../scss/modules/_index.scss';
 
-import '../../sources/scss/modules/_index.scss';
+
 
 window.addEventListener('load', () => {
 

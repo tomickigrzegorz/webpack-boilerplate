@@ -6,9 +6,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-// const Critters = require('critters-webpack-plugin');
-// const WebpackCritical = require('webpack-critical');
-const CriticalPlugin = require('critical-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const PUBLIC_PATH = 'http://www.grzegorztomicki.pl';
@@ -19,11 +16,12 @@ const OUTPUT_DIR = 'dist';
 const optimization = {
   splitChunks: {
     cacheGroups: {
-      default: false,
-      commons: {
-        test: /[\\/]node_modules[\\/]/,
-        name: 'vendors',
-        chunks: 'all'
+      vendor: {
+        test: /node_modules/,
+        chunks: "all",
+        name: "vendor",
+        priority: 10,
+        enforce: true
       }
     }
   },
@@ -57,18 +55,14 @@ module.exports = (env, argv) => {
       };
 
   const entryHtmlPlugins = Object.keys(ENTRY.html).map(entryName => {
-    const newEntryName = (entryName === "contact")
-      ? "kontakt" : entryName === "about"
-        ? "o-mnie" : "index";
+    const newEntryName = (entryName === "contact") ? "kontakt" : entryName === "about" ? "o-mnie" : "index";
     return new HtmlWebPackPlugin({
       filename: `${newEntryName}.html`,
       template: `./sources/templates/${entryName}.pug`,
       file: require(`../sources/data/${entryName}.json`),
-      chunksSortMode: "manual",
       chunks: [entryName],
       minify: type.minify,
       mode: type.mode,
-      // chunksSortMode: 'none'
       // inlineSource: '.(css)$'
       // inlineSource: '.(js|css)$',
     })
@@ -134,7 +128,7 @@ module.exports = (env, argv) => {
           {
             loader: "sass-resources-loader",
             options: {
-              resources: ["./sources/scss/main.scss"]
+              resources: ["./sources/scss/modules/_config.scss", "./sources/scss/modules/_mixins.scss"]
             }
           }
         ]
@@ -145,7 +139,6 @@ module.exports = (env, argv) => {
         loader: 'file-loader',
         options: {
           name: "[name].[ext]",
-          // name: '[name]-[hash:8].[ext]',
           outputPath: argv.mode === 'production' ? './images/' : '',
           publicPath: argv.mode === 'production' ? '../../images/' : '',
           useRelativePath: true
@@ -220,45 +213,12 @@ module.exports = (env, argv) => {
         ]),
         argv
       ),
-      // prodPlugin(new OptimizeCssAssetsPlugin(), argv),
       new webpack.DefinePlugin({
         PRODUCTION: argv.mode === "development" ?
           JSON.stringify(false) : JSON.stringify(true)
       }),
-      prodPlugin(
-        new CriticalPlugin({
-          inline: true,
-          width: 1300,
-          height: 900,
-          minify: true,
-          extract: true,
-          timeout: 30000,
-          pathPrefix: '/MySubfolderDocrot',
-          ignore: ['font-face', /some-regexp/],
-          ignoreOptions: {}
-        }),
-        argv
-      ),
     ]
       .concat(entryHtmlPlugins)
-    // .concat(
-    //   prodPlugin(
-    //     new WebpackCritical({
-    //       context: OUTPUT_DIR,
-    //       ignore: ['@font-face']
-    //     }),
-    //     argv
-    //   ),
-    // )
-    // .concat(
-    //   prodPlugin(
-    //     new Critters({
-    //       preload: 'swap',
-    //       preloadFonts: true
-    //     }),
-    //     argv
-    //   ),
-    // )
     // .concat(
     //   prodPlugin(
     //     new BundleAnalyzerPlugin({

@@ -1,20 +1,16 @@
-footer {
+.footer {
   margin-top: 30px;
   color: $color-gray-dark;
-
   .cookie {
     @include font-size(12);
   }
-
   .copyright {
     @include font-size(14);
     margin-bottom: 10px;
   }
-
   a {
     text-decoration: none;
     color: $color-gray-dark;
-
     &:hover {
       border-bottom: 1px solid $color-gray-darken;
     }
