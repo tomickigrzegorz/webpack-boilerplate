@@ -27,7 +27,7 @@ html(lang="pl", dir="ltr", class="contact")
                 .column.item-image.hide-md
                     img(src=""+pathToFile+path.file.body.image+"", class="img-responsive img-shadow", alt="Napisz emaila")
                 .column.item-form
-                    form(class="form", autocomplete="off", method="post")
+                    form(class="form", autocomplete="off", method="post", aria-labelledby="contact")
                         .form-group
                             label(class="form-label", for="imie-i-nazwisko") Imię i naziwsko
                             input(class="form-input", type="text", placeholder="imię i nazwisko", name="imie-i-nazwisko", id="name", required)
