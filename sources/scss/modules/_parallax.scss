@@ -39,6 +39,9 @@
   bottom: 40px;
   text-align: center;
   cursor: pointer;
+  a {
+    text-decoration: none;
+  }
   @include breakpoint(lg) {
     display: block;
   }
