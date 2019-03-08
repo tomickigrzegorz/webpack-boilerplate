@@ -1,5 +1,5 @@
 import '@babel/polyfill';
-import SmoothscrollAnchorPolyfill from './modules/SmoothScroll';
+import SmoothScroll from 'smooth-scroll';
 import ShareButton from './modules/ShareButton';
 import HideShowMouse from './modules/HideShowMouse';
 import Gallery from './modules/Gallery';
@@ -11,7 +11,9 @@ import '../scss/index.scss';
 
 window.addEventListener('load', () => {
 
-  SmoothscrollAnchorPolyfill.polyfill();
+  const scroll = new SmoothScroll('.scroll a[href*="#"]', {
+    speed: 300
+  });
 
   new HideShowMouse().hideMouse();
   new Gallery().galleryInit();

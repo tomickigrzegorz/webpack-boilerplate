@@ -12,18 +12,16 @@
   opacity: .5;
   transition: opacity .5s ease-out;
   border-radius: 4px;
-
   &:before {
     content: '';
+    position: absolute;
     display: block;
     border-right: solid 10px transparent;
     border-left: solid 10px transparent;
     border-bottom: solid 10px #FFF;
-    position: absolute;
     top: 37%;
     left: 31%;
   }
-
   &:hover {
     opacity: 1;
   }
