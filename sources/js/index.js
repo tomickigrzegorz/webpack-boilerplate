@@ -9,8 +9,6 @@ import dateFooter from './modules/Footer';
 dateFooter();
 import '../scss/index.scss';
 
-
-
 window.addEventListener('load', () => {
 
   SmoothscrollAnchorPolyfill.polyfill();
