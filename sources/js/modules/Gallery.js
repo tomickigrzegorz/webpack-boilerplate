@@ -1,5 +1,5 @@
 import { detectMode, docQuerySelector, docQuerySelectorAll } from '../helpers/elements';
-import { modal, classes, templateCloseButton, templateImage } from '../helpers/constants';
+import { modal, classes, templateCloseButton } from '../helpers/constants';
 
 import axios from 'axios';
 
