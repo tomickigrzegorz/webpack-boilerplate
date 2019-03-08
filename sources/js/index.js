@@ -1,4 +1,4 @@
-// import '@babel/polyfill';
+import '@babel/polyfill';
 import SmoothscrollAnchorPolyfill from './modules/SmoothScroll';
 import ShareButton from './modules/ShareButton';
 import HideShowMouse from './modules/HideShowMouse';
