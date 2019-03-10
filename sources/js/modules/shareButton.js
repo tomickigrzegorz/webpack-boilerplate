@@ -1,17 +1,12 @@
-import { docQuerySelector, docQuerySelectorAll } from '../helpers/elements';
-import { share } from '../helpers/constants.js';
-
 import '../../scss/modules/_shareButtons.scss';
+import { share } from '../helpers/constants.js';
+import { docQuerySelector, docQuerySelectorAll } from '../helpers/elements';
+
 
 class ShareButton {
   constructor() { }
 
-  init() {
-    this.renderHTML();
-    this.eventButton();
-  }
-
-  renderHTML() {
+  renderButton() {
     const buttonPlace = docQuerySelector(share.classShare);
     const item = {
       facebook: {
@@ -41,6 +36,7 @@ class ShareButton {
     if (buttonPlace) {
       buttonPlace.innerHTML = html;
     }
+    this.eventButton();
   };
 
   eventButton() {

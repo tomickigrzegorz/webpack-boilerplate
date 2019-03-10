@@ -1,5 +1,5 @@
-import { docQuerySelector, scrollPos } from '../helpers/elements';
 import { mouse } from '../helpers/constants.js';
+import { docQuerySelector, scrollPos } from '../helpers/elements';
 
 class HideShowMouse {
   constructor() { }

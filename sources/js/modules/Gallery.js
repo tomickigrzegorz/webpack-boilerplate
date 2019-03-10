@@ -16,7 +16,7 @@ class Gallery {
       const dateName = item.getAttribute('data-name');
       item.addEventListener('click', e => {
         e.preventDefault();
-        docQuerySelector(modal.classModal).style.display = 'block';
+        docQuerySelector(`.${modal.classModal}`).style.display = 'block';
         document.body.classList.add('modal-show');
         this.galleryClose(modal.classModal, modal.classModalShow, modal.classModalClose);
         this.galleryJson(dateName);
@@ -48,7 +48,7 @@ class Gallery {
 
   galleryBuild(arrayItems) {
     const pathTo = detectMode();
-    const modalPlace = docQuerySelector(modal.classModal);
+    const modalPlace = docQuerySelector(`.${modal.classModal}`);
     const fragment = document.createDocumentFragment();
 
     for (let key in arrayItems) {
@@ -67,7 +67,7 @@ class Gallery {
 
   galleryCloseButton() {
     const buttonModal = templateCloseButton;
-    docQuerySelector(modal.classModal).innerHTML = buttonModal;
+    docQuerySelector(`.${modal.classModal}`).innerHTML = buttonModal;
   }
 
 }

@@ -1,16 +1,16 @@
 export const classes = {
-  classScrollButton: 'scroll-button',
-  classHiddenButton: 'scroll-button--hidden',
-  classHeaderContainer: 'header-container',
-  classSticky: 'sticky',
-  classMobile: 'mobile',
-  classMenuOn: 'menu-on',
-  classMenu: 'menu',
-  classDate: 'date-footer',
-  classFooterDate: 'date-footer',
-  classBackToTop: 'back-to-top',
-  classPhoneAndEmail: 'phone-and-email',
-  classEffectGoliath: 'effect-goliath'
+  classScrollButton: '.scroll-button',
+  classHiddenButton: '.scroll-button--hidden',
+  classHeaderContainer: '.header-container',
+  classSticky: '.sticky',
+  classMobile: '.mobile',
+  classMenuOn: '.menu-on',
+  classMenu: '.menu',
+  classDate: '.date-footer',
+  classFooterDate: '.date-footer',
+  classBackToTop: '.back-to-top',
+  classPhoneAndEmail: '.phone-and-email',
+  classEffectGoliath: '.effect-goliath'
 };
 
 export const modal = {
@@ -20,22 +20,24 @@ export const modal = {
 };
 
 export const share = {
-  classShare: 'share-button',
-  classShareBtn: 'share-btn',
-  dataShare: 'data-share',
+  classShare: '.share-button',
+  classShareBtn: '.share-btn',
+  dataShare: '.data-share',
   width: 520,
   height: 320
 };
 
 export const mouse = {
-  classScroll: 'please-scroll',
+  classScroll: '.please-scroll',
   scrollPosHeihgt: 200
 };
 
 export const form = {
-  formName: 'form',
+  formName: '.form',
   classError: 'error',
-  classItemForm: 'item-form'
+  classItemForm: '.item-form',
+  successSend: '<h2>Dziękuję.<br>Postaram się jak najszybciej odpowiedzieć.</h2>',
+  errorSend: 'Wystąpił jakiś błąd proszę wysłać ponownie formularz'
 };
 
 export const templateContact = `

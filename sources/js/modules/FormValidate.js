@@ -1,18 +1,10 @@
 import axios from 'axios';
-import {
-    docQuerySelector
-} from '../helpers/elements';
-import {
-    form
-} from '../helpers/constants';
+import { form } from '../helpers/constants';
+import { docGetElementById, docQuerySelector } from '../helpers/elements';
+
 
 class FormValidate {
     constructor() { }
-
-    init() {
-        this.prepareElements();
-        this.bindSubmit();
-    }
 
     prepareElements() {
         docQuerySelector(form.formName).setAttribute('novalidate', 'novalidate');
@@ -59,6 +51,8 @@ class FormValidate {
                 });
             }
         });
+
+        this.bindSubmit();
     };
 
     showFieldValidation(input, inputIsValid) {
@@ -187,8 +181,8 @@ class FormValidate {
             });
 
             if (formIsValidated) {
-                console.log('send email');
-                //   e.target.submit();
+                // console.log('send email');
+                // e.target.submit();
                 this.sendMail();
             } else {
                 return false;
@@ -199,11 +193,11 @@ class FormValidate {
     sendMail() {
 
         const data = {
-            'imie-i-nazwisko': document.getElementById('name').value,
-            'twoj-email': document.getElementById('email').value,
-            'data-wydarzenia': document.getElementById('date').value,
-            'miejsce-wydarzenia': document.getElementById('place').value,
-            'tresc-wiadomosci': document.getElementById('text').value
+            'imie-i-nazwisko': docGetElementById('name').value,
+            'twoj-email': docGetElementById('email').value,
+            'data-wydarzenia': docGetElementById('date').value,
+            'miejsce-wydarzenia': docGetElementById('place').value,
+            'tresc-wiadomosci': docGetElementById('text').value
         };
 
         const config = {
@@ -214,10 +208,10 @@ class FormValidate {
         axios.post('mail.php', data, config)
             .then(response => {
                 docQuerySelector(form.formName).remove();
-                docQuerySelector(form.classItemForm).innerHTML = '<h2>Dziękuję.<br>Postaram się jak najszybciej odpowiedzieć.</h2>';
+                docQuerySelector(form.classItemForm).innerHTML = form.successSend;
             })
             .catch(error => {
-                let text = document.createTextNode('Wystąpił jakiś błąd proszę wysłać ponownie formularz');
+                let text = document.createTextNode(form.errorSend);
                 let child = docQuerySelector(form.formName);
                 child.parentNode.insertBefore(text, child);
             });

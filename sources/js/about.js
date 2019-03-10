@@ -1,10 +1,10 @@
 import '@babel/polyfill';
-import ShareButton from './modules/ShareButton';
+import '../scss/about.scss';
 import dateFooter from './modules/Footer';
+import ShareButton from './modules/ShareButton';
+
 dateFooter();
 
-import '../scss/about.scss';
-
 window.addEventListener('load', () => {
-  new ShareButton().init();
+  new ShareButton().renderButton();
 });
