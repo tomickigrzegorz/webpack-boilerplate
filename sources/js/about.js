@@ -4,6 +4,6 @@ import dateFooter from './modules/Footer';
 import ShareButton from './modules/ShareButton';
 
 window.addEventListener('load', () => {
-  new ShareButton().renderButton();
+  new ShareButton();
   dateFooter();
 });

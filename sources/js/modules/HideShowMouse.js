@@ -2,7 +2,9 @@ import { mouse } from '../helpers/constants.js';
 import { docQuerySelector, scrollPos } from '../helpers/elements';
 
 class HideShowMouse {
-  constructor() { }
+  constructor() {
+    this.hideMouse();
+  }
 
   hideMouse() {
     window.addEventListener('scroll', this.hideOrShowButtonMouse);

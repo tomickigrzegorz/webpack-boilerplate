@@ -4,7 +4,9 @@ import { docQuerySelector, docQuerySelectorAll } from '../helpers/elements';
 
 
 class ShareButton {
-  constructor() { }
+  constructor() {
+    this.renderButton();
+  }
 
   renderButton() {
     const buttonPlace = docQuerySelector(share.classShare);
@@ -20,7 +22,6 @@ class ShareButton {
         title: 'Udostępnij w serwisie Twitter. Strona otworzy się w nowym oknie.'
       }
     };
-
 
     const html = `
         <div class="share-button">
@@ -46,6 +47,8 @@ class ShareButton {
     const winTop = (screen.height / 2) - (winHeight / 2);
     const winLeft = (screen.width / 2) - (winWidth / 2);
 
+console.log(buttonShare)
+
     for (let item of buttonShare) {
       let typeSocial = item.getAttribute(share.dataShare);
       item.addEventListener('click', e => {
@@ -62,7 +65,6 @@ class ShareButton {
 
   showShareLink(typeSocial) {
     let url;
-
     switch (typeSocial) {
       case 'facebook':
         url = 'https://www.facebook.com/sharer/sharer.php?u=' + this.getUrl() + '&p=' + this.getDescription();

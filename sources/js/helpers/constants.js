@@ -22,7 +22,7 @@ export const modal = {
 export const share = {
   classShare: '.share-button',
   classShareBtn: '.share-btn',
-  dataShare: '.data-share',
+  dataShare: 'data-share',
   width: 520,
   height: 320
 };

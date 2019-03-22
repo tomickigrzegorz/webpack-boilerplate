@@ -13,10 +13,10 @@ window.addEventListener('load', () => {
     speed: 300
   });
 
-  new HideShowMouse().hideMouse();
-  new Gallery().galleryInit();
+  new HideShowMouse();
+  new Gallery();
 
-  new ShareButton().renderButton();
+  new ShareButton();
 
   backToTop();
   dateFooter();

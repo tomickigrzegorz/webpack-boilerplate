@@ -8,7 +8,7 @@ import ShareButton from './modules/ShareButton';
 addContactInfo();
 
 window.addEventListener('load', () => {
-  new ShareButton().renderButton();
-  new FormValidate().prepareElements();
+  new ShareButton();
+  new FormValidate();
   dateFooter();
 });

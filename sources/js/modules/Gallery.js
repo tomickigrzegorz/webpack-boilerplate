@@ -8,7 +8,9 @@ import '../../scss/modules/_gallery.scss';
 
 
 class Gallery {
-  constructor() { }
+  constructor() {
+    this.galleryInit();
+  }
 
   galleryInit() {
     let elements = docQuerySelectorAll(classes.classEffectGoliath);
