@@ -7,8 +7,10 @@ class HideShowMouse {
   }
 
   hideMouse() {
-    window.addEventListener('scroll', this.hideOrShowButtonMouse);
-    window.addEventListener('resize', this.hideOrShowButtonMouse);
+    this.hideOrShowButtonMouse();
+    ['scroll', 'resize'].forEach((event) => {
+      window.addEventListener(event, this.hideOrShowButtonMouse);
+    });
   }
 
   hideOrShowButtonMouse() {

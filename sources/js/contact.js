@@ -9,6 +9,6 @@ addContactInfo();
 
 window.addEventListener('load', () => {
   new ShareButton();
-  new FormValidate();
+  new FormValidate().prepareElements();
   dateFooter();
 });

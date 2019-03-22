@@ -47,8 +47,6 @@ class ShareButton {
     const winTop = (screen.height / 2) - (winHeight / 2);
     const winLeft = (screen.width / 2) - (winWidth / 2);
 
-console.log(buttonShare)
-
     for (let item of buttonShare) {
       let typeSocial = item.getAttribute(share.dataShare);
       item.addEventListener('click', e => {

@@ -4,9 +4,7 @@ import { docGetElementById, docQuerySelector } from '../helpers/elements';
 
 
 class FormValidate {
-    constructor() {
-        this.prepareElements();
-    }
+    constructor() { }
 
     prepareElements() {
         docQuerySelector(form.formName).setAttribute('novalidate', 'novalidate');
