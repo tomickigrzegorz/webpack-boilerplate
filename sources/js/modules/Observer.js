@@ -1,8 +1,9 @@
 import '../../scss/modules/_observer.scss';
 
 const observer = () => {
+
   let images = document.querySelectorAll('source, img');
-  
+
   const loadImage = image => {
     image.classList.add('fade-in');
     if (image.dataset && image.dataset.src) {

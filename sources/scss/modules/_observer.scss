@@ -32,6 +32,9 @@ figure {
 
   picture,
   img {
-    height: 800px;
+    display: block;
+    max-width: none;
+    width: 100%;
+    min-height: 200px;
   }
 }

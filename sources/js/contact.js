@@ -1,4 +1,3 @@
-import '@babel/polyfill';
 import '../scss/contact.scss';
 import addContactInfo from './modules/AddContactInfo';
 import dateFooter from './modules/Footer';

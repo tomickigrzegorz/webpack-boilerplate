@@ -1,4 +1,3 @@
-import '@babel/polyfill';
 import SmoothScroll from 'smooth-scroll';
 import '../scss/index.scss';
 import observer from './modules/Observer';

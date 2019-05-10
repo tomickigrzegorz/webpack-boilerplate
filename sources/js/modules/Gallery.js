@@ -1,7 +1,7 @@
+import 'whatwg-fetch';
 import { detectMode, docQuerySelector, docQuerySelectorAll } from '../helpers/elements';
 import { modal, classes, templateCloseButton } from '../helpers/constants';
 
-import axios from 'axios';
 import observer from './Observer';
 
 import '../../scss/modules/_modal.scss';
@@ -43,9 +43,13 @@ class Gallery {
     }
   }
 
-  galleryJson(jsonFile) {
+  async galleryJson(jsonFile) {
     const jsonPath = detectMode() + `data/${jsonFile}.json`;
-    axios.get(jsonPath).then(response => this.galleryBuild(response.data));
+    const res = await fetch(jsonPath);
+    const jsonData = await res.json();
+
+    this.galleryBuild(jsonData);
+    observer();
   }
 
   galleryBuild(arrayItems) {
@@ -65,7 +69,6 @@ class Gallery {
       fragment.appendChild(picture);
     }
     modalPlace.appendChild(fragment);
-    observer();
   }
 
   galleryCloseButton() {
