@@ -2,10 +2,10 @@ import { detectMode, docQuerySelector, docQuerySelectorAll } from '../helpers/el
 import { modal, classes, templateCloseButton } from '../helpers/constants';
 
 import axios from 'axios';
+import observer from './Observer';
 
 import '../../scss/modules/_modal.scss';
 import '../../scss/modules/_gallery.scss';
-
 
 class Gallery {
   constructor() {
@@ -58,13 +58,14 @@ class Gallery {
       const pathImg = `${pathTo}${arrayItems[key].items.path}`;
       const picture = document.createElement('picture');
       picture.innerHTML += `
-        <source srcset="${pathImg}${img.replace('jpg', 'webp')}" type="image/webp" class="img-responsive gallery-items">
-        <source srcset="${pathImg}${img}" type="image/jpeg" class="img-responsive gallery-items">
-        <img src="${pathImg}${img}" class="img-responsive gallery-items"/>
+        <source data-srcset="${pathImg}${img.replace('jpg', 'webp')}" type="image/webp" class="img-responsive gallery-items">
+        <source data-srcset="${pathImg}${img}" type="image/jpeg" class="img-responsive gallery-items">
+        <img data-src="${pathImg}${img}" class="img-responsive gallery-items"/>
       `;
       fragment.appendChild(picture);
     }
     modalPlace.appendChild(fragment);
+    observer();
   }
 
   galleryCloseButton() {

@@ -1,6 +1,7 @@
 import '@babel/polyfill';
 import SmoothScroll from 'smooth-scroll';
 import '../scss/index.scss';
+import observer from './modules/Observer';
 import backToTop from './modules/BackToTop';
 import dateFooter from './modules/Footer';
 import Gallery from './modules/Gallery';
@@ -18,6 +19,7 @@ window.addEventListener('load', () => {
 
   new ShareButton();
 
+  observer();
   backToTop();
   dateFooter();
 });

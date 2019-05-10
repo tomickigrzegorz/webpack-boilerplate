@@ -39,9 +39,9 @@ html(lang="pl", dir="ltr", class="home")
                             .item
                                 figure(class="effect-goliath" data-name=val.url)
                                     picture
-                                        source(srcset=(pathToFile+val.image.replace(".jpg", ".webp")), type="image/webp", class="img-responsive")
-                                        source(srcset=(pathToFile+val.image), type="image/jpeg", class="img-responsive")
-                                        img(src=(pathToFile+val.image),alt=val.alt,class="img-responsive")
+                                        source(data-srcset=(pathToFile+val.image.replace(".jpg", ".webp")), type="image/webp", class="img-responsive")
+                                        source(data-srcset=(pathToFile+val.image), type="image/jpeg", class="img-responsive")
+                                        img(data-src=(pathToFile+val.image),alt=val.alt,class="img-responsive")
                                     figcaption
                                         p
                                             span= val.eve
