@@ -62,9 +62,7 @@ module.exports = (env, argv) => {
       file: require(`../sources/data/${entryName}.json`),
       chunks: [entryName],
       minify: type.minify,
-      mode: type.mode,
-      // inlineSource: '.(css)$'
-      // inlineSource: '.(js|css)$',
+      mode: type.mode
     })
   });
 
@@ -193,23 +191,11 @@ module.exports = (env, argv) => {
         argv
       ),
       prodPlugin(
-        new CopyWebpackPlugin([{
-          from: "sources/assets/",
-          to: "assets/"
-        },
-        {
-          from: "sources/data/",
-          to: "data/"
-        },
-        {
-          from: "sources/images/favicon.ico",
-          to: "./"
-        },
-        {
-          from: "sources/images/",
-          to: "images/",
-          ignore: ["logo.afdesign"]
-        }
+        new CopyWebpackPlugin([
+          { from: "sources/assets/", to: "assets/" },
+          { from: "sources/data/", to: "data/" },
+          { from: "sources/images/favicon.ico", to: "./" },
+          { from: "sources/images/", to: "images/", ignore: ["logo.afdesign"] }
         ]),
         argv
       ),
