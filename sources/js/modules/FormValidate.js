@@ -1,4 +1,4 @@
-import axios from 'axios';
+import 'whatwg-fetch';
 import { form } from '../helpers/constants';
 import { docGetElementById, docQuerySelector } from '../helpers/elements';
 
@@ -205,16 +205,29 @@ class FormValidate {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         };
-        axios.post('mail.php', data, config)
-            .then(response => {
-                docQuerySelector(form.formName).remove();
-                docQuerySelector(form.classItemForm).innerHTML = form.successSend;
-            })
-            .catch(error => {
-                let text = document.createTextNode(form.errorSend);
-                let child = docQuerySelector(form.formName);
-                child.parentNode.insertBefore(text, child);
-            });
+
+        fetch('mail.php', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: config
+        }).then(response => {
+            docQuerySelector(form.formName).remove();
+            docQuerySelector(form.classItemForm).innerHTML = form.successSend;
+        }).catch(error => {
+            let text = document.createTextNode(form.errorSend);
+            let child = docQuerySelector(form.formName);
+            child.parentNode.insertBefore(text, child);
+        });
+        // axios.post('mail.php', data, config)
+        //     .then(response => {
+        //         docQuerySelector(form.formName).remove();
+        //         docQuerySelector(form.classItemForm).innerHTML = form.successSend;
+        //     })
+        //     .catch(error => {
+        //         let text = document.createTextNode(form.errorSend);
+        //         let child = docQuerySelector(form.formName);
+        //         child.parentNode.insertBefore(text, child);
+        //     });
     }
 
 };
