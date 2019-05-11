@@ -16,24 +16,26 @@ const OUTPUT_DIR = 'dist';
 const optimization = {
   splitChunks: {
     cacheGroups: {
-      vendor: {
-        test: /node_modules/,
-        chunks: "all",
-        name: "vendor",
-        priority: 10,
-        enforce: true
-      }
-    }
+      styles: {
+        name: 'commons',
+        test: /\.s?css$/,
+        chunks: 'all',
+        minChunks: 2,
+        reuseExistingChunk: false,
+        enforce: true,
+      },
+    },
   },
   minimizer: [
     new UglifyJsPlugin({
       uglifyOptions: {
+        warnings: false,
         output: {
-          comments: false
-        }
-      }
-    })
-  ]
+          comments: false,
+        },
+      },
+    }),
+  ],
 };
 
 module.exports = (env, argv) => {
@@ -68,7 +70,8 @@ module.exports = (env, argv) => {
 
   const output = {
     path: path.resolve(__dirname, '../dist'),
-    filename: 'vendor/js/[name].[chunkhash].bundle.js'
+    filename: 'vendor/js/[name].[hash].bundle.js',
+    chunkFilename: 'vendor/js/[name].[hash].js'
   };
 
   return {
@@ -164,6 +167,7 @@ module.exports = (env, argv) => {
       prodPlugin(
         new MiniCssExtractPlugin({
           filename: "vendor/css/[name].[hash].css",
+          chunkFilename: 'vendor/css/[name].[hash].css',
         }),
         argv
       ),
