@@ -9,7 +9,7 @@ const observer = () => {
     if (image.dataset && image.dataset.src) {
       image.src = image.dataset.src;
     }
-  
+
     if (image.dataset && image.dataset.srcset) {
       image.srcset = image.dataset.srcset;
     }
@@ -22,11 +22,10 @@ const observer = () => {
       rootMargin: '0px',
       threshold: 0
     };
-  
+
     // eslint-disable-next-line no-inner-declarations
     const onChange = (changes, observer) => {
-      changes.forEach(function(change) {
-        // console.log(change);
+      changes.forEach(function (change, index) {
         if (change.intersectionRatio > 0) {
           // Stop watching and load the image
           loadImage(change.target);
@@ -34,9 +33,9 @@ const observer = () => {
         }
       });
     };
-  
+
     let observer = new IntersectionObserver(onChange, config);
-    images.forEach(function(img) {
+    images.forEach(function (img) {
       observer.observe(img);
     });
   } else {
