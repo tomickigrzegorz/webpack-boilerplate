@@ -26,3 +26,7 @@ $ npm run prod
 ```
 $ npm run serve
 ```
+
+## Info
+
+> I have converted the pictures using this -> [sharp-images](https://github.com/tomik23/sharp-images)
