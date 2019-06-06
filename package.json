@@ -15,8 +15,7 @@
     "prod": "webpack --config ./config/webpack.config.js --mode production",
     "serve": "http-server ./dist -c-1 -p 8081 -o",
     "sitemap": "node ./helpers/sitemap.js",
-    "json": "node ./helpers/list_images.js",
-    "webp": "gulp img"
+    "json": "node ./helpers/list_images.js"
   },
   "author": "Grzegorz Tomicki",
   "license": "MIT",
