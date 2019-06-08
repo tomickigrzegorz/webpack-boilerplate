@@ -37,7 +37,7 @@ export const form = {
   classError: 'error',
   classItemForm: '.item-form',
   successSend: '<h2>Dziękuję.<br>Postaram się jak najszybciej odpowiedzieć.</h2>',
-  errorSend: 'Wystąpił jakiś błąd proszę wysłać ponownie formularz'
+  errorSend: 'Wystąpił błąd, proszę wysłać ponownie formularz'
 };
 
 export const templateContact = `
