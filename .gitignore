@@ -1,11 +1,8 @@
 .history
-.idea
 .htaccess
 node_modules
 dist
-old
 mail.php
-package-lock.json
 logo.afdesign
 agnieszka-i-andrzej-plener
 agnieszka-i-andrzej-slub

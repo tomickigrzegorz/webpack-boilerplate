@@ -1,8 +1,10 @@
-import { classes } from '../helpers/constants.js';
+import { classes } from '../helpers/constants';
 import { docQuerySelector } from '../helpers/elements';
 
 const DateFooter = () => {
-  docQuerySelector(classes.classFooterDate).innerHTML = new Date().getFullYear();
+  docQuerySelector(
+    classes.classFooterDate
+  ).innerHTML = new Date().getFullYear();
 };
 
 export default DateFooter;

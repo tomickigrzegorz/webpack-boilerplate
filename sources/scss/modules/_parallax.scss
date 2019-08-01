@@ -4,7 +4,8 @@
   background-position: center center;
   background-attachment: scroll;
   background-size: cover;
-  background-image: url('../images/parallax/images.jpg');
+  background-image: url('../images/parallax.jpg');
+
   @include breakpoint(xl) {
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -17,14 +18,17 @@
     opacity: 1;
     top: 29%;
   }
+
   15% {
     opacity: 1;
     top: 50%;
   }
+
   50% {
     opacity: 0;
     top: 50%;
   }
+
   100% {
     opacity: 0;
     top: 29%;
@@ -39,12 +43,15 @@
   bottom: 40px;
   text-align: center;
   cursor: pointer;
+
   a {
     text-decoration: none;
   }
+
   @include breakpoint(lg) {
     display: block;
   }
+
   .scroll-the-page {
     position: relative;
     display: block;
@@ -53,6 +60,7 @@
     margin: 0 auto 10px;
     border: 3px solid $color-white;
     border-radius: 23px;
+
     span {
       position: absolute;
       display: block;
@@ -65,6 +73,7 @@
       border-radius: 50%;
       animation: ani-mouse 2.5s linear infinite;
     }
+
     &:before {
       content: 'przewiń mnie';
       position: absolute;

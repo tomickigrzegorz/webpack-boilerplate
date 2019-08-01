@@ -1,38 +1,42 @@
 {
     "env": {
         "browser": true,
-        "es6": true,
-        "node": true
+        "es6": true
+    },
+    "extends": [
+        "airbnb-base",
+        "prettier"
+    ],
+    "plugins": [
+        "html",
+        "prettier"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
     },
     "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "arrowFunctions": true,
-            "blockBindings": true,
-            "classes": true,
-            "defaultParams": true,
-            "destructuring": true,
-            "forOf": true,
-            "generators": false,
-            "modules": true,
-            "objectLiteralComputedProperties": true,
-            "objectLiteralDuplicateProperties": false,
-            "objectLiteralShorthandMethods": true,
-            "objectLiteralShorthandProperties": true,
-            "experimentalObjectRestSpread": true,
-            "spread": true,
-            "superInFunctions": true,
-            "templateStrings": true,
-            "restParams": true,
-            "jsx": true
-        }
+        "ecmaVersion": 2018,
+        "sourceType": "module"
     },
     "rules": {
-        "quotes": [2, "single"],
-        "comma-dangle": ["error", "never"],
-        "strict": [2, "never"],
-        "semi": [2, "always"],
-        "max-len": "off"
+        "prettier/prettier": "error",
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "class-methods-use-this": "off",
+        "no-plusplus": [
+            "error",
+            {
+                "allowForLoopAfterthoughts": true
+            }
+        ],
+        "no-param-reassign": [
+            2,
+            {
+                "props": false
+            }
+        ]
     }
 }

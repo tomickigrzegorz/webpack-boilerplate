@@ -7,16 +7,22 @@ import Gallery from './modules/Gallery';
 import HideShowMouse from './modules/HideShowMouse';
 import ShareButton from './modules/ShareButton';
 
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
+  const option = {
+    speed: 100,
+    easing: 'easeOutCubic',
+  };
+  // eslint-disable-next-line no-unused-vars
+  const scroll = new SmoothScroll('.scroll', option);
 
-  const scroll = new SmoothScroll('.scroll a[href*="#"]', {
-    speed: 300
-  });
+  const hideshowmouse = new HideShowMouse();
+  hideshowmouse.hideMouse();
 
-  new HideShowMouse();
-  new Gallery();
+  const gallery = new Gallery();
+  gallery.galleryInit();
 
-  new ShareButton();
+  const shareButton = new ShareButton();
+  shareButton.renderButton();
 
   observer();
   backToTop();

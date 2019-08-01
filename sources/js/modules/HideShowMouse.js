@@ -2,13 +2,9 @@ import { mouse } from '../helpers/constants';
 import { docQuerySelector, scrollPos } from '../helpers/elements';
 
 class HideShowMouse {
-  constructor() {
-    this.hideMouse();
-  }
-
   hideMouse() {
     this.hideOrShowButtonMouse();
-    ['scroll', 'resize'].forEach((event) => {
+    ['scroll', 'resize'].forEach(event => {
       window.addEventListener(event, this.hideOrShowButtonMouse);
     });
   }
@@ -16,11 +12,10 @@ class HideShowMouse {
   hideOrShowButtonMouse() {
     const windowWidth = window.innerWidth;
     docQuerySelector(mouse.classScroll).style.display =
-      scrollPos() > mouse.scrollPosHeihgt || windowWidth < 1000 ?
-        'none' :
-        'block';
+      scrollPos() > mouse.scrollPosHeihgt || windowWidth < 1000
+        ? 'none'
+        : 'block';
   }
-
 }
 
 export default HideShowMouse;

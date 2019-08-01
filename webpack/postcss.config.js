@@ -1,8 +1,6 @@
 module.exports = {
   plugins: {
-    'autoprefixer': {
-      browsers: ['last 2 versions', 'iOS >= 8']
-    },
+    'autoprefixer': {},
     'postcss-url': {
       url: 'inline',
       maxSize: 50

@@ -10,13 +10,13 @@ export const classes = {
   classFooterDate: '.date-footer',
   classBackToTop: '.back-to-top',
   classPhoneAndEmail: '.phone-and-email',
-  classEffectGoliath: '.effect-goliath'
+  classEffectGoliath: '.effect-goliath',
 };
 
 export const modal = {
   classModal: 'modal',
   classModalShow: 'modal-show',
-  classModalClose: 'modal-close'
+  classModalClose: 'modal-close',
 };
 
 export const share = {
@@ -24,20 +24,21 @@ export const share = {
   classShareBtn: '.share-btn',
   dataShare: 'data-share',
   width: 520,
-  height: 320
+  height: 320,
 };
 
 export const mouse = {
   classScroll: '.please-scroll',
-  scrollPosHeihgt: 200
+  scrollPosHeihgt: 200,
 };
 
 export const form = {
   formName: '.form',
   classError: 'error',
   classItemForm: '.item-form',
-  successSend: '<h2>Dziękuję.<br>Postaram się jak najszybciej odpowiedzieć.</h2>',
-  errorSend: 'Wystąpił błąd, proszę wysłać ponownie formularz'
+  successSend:
+    '<h2>Dziękuję.<br>Postaram się jak najszybciej odpowiedzieć.</h2>',
+  errorSend: 'Wystąpił błąd, proszę wysłać ponownie formularz',
 };
 
 export const templateContact = `
@@ -52,4 +53,5 @@ export const templateContact = `
   </div>
 `;
 
-export const templateCloseButton = '<div id="modal-close" class="modal-close" class="text-center">zamknij</div>';
+export const templateCloseButton =
+  '<div id="modal-close" class="modal-close" class="text-center">zamknij</div>';

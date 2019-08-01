@@ -6,8 +6,12 @@ import ShareButton from './modules/ShareButton';
 
 addContactInfo();
 
-window.addEventListener('load', () => {
-  new ShareButton();
-  new FormValidate().prepareElements();
+window.addEventListener('DOMContentLoaded', () => {
+  const shareButton = new ShareButton();
+  shareButton.renderButton();
+
+  const formValidate = new FormValidate();
+  formValidate.prepareElements();
+
   dateFooter();
 });

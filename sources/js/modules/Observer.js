@@ -1,8 +1,7 @@
 import '../../scss/modules/_observer.scss';
 
 const observer = () => {
-
-  let images = document.querySelectorAll('source, img');
+  const images = document.querySelectorAll('source, img');
 
   const loadImage = image => {
     image.classList.add('fade-in');
@@ -17,15 +16,15 @@ const observer = () => {
 
   if ('IntersectionObserver' in window) {
     // IntersectionObserver Supported
-    let config = {
+    const config = {
       root: null,
       rootMargin: '0px',
-      threshold: 0
+      threshold: 0,
     };
 
     // eslint-disable-next-line no-inner-declarations
     const onChange = (changes, observer) => {
-      changes.forEach(function (change, index) {
+      changes.forEach(change => {
         if (change.intersectionRatio > 0) {
           // Stop watching and load the image
           loadImage(change.target);
@@ -34,8 +33,9 @@ const observer = () => {
       });
     };
 
-    let observer = new IntersectionObserver(onChange, config);
-    images.forEach(function (img) {
+    // eslint-disable-next-line no-shadow
+    const observer = new IntersectionObserver(onChange, config);
+    images.forEach(img => {
       observer.observe(img);
     });
   } else {
