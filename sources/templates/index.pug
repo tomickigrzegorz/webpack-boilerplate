@@ -1,6 +1,6 @@
 block variables
 - var path = self.htmlWebpackPlugin.options
-- var pathToFile = (path.mode == 'development') ? "../../../sources/" : ""
+- var pathToFile = (path.mode == 'development') ? "./sources/" : ""
 - var logoFile = "images/fotograf-slubny-warszawa-lublin-chelm.svg";
 - var zoomIn = "images/zoom.svg";
 
@@ -38,6 +38,10 @@ html(lang="pl", dir="ltr", class="home")
                         each val, i in path.file.body.gridGallery
                             .item
                                 figure(class="effect-goliath" data-name=val.url)
+                                    //- picture
+                                    //-     source(data-srcset=(pathToFile+val.image.replace(".jpg", ".webp")), type="image/webp", class="img-responsive")
+                                    //-     source(data-srcset=(pathToFile+val.image), type="image/jpeg", class="img-responsive")
+                                    //-     img(data-src=(pathToFile+val.image),alt=val.alt,class="img-responsive")
                                     picture
                                         source(data-srcset=(pathToFile+val.image.replace(".jpg", ".webp")), type="image/webp", class="img-responsive")
                                         source(data-srcset=(pathToFile+val.image), type="image/jpeg", class="img-responsive")

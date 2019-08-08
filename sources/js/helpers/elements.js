@@ -15,6 +15,7 @@ export function scrollPos() {
 }
 
 export function detectMode() {
-  const path = !PRODUCTION ? '../../../sources/' : './';
+  // eslint-disable-next-line no-undef
+  const path = !PRODUCTION ? './sources/' : './';
   return path;
 }

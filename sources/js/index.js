@@ -1,10 +1,12 @@
 import SmoothScroll from 'smooth-scroll';
+import '../scss/modules/_global.scss';
 import '../scss/index.scss';
+import '../scss/modules/_parallax.scss';
+
 import observer from './modules/Observer';
 import backToTop from './modules/BackToTop';
 import dateFooter from './modules/Footer';
 import Gallery from './modules/Gallery';
-import HideShowMouse from './modules/HideShowMouse';
 import ShareButton from './modules/ShareButton';
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -14,9 +16,6 @@ window.addEventListener('DOMContentLoaded', () => {
   };
   // eslint-disable-next-line no-unused-vars
   const scroll = new SmoothScroll('.scroll', option);
-
-  const hideshowmouse = new HideShowMouse();
-  hideshowmouse.hideMouse();
 
   const gallery = new Gallery();
   gallery.galleryInit();

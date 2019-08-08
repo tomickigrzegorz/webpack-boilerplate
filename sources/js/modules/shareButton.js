@@ -1,6 +1,13 @@
-import '../../scss/modules/_shareButtons.scss';
-import { share } from '../helpers/constants';
 import { docQuerySelector, docQuerySelectorAll } from '../helpers/elements';
+import '../../scss/modules/_shareButtons.scss';
+
+const share = {
+  classShare: '.share-button',
+  classShareBtn: '.share-btn',
+  dataShare: 'data-share',
+  width: 520,
+  height: 320,
+};
 
 class ShareButton {
   renderButton() {

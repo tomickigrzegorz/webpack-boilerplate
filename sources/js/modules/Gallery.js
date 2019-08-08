@@ -3,16 +3,24 @@ import {
   docQuerySelector,
   docQuerySelectorAll,
 } from '../helpers/elements';
-import { modal, classes, templateCloseButton } from '../helpers/constants';
 
 import observer from './Observer';
 
 import '../../scss/modules/_modal.scss';
 import '../../scss/modules/_gallery.scss';
 
+const modal = {
+  classModal: 'modal',
+  classModalShow: 'modal-show',
+  classModalClose: 'modal-close',
+};
+
+const templateCloseButton =
+  '<div id="modal-close" class="modal-close" class="text-center">zamknij</div>';
+
 class Gallery {
   galleryInit() {
-    const elements = docQuerySelectorAll(classes.classEffectGoliath);
+    const elements = docQuerySelectorAll('.effect-goliath');
     elements.forEach(item => {
       const dateName = item.getAttribute('data-name');
       item.addEventListener('click', e => {

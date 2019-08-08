@@ -4,7 +4,7 @@
   background-position: center center;
   background-attachment: scroll;
   background-size: cover;
-  background-image: url('../images/parallax.jpg');
+  background-image: url('~assets/parallax/parallax.jpg');
 
   @include breakpoint(xl) {
     background-position: 50% 50%;

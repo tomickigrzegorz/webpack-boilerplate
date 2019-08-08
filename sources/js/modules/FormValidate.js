@@ -1,5 +1,14 @@
-import { form } from '../helpers/constants';
 import { docGetElementById, docQuerySelector } from '../helpers/elements';
+import '../../scss/modules/_form.scss';
+
+const form = {
+  formName: '.form',
+  classError: 'error',
+  classItemForm: '.item-form',
+  successSend:
+    '<h2>Dziękuję.<br>Postaram się jak najszybciej odpowiedzieć.</h2>',
+  errorSend: 'Wystąpił błąd, proszę wysłać ponownie formularz',
+};
 
 class FormValidate {
   prepareElements() {
@@ -219,16 +228,6 @@ class FormValidate {
         const child = docQuerySelector(form.formName);
         child.parentNode.insertBefore(text, child);
       });
-    // axios.post('mail.php', data, config)
-    //     .then(response => {
-    //         docQuerySelector(form.formName).remove();
-    //         docQuerySelector(form.classItemForm).innerHTML = form.successSend;
-    //     })
-    //     .catch(error => {
-    //         let text = document.createTextNode(form.errorSend);
-    //         let child = docQuerySelector(form.formName);
-    //         child.parentNode.insertBefore(text, child);
-    //     });
   }
 }
 

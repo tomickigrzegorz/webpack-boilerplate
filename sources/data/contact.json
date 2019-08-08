@@ -4,7 +4,7 @@
     "description": "Zapraszam Was do działu kontakt gdzie poprzez formularz kontaktowy będziecie mogli mnie zapytać o dostępność w dniu Waszego ślubu oraz ofertę fotografii ślubnej."
   },
   "body": {
-    "image": "./images/contact.jpg",
+    "image": "images/contact.jpg",
     "mainText": "Jeśli chcecie poznać więcej szczegółów dotyczących mojej oferty zadzwońcie lub napiszcie emaila.<br>Możecie mi opisać wszystkie szczegóły, inspiracje i pomysły.<br>Chętnie wysłucham jak zaplanowaliście Wasz wymarzony ślub oraz to jakie macie oczekiwania.<br><br><div class='phone-and-email'></div><br>Wyślij formularz postaram się jak najszybciej odpowiedzieć.<br><br>"
   }
 }

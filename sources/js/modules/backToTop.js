@@ -1,12 +1,11 @@
-import { classes, mouse } from '../helpers/constants';
 import { docQuerySelector, scrollPos } from '../helpers/elements';
+import '../../scss/modules/_backToTop.scss';
 
-const backToTop = docQuerySelector(classes.classBackToTop);
+const backToTop = docQuerySelector('.back-to-top');
 
 const BackToTop = () => {
   window.addEventListener('scroll', () => {
-    backToTop.style.display =
-      scrollPos() > mouse.scrollPosHeihgt ? 'block' : 'none';
+    backToTop.style.display = scrollPos() > 200 ? 'block' : 'none';
   });
 };
 

@@ -1,6 +1,6 @@
 block variables
 - var path = self.htmlWebpackPlugin.options
-- var pathToFile = (path.mode == 'development') ? "../../../sources/" : ""
+- var pathToFile = (path.mode == 'development') ? "./sources/" : ""
 - var logoFile = "images/fotograf-slubny-warszawa-lublin-chelm.svg";
 
 doctype html
@@ -28,4 +28,4 @@ html(lang="pl", dir="ltr", class="about")
                     !=path.file.body.mainText
 
         include ./includes/footer.pug
-        include ./includes/backToTop.pug
+        //- include ./includes/backToTop.pug

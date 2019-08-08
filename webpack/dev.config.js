@@ -1,13 +1,18 @@
 const webpack = require('webpack');
+const path = require('path');
 const merge = require('webpack-merge');
 const baseConfig = require('./base.config.js');
 
 module.exports = merge(baseConfig, {
-  devtool: 'source-map',
+  mode: 'development',
+  resolve: {
+    alias: {
+      'assets': path.resolve(__dirname, '../sources/images')
+    }
+  },
   module: {
     rules: [
       {
-        // HTML
         test: /\.html$/,
         use: [
           {
@@ -16,7 +21,6 @@ module.exports = merge(baseConfig, {
         ],
       },
       {
-        // CSS SASS SCSS
         test: /\.(css|sass|scss)$/,
         use: [
           'style-loader',
@@ -54,14 +58,9 @@ module.exports = merge(baseConfig, {
         ],
       },
       {
-        // IMAGES
         test: /\.(jpe?g|png|gif|svg)$/i,
         loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-          outputPath: './sources/images/',
-          publicPath: './sources/images/'
-        },
+        options: {},
       },
     ],
   },

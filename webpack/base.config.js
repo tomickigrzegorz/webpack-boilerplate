@@ -7,7 +7,6 @@ module.exports = {
   module: {
     rules: [
       {
-        // JS
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
@@ -15,7 +14,6 @@ module.exports = {
         },
       },
       {
-        // PUG
         test: /\.pug$/,
         loader: 'pug-loader',
         options: {
