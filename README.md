@@ -16,7 +16,7 @@ npm i
 ### Development server
 
 ```bash
-npm dev
+npm run dev
 ```
 
 ### Production build
