@@ -16,13 +16,13 @@ npm i
 ### Development server
 
 ```bash
-npm start
+npm dev
 ```
 
 ### Production build
 
 ```bash
-npm run build
+npm run prod
 ```
 
 ## Features
