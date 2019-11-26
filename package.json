@@ -1,6 +1,6 @@
 {
   "name": "new-site-webpack-build",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "webpack multiple entry and output",
   "main": "index.js",
   "keywords": [
