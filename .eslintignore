@@ -1,5 +1,5 @@
 .gitignore
-config/*
-dist/*
+config/
+docs/
 node_modules/
-webpack/*
+config/

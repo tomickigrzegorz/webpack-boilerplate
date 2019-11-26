@@ -1,10 +1,10 @@
 {
   "head": {
-    "title": "O mnie - kilka słów wstępu",
-    "description": "Tutaj możecie przeczytać kilka słów na mój temat. Bardzo miło będzie mi Was poznać."
+    "title": "title - about",
+    "description": "description - about"
   },
   "body": {
-    "image": "images/about-me.jpg",
-    "mainText": "Nazywam się Grzegorz Tomicki.<br>Fotografowanie to dla mnie ogromne wyzwanie a zarazem wielka pasja i radość że mogę Wam pomóc w udokumentowaniu emocji, które towarzyszą w tym niesamowitym momencie Waszego życia. <br>W każde zlecenie wkładam 100% siebie.<br>Zdjęcia ślubne to moja pasja.<br><br>Jednym z elementów twórczych tego procesu, jest album z reportażu ślubnego.<br>Na kartach albumu staram się przedstawić jak najwięcej emocji, chwil, momentów wartych uwiecznienia.<br><br>Uchwycić wzruszenie, wzajemną fascynację, bliskość, radość.<br><br>Wykonuję usługę na terenie następujacych miast: Warszawa, Lublin, Chełm<br><br>Zapraszam do kontaktu."
+    "image": "images/about.jpg",
+    "mainText": "main text - about"
   }
 }

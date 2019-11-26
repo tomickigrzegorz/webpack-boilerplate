@@ -1,18 +1,5 @@
-.info {
-  margin-bottom: 20px;
+@import "./modules/global";
 
-  .phone {
-    a {
-      color: $color-gray-darken;
-      text-decoration: none;
-      position: relative;
-      display: block;
-      height: 30px;
-
-      &:hover {
-        text-decoration: underline;
-        color: $color-burgund;
-      }
-    }
-  }
+h1 {
+  color: $green;
 }

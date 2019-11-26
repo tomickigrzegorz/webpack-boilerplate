@@ -1,3 +1,5 @@
-.item-text {
-  margin-top: 10px;
+@import "./modules/global";
+
+h1 {
+  color: $blue;
 }

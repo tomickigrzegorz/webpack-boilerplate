@@ -1,90 +1,10 @@
 {
   "head": {
-    "title": "Grzegorz Tomicki - fotograf Warszawa, Lublin Chełm, Warszawa - fotografia ślubna i rodzinna",
-    "description": "Ciekawe nietuzinkowe zdjęcia, niezapomniane chwile. Zdjęcia Ślubne i rodzinne, chrzty, komunie, plenery ..."
+    "title": "title - index",
+    "description": "description - index"
   },
   "body": {
-    "parallax": "images/parallax/IMG_6276.jpg",
-    "textBefore": "poniżej kilka przykładowych gallerii",
-    "gridGallery": [
-      {
-        "url": "agnieszka-i-andrzej-slub",
-        "image": "images/thumbnail/IMG_5600.jpg",
-        "alt": "Agnieszka i Andrzej",
-        "eve": "ślub"
-      },
-      {
-        "url": "agnieszka-i-andrzej-plener",
-        "image": "images/thumbnail/IMG_6610.jpg",
-        "alt": "Agnieszka i Andrzej",
-        "eve": "plener"
-      },
-      {
-        "url": "magda-i-grzesiek-slub",
-        "image": "images/thumbnail/IMG_3466.jpg",
-        "alt": "Magda i Grzesiek",
-        "eve": "ślub"
-      },
-      {
-        "url": "magda-i-grzesiek-plener",
-        "image": "images/thumbnail/IMG_4140.jpg",
-        "alt": "Magda i Grzesiek",
-        "eve": "plener"
-      },
-      {
-        "url": "monika-i-pawel-slub",
-        "image": "images/thumbnail/IMG_2516.jpg",
-        "alt": "Monika i Paweł",
-        "eve": "ślub"
-      },
-      {
-        "url": "monika-i-pawel-plener",
-        "image": "images/thumbnail/IMG_2949.jpg",
-        "alt": "Monika i Paweł",
-        "eve": "plener"
-      },
-      {
-        "url": "dorota-i-piotrek-slub",
-        "image": "images/thumbnail/IMG_1102.jpg",
-        "alt": "Dorota i Piotrek",
-        "eve": "ślub"
-      },
-      {
-        "url": "dorota-i-piotrek-plener",
-        "image": "images/thumbnail/IMG_2326.jpg",
-        "alt": "Dorota i Piotrek",
-        "eve": "plener"
-      },
-      {
-        "url": "marlena-i-przemek-slub",
-        "image": "images/thumbnail/IMG_9679.jpg",
-        "alt": "Marlena i Przemek",
-        "eve": "ślub"
-      },
-      {
-        "url": "marlena-i-przemek-plener",
-        "image": "images/thumbnail/IMG_0599.jpg",
-        "alt": "Marlena i Przemek",
-        "eve": "plener"
-      },
-      {
-        "url": "ania-i-kamil-slub",
-        "image": "images/thumbnail/IMG_1332.jpg",
-        "alt": "Ania i Kamil",
-        "eve": "ślub"
-      },
-      {
-        "url": "ania-i-kamil-plener",
-        "image": "images/thumbnail/IMG_0911.jpg",
-        "alt": "Ania i Kamil",
-        "eve": "plener"
-      }
-    ],
-    "textAfter": [
-      {
-        "text": "zobacz więcej na blogu",
-        "url": "\//blog.grzegorztomicki.pl"
-      }
-    ]
+    "image": "images/index.jpg",
+    "mainText": "main text - index"
   }
 }
