@@ -29,6 +29,7 @@ npm run build
 
 - [Webpack](https://webpack.js.org/)
 - [Babel](https://babeljs.io/)
+- [Core-js](https://github.com/zloirock/core-js/)
 - [Pug](https://github.com/pugjs/)
 - [Sass](https://sass-lang.com/)
 - [PostCSS](https://postcss.org/)
@@ -55,7 +56,7 @@ npm run build
   - [`eslint-plugin-html`](https://github.com/BenoitZugmeyer/eslint-plugin-html/) An ESLint plugin to extract and lint scripts from HTML files
   - [`eslint-plugin-import`](https://github.com/benmosher/eslint-plugin-import/) ESLint plugin with rules that help validate proper imports
   - [`eslint-plugin-prettier`](https://github.com/prettier/eslint-plugin-prettier/) ESLint plugin for Prettier formatting
-- [`core-js](https://github.com/zloirock/core-js) - Modular standard library for JavaScript, includes many polyfills
+- [`core-js](https://github.com/zloirock/core-js/) - Modular standard library for JavaScript, includes many polyfills
 
 ### Loaders
 
