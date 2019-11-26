@@ -8,7 +8,7 @@
     "pug",
     "scss",
     "babel",
-    "axios"
+    "core-js"
   ],
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack.dev.js --progress --open",
