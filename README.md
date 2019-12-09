@@ -79,7 +79,7 @@ npm run prod
 - [`copy-webpack-plugin`](https://github.com/webpack-contrib/copy-webpack-plugin) - Copy files to build directory
 - [`mini-css-extract-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) - Extract CSS into separate files
 - [`terser-webpack-plugin`](https://github.com/webpack-contrib/terser-webpack-plugin) - Minify JavaScript
-- [`sw-precache-webpack-plugin`](https://github.com/goldhand/sw-precache-webpack-plugin) - Generates a service worker using sw-precache
+- [`workbox-webpack-plugin`](https://github.com/GoogleChrome/workbox/tree/master/packages/workbox-webpack-plugin) - Workbox provides two webpack plugins: one that generates a complete service worker for you and one that generates a list of assets to precache that is injected into a service worker file.
 
 ## License
 
