@@ -5,7 +5,7 @@ const baseConfig = require('./webpack.base.js');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
@@ -72,20 +72,9 @@ const configureMiniCssExtract = () => {
 // configure SW
 const configureSW = () => {
   return {
-    cacheId: 'test',
-    dontCacheBustUrlsMatching: /\.\w{8}\./,
-    filename: 'sw.js',
-    minify: false,
-    navigateFallback: `${PUBLIC_PATH}index.html`,
-    stripPrefix: OUTPUT_DIR,
-    staticFileGlobs: [
-      `${OUTPUT_DIR}/assets/manifest.json`,
-      `${OUTPUT_DIR}/favicon.ico`,
-      `${OUTPUT_DIR}/vendor/js/*.js`,
-      `${OUTPUT_DIR}/vendor/css/*.css`,
-      `${OUTPUT_DIR}/images/static/*.png`,
-      `${OUTPUT_DIR}/images/*.ico`,
-    ],
+    swDest: 'sw.js',
+    clientsClaim: true,
+    skipWaiting: true,
   }
 }
 
@@ -151,7 +140,7 @@ module.exports = merge(baseConfig, {
     new MiniCssExtractPlugin(
       configureMiniCssExtract()
     ),
-    new SWPrecacheWebpackPlugin(
+    new WorkboxPlugin.GenerateSW(
       configureSW()
     ),
     new CopyWebpackPlugin(
