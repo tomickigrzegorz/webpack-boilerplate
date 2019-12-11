@@ -26,15 +26,6 @@ module.exports = merge(baseConfig, {
             },
           },
           {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              config: {
-                path: './config/',
-              },
-            },
-          },
-          {
             loader: 'sass-loader',
             options: {
               sourceMap: true,
