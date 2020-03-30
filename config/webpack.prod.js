@@ -37,6 +37,15 @@ const configureFileLoader = () => {
   }
 }
 
+// configure Terser
+const configureTerser = () => {
+  return {
+    cache: true,
+    parallel: true,
+    sourceMap: true,
+  };
+};
+
 // configure Optimization
 const configureOptimization = () => {
   return {
@@ -56,7 +65,7 @@ const configureOptimization = () => {
         },
       }
     },
-    minimizer: [new TerserPlugin()]
+    minimizer: [new TerserPlugin(configureTerser())]
   }
 }
 
