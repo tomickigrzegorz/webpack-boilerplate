@@ -121,7 +121,8 @@ module.exports = merge(baseConfig, {
             loader: 'sass-resources-loader',
             options: {
               resources: [
-                './sources/scss/modules/_config.scss'
+                './sources/scss/modules/_config.scss',
+                './sources/scss/modules/_global.scss'
               ],
             },
           },
