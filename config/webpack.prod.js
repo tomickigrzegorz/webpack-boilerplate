@@ -80,18 +80,19 @@ const configureMiniCssExtract = () => {
 // configure SW
 const configureSW = () => {
   return {
-    swDest: 'sw.js',
     clientsClaim: true,
     skipWaiting: true,
+    directoryIndex: 'index.html',
+    offlineGoogleAnalytics: true
   }
 }
 
 // configure Copy
 const configureCopy = () => {
   return [
-    { from: "sources/images/favicon.ico", to: "./" },
-    { from: "sources/assets/", to: "assets/" },
-    { from: "sources/images/", to: "images/" }
+    { from: 'sources/images/favicon.ico', to: './' },
+    { from: 'sources/assets/', to: 'assets/' },
+    { from: 'sources/images/', to: 'images/' }
   ]
 }
 
