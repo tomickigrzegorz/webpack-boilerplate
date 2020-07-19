@@ -1,14 +1,14 @@
 const path = require('path');
 const webpack = require('webpack');
-const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base.js');
+const { merge } = require('webpack-merge');
 
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const OUTPUT_DIR = 'docs';
 
@@ -54,6 +54,7 @@ const configureOptimization = () => {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendor',
+          enforce: true,
           chunks: 'all'
         },
         styles: {
@@ -89,12 +90,13 @@ const configureSW = () => {
 
 // configure Copy
 const configureCopy = () => {
-  return [
-    { from: 'sources/images/favicon.ico', to: './' },
-    { from: 'sources/assets/', to: 'assets/' },
-    { from: 'sources/images/', to: 'images/' }
-  ]
-}
+  return {
+    patterns: [
+      { from: 'sources/assets/', to: 'assets/' },
+      { from: 'sources/images/', to: 'images/' }
+    ]
+  }
+};
 
 module.exports = merge(baseConfig, {
   mode: 'production',

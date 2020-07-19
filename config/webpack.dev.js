@@ -1,6 +1,6 @@
 const webpack = require('webpack');
-const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base.js');
+const { merge } = require('webpack-merge');
 
 // configure File Loader
 const configureFileLoader = () => {
