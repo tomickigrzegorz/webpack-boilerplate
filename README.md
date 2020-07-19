@@ -52,7 +52,7 @@ npm run prod
 - [`babel-eslint`](https://github.com/babel/babel-eslint) - Lint Babel code
   - [`eslint`](https://github.com/eslint/eslint) - ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code
   - [`eslint-config-airbnb-base`](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base/) - This package provides Airbnb's base JS
-  - [https://github.com/prettier/eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) - Turns off all rules that are unnecessary or might conflict with Prettier
+  - [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) - Turns off all rules that are unnecessary or might conflict with Prettier
   - [`eslint-plugin-html`](https://github.com/BenoitZugmeyer/eslint-plugin-html/) An ESLint plugin to extract and lint scripts from HTML files
   - [`eslint-plugin-import`](https://github.com/benmosher/eslint-plugin-import/) ESLint plugin with rules that help validate proper imports
   - [`eslint-plugin-prettier`](https://github.com/prettier/eslint-plugin-prettier/) ESLint plugin for Prettier formatting
