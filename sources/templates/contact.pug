@@ -1,9 +1,8 @@
 block variables
 - var path = self.htmlWebpackPlugin.options
-- var pathToFile = (path.mode == 'development') ? "./sources/" : ""
 
 doctype html
-html(lang="pl", dir="ltr", class="contact")
+html(lang="pl" dir="ltr" class="contact")
 
     include ./includes/head.pug
     include ./includes/menuItem.pug
@@ -14,4 +13,4 @@ html(lang="pl", dir="ltr", class="contact")
     body
         +menuItem('contact')
         h1 CONTACT
-        img(src=pathToFile+path.file.body.image class="responsive")
+        img(src=path.file.body.image class="responsive")

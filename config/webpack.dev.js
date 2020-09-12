@@ -2,6 +2,18 @@ const webpack = require('webpack');
 const baseConfig = require('./webpack.base.js');
 const { merge } = require('webpack-merge');
 
+// Configure Dev Server
+const configureDevServer = () => {
+  return {
+    contentBase: './sources',
+    open: true,
+    port: 3000,
+    inline: true,
+    stats: "errors-only",
+    hot: true,
+  };
+};
+
 // configure File Loader
 const configureFileLoader = () => {
   return {
@@ -12,6 +24,7 @@ const configureFileLoader = () => {
 
 module.exports = merge(baseConfig, {
   mode: 'development',
+  devServer: configureDevServer(),
   module: {
     rules: [
       {
