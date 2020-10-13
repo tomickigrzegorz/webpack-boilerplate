@@ -101,6 +101,7 @@ const configureCopy = () => {
 module.exports = merge(baseConfig, {
   mode: 'production',
   output: configureOutput(),
+  target: 'es5',
   module: {
     rules: [
       {
@@ -117,10 +118,9 @@ module.exports = merge(baseConfig, {
           {
             loader: 'postcss-loader',
             options: {
-              sourceMap: true,
-              config: {
-                path: './config/',
-              },
+              postcssOptions: {
+                config: path.resolve(__dirname, 'postcss.config.js'),
+              }
             },
           },
           {
