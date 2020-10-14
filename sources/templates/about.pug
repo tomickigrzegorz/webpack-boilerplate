@@ -1,5 +1,5 @@
 block variables
-- var path = self.htmlWebpackPlugin.options
+- var path = self.htmlWebpackPlugin.options.DATA
 
 doctype html
 html(lang="pl" dir="ltr" class="about")
@@ -8,9 +8,9 @@ html(lang="pl" dir="ltr" class="about")
     include ./includes/menuItem.pug
 
     head
-        +head(path.file)
+        +head(path)
 
     body
         +menuItem('about')
         h1 ABOUT ME
-        img(src=path.file.body.image class="responsive")
+        img(src=path.body.image class="responsive")

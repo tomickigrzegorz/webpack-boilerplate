@@ -47,7 +47,7 @@ module.exports = {
     ...Object.keys(ENTRY.html).map(entryName => new HtmlWebPackPlugin({
       filename: `${entryName}.html`,
       template: `./sources/templates/${entryName}.pug`,
-      file: require(`../sources/data/${entryName}.json`),
+      DATA: require(`../sources/data/${entryName}.json`),
       chunks: [entryName],
       mode: process.env.NODE_ENV === 'production' ? 'production' : 'development'
     }))
