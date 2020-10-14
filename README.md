@@ -2,7 +2,7 @@
 # Webpack Boilerplate
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-Minimal Webpack 4 boilerplate with Babel, core-js, Sass, Pug, ESlint and a lot mor.
+Minimal Webpack 5 boilerplate with Babel, core-js, Sass, Pug, ESlint and a lot mor.
 It also includes optimization for development and production build.
 
 ## Clone the repo and install dependencies
