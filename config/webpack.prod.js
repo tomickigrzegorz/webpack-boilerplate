@@ -41,9 +41,7 @@ const configureFileLoader = () => {
 // configure Terser
 const configureTerser = () => {
   return {
-    cache: true,
-    parallel: true,
-    sourceMap: true,
+    parallel: true
   };
 };
 
