@@ -49,9 +49,9 @@ npm run prod
 
 - [`@babel/core`](https://www.npmjs.com/package/@babel/core) - Transpile ES6+ to backwards compatible JavaScript
 - [`@babel/preset-env`](https://babeljs.io/docs/en/babel-preset-env) - Smart defaults for Babel
-- [`babel-eslint`](https://github.com/babel/babel-eslint) - Lint Babel code
+- [`@babel/eslint-parser`](https://www.npmjs.com/package/@babel/eslint-parser) - Is a parser that allows ESLint to run on source code that is transformed by Babel.
   - [`eslint`](https://github.com/eslint/eslint) - ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code
-  - [`eslint-config-airbnb-base`](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base/) - This package provides Airbnb's base JS
+  - [`eslint:recommended`](https://eslint.org/docs/user-guide/configuring#using-eslintrecommended) - An extends property value "eslint:recommended" enables a subset of core rules that report common problems
   - [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) - Turns off all rules that are unnecessary or might conflict with Prettier
   - [`eslint-plugin-html`](https://github.com/BenoitZugmeyer/eslint-plugin-html/) An ESLint plugin to extract and lint scripts from HTML files
   - [`eslint-plugin-import`](https://github.com/benmosher/eslint-plugin-import/) ESLint plugin with rules that help validate proper imports
