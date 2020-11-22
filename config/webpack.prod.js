@@ -11,17 +11,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { cssLoaders } = require('./util');
 
-const OUTPUT_DIR = 'docs';
-
-// configure Ouyput
-const configureOutput = () => {
-  return {
-    path: path.resolve(__dirname, `../${OUTPUT_DIR}`),
-    filename: 'vendor/js/[name].[fullhash].js',
-    chunkFilename: 'vendor/js/[name].[fullhash].js',
-  }
-}
-
 // configure File Loader
 const configureFileLoader = () => {
   return {
@@ -48,23 +37,23 @@ const configureTerser = () => {
 // configure Optimization
 const configureOptimization = () => {
   return {
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendor',
-          enforce: true,
-          chunks: 'all'
-        },
-        styles: {
-          name: 'styles',
-          test: /\.s?css$/,
-          chunks: 'all',
-          minChunks: 2,
-          enforce: true,
-        },
-      }
-    },
+    // splitChunks: {
+    //   cacheGroups: {
+    //     vendor: {
+    //       test: /[\\/]node_modules[\\/]/,
+    //       name: 'vendor',
+    //       enforce: true,
+    //       chunks: 'all'
+    //     },
+    //     styles: {
+    //       name: 'styles',
+    //       test: /\.s?css$/,
+    //       chunks: 'all',
+    //       minChunks: 2,
+    //       enforce: true,
+    //     },
+    //   }
+    // },
     minimizer: [new TerserPlugin(configureTerser())]
   }
 }
@@ -99,7 +88,6 @@ const configureCopy = () => {
 
 module.exports = merge(baseConfig, {
   mode: 'production',
-  output: configureOutput(),
   target: 'es5',
   module: {
     rules: [
