@@ -81,6 +81,10 @@ npm run prod
 - [`terser-webpack-plugin`](https://github.com/webpack-contrib/terser-webpack-plugin) - Minify JavaScript
 - [`workbox-webpack-plugin`](https://github.com/GoogleChrome/workbox/tree/master/packages/workbox-webpack-plugin) - Workbox provides two webpack plugins: one that generates a complete service worker for you and one that generates a list of assets to precache that is injected into a service worker file.
 
+### Assets
+- `.htaccess` - optimized 100/100 in google https://web.dev/measure/ of course when there are no ads ;)
+- `manifest.json` - of course you can use the `favicons-webpack-plugin` that will generate all possible elements in the manifest
+
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
