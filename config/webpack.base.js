@@ -62,7 +62,6 @@ module.exports = {
     about: './sources/js/about.js',
     contact: './sources/js/contact.js'
   },
-  target: process.env.NODE_ENV === 'development' ? 'web' : 'browserslist',
   output: configureOutput(),
   resolve: configureResolveAlias(),
   module: {

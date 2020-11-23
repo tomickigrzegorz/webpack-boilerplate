@@ -25,6 +25,7 @@ const configureFileLoader = () => {
 
 module.exports = merge(baseConfig, {
   mode: 'development',
+  target: 'web',
   devServer: configureDevServer(),
   module: {
     rules: [

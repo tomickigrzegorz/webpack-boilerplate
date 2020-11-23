@@ -89,6 +89,7 @@ const configureCopy = () => {
 module.exports = merge(baseConfig, {
   mode: 'production',
   target: 'es5',
+  target: 'browserslist',
   module: {
     rules: [
       {
