@@ -2,6 +2,8 @@ const ENTRY = require('./entry.js');
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
+const OUTPUT_DIR = 'docs';
+
 // configure Resolve
 const configureResolveAlias = () => {
   return {
@@ -34,8 +36,33 @@ const configurePugLoader = () => {
   }
 }
 
+// Multiple Entry
+const entryHtmlPlugins = ENTRY.html.map(entryName => {
+  return new HtmlWebPackPlugin({
+    filename: `${entryName}.html`,
+    template: `./sources/templates/${entryName}.pug`,
+    file: require(`../sources/data/${entryName}.json`),
+    chunks: [entryName],
+    inject: true
+  })
+})
+
+// configure Ouyput
+const configureOutput = () => {
+  return {
+    path: path.resolve(__dirname, `../${OUTPUT_DIR}`),
+    filename: 'vendor/js/[name].[hash].js',
+    chunkFilename: 'vendor/js/[name].[hash].js',
+  }
+}
+
 module.exports = {
-  entry: ENTRY.html,
+  entry: {
+    index: "./sources/js/index.js",
+    about: "./sources/js/about.js",
+    contact: "./sources/js/contact.js"
+  },
+  output: configureOutput(),
   resolve: configureResolveAlias(),
   module: {
     rules: [
@@ -44,12 +71,6 @@ module.exports = {
     ],
   },
   plugins: [
-    ...Object.keys(ENTRY.html).map(entryName => new HtmlWebPackPlugin({
-      filename: `${entryName}.html`,
-      template: `./sources/templates/${entryName}.pug`,
-      file: require(`../sources/data/${entryName}.json`),
-      chunks: [entryName],
-      mode: process.env.NODE_ENV === 'production' ? 'production' : 'development'
-    }))
+    ...entryHtmlPlugins
   ]
 };

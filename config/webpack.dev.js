@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const baseConfig = require('./webpack.base.js');
 const { merge } = require('webpack-merge');
+const { cssLoaders } = require('./util');
 
 // Configure Dev Server
 const configureDevServer = () => {
@@ -31,28 +32,7 @@ module.exports = merge(baseConfig, {
         test: /\.(css|sass|scss)$/,
         use: [
           'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 2,
-              sourceMap: true
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'sass-resources-loader',
-            options: {
-              resources: [
-                './sources/scss/modules/_config.scss',
-                './sources/scss/modules/_global.scss'
-              ],
-            },
-          },
+          ...cssLoaders
         ],
       },
       configureFileLoader()

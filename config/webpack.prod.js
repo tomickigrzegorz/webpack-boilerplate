@@ -9,17 +9,9 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { cssLoaders } = require('./util');
 
 const OUTPUT_DIR = 'docs';
-
-// configure Ouyput
-const configureOutput = () => {
-  return {
-    path: path.resolve(__dirname, `../${OUTPUT_DIR}`),
-    filename: 'vendor/js/[name].[hash].js',
-    chunkFilename: 'vendor/js/[name].[hash].js',
-  }
-}
 
 // configure File Loader
 const configureFileLoader = () => {
@@ -100,44 +92,13 @@ const configureCopy = () => {
 
 module.exports = merge(baseConfig, {
   mode: 'production',
-  output: configureOutput(),
   module: {
     rules: [
       {
         test: /\.(css|sass|scss)$/,
         use: [
           MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-              importLoaders: 2
-            },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              config: {
-                path: './config/',
-              },
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'sass-resources-loader',
-            options: {
-              resources: [
-                './sources/scss/modules/_config.scss',
-                './sources/scss/modules/_global.scss'
-              ],
-            },
-          },
+          ...cssLoaders
         ],
       },
       configureFileLoader()
