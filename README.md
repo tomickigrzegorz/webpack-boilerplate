@@ -1,5 +1,5 @@
 
-# Webpack Boilerplate
+# Webpack Boilerplate - multiple entry
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 Minimal Webpack 5 boilerplate with Babel, core-js, Sass, Pug, ESlint and a lot mor. It also includes optimization for development and production build.
@@ -62,8 +62,7 @@ npm run prod
 
 - [`babel-loader`](https://webpack.js.org/loaders/babel-loader/) - Transpile files with Babel and Webpack
 - [`sass-loader`](https://webpack.js.org/loaders/sass-loader/) - Load SCSS and compile to CSS
-- [`sass-resources-loader`](https://github.com/shakacode/sass-resources-loader/) - @import your SASS resources into every required SASS module
-- [`node-sass`](https://github.com/sass/node-sass) - Node Sass
+- [`sass`](https://github.com/sass/sass) - Sass makes CSS fun! ;)
 - [`postcss-loader`](https://webpack.js.org/loaders/postcss-loader/) - Process CSS with PostCSS
   - [`cssnano`](https://github.com/cssnano/cssnano) - Optimize and compress PostCSS
   - [`autoprefixer`](https://github.com/postcss/autoprefixer) - Parse CSS and add vendor prefixes
