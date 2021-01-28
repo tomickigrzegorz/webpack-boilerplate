@@ -1,5 +1,5 @@
+// shared module
+import './module/share';
 import '../scss/index.scss';
 
-window.addEventListener('DOMContentLoaded', () => {
-  console.log('INDEX');
-});
+console.log('INDEX');

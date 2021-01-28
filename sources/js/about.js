@@ -1,5 +1,5 @@
+// shared module
+import './module/share';
 import '../scss/about.scss';
 
-window.addEventListener('DOMContentLoaded', () => {
-  console.log('ABOUT ME');
-});
+console.log('ABOUT ME');
