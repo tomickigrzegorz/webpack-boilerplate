@@ -27,6 +27,7 @@ module.exports = merge(baseConfig, {
   mode: 'development',
   target: 'web',
   devServer: configureDevServer(),
+  devtool: 'eval-source-map',
   module: {
     rules: [
       {

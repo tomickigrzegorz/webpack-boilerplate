@@ -1,9 +1,9 @@
-const path = require('path');
 const webpack = require('webpack');
 const baseConfig = require('./webpack.base.js');
 const { merge } = require('webpack-merge');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const TerserPlugin = require('terser-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -27,34 +27,11 @@ const configureFileLoader = () => {
   }
 }
 
-// configure Terser
-const configureTerser = () => {
-  return {
-    parallel: true
-  };
-};
-
 // configure Optimization
 const configureOptimization = () => {
   return {
-    // splitChunks: {
-    //   cacheGroups: {
-    //     vendor: {
-    //       test: /[\\/]node_modules[\\/]/,
-    //       name: 'vendor',
-    //       enforce: true,
-    //       chunks: 'all'
-    //     },
-    //     styles: {
-    //       name: 'styles',
-    //       test: /\.s?css$/,
-    //       chunks: 'all',
-    //       minChunks: 2,
-    //       enforce: true,
-    //     },
-    //   }
-    // },
-    minimizer: [new TerserPlugin(configureTerser())]
+    minimize: true,
+    minimizer: [new TerserPlugin()]
   }
 }
 
@@ -88,7 +65,6 @@ const configureCopy = () => {
 
 module.exports = merge(baseConfig, {
   mode: 'production',
-  target: 'es5',
   target: 'browserslist',
   module: {
     rules: [

@@ -1,8 +1,14 @@
-const ENTRY = require('./entry.js');
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 const OUTPUT_DIR = 'docs';
+
+// only form HtmlWebPackPlugin
+const config = [
+  { site: 'index', share: 'share' },
+  { site: 'about', share: 'share' },
+  { site: 'contact' }
+];
 
 // configure Resolve
 const configureResolveAlias = () => {
@@ -36,7 +42,7 @@ const configurePugLoader = () => {
   }
 }
 
-// configure Ouyput
+// configure Output
 const configureOutput = () => {
   return {
     path: path.resolve(__dirname, `../${OUTPUT_DIR}`),
@@ -45,22 +51,30 @@ const configureOutput = () => {
   }
 }
 
-// Multiple Entry
-const entryHtmlPlugins = ENTRY.html.map(entryName => {
+// configure HtmlWebPackPlugin
+const entryHtmlPlugins = config.map(({ site, share }) => {
   return new HtmlWebPackPlugin({
-    filename: `${entryName}.html`,
-    template: `./sources/templates/${entryName}.pug`,
-    DATA: require(`../sources/data/${entryName}.json`),
-    chunks: [entryName],
-    inject: true
+    filename: `${site}.html`,
+    template: `./sources/templates/${site}.pug`,
+    DATA: require(`../sources/data/${site}.json`),
+    chunks: [site, share],
   })
 })
 
 module.exports = {
   entry: {
-    index: './sources/js/index.js',
-    about: './sources/js/about.js',
-    contact: './sources/js/contact.js'
+    index: {
+      import: './sources/js/index.js',
+      dependOn: 'share'
+    },
+    about: {
+      import: './sources/js/about.js',
+      dependOn: 'share'
+    },
+    contact: {
+      import: './sources/js/contact.js'
+    },
+    share: './sources/js/module/share.js'
   },
   output: configureOutput(),
   resolve: configureResolveAlias(),
