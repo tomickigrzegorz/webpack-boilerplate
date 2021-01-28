@@ -4,7 +4,6 @@ module.exports.cssLoaders = [
   {
     loader: 'css-loader',
     options: {
-      sourceMap: true,
       importLoaders: 2
     },
   },
@@ -20,15 +19,10 @@ module.exports.cssLoaders = [
     loader: 'sass-loader',
     options: {
       sourceMap: true,
-    },
-  },
-  {
-    loader: 'sass-resources-loader',
-    options: {
-      resources: [
-        './sources/scss/modules/_config.scss',
-        './sources/scss/modules/_global.scss'
-      ],
+      additionalData: `
+        @import "sources/scss/modules/_config.scss";
+        @import "sources/scss/modules/_global.scss";
+      `
     },
   },
 ];
