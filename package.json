@@ -1,6 +1,6 @@
 {
   "name": "new-site-webpack-build",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "webpack multiple entry and output",
   "license": "MIT",
   "keywords": [
