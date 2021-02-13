@@ -1,8 +1,18 @@
-h1 {
-  color: $red;
+@font-face {
+  font-family: 'Kodchasan';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("../fonts/Kodchasan.woff2") format('woff2');
 }
 
 body {
-  background: url("../images/static/bamboo-logo.svg") repeat;
+  background: url("../images/static/bamboo.svg") repeat;
   background-size: 5%;
+  font-family: 'Kodchasan', sans-serif;
+  font-weight: 200;
+}
+
+h1 {
+  color: $red;
 }

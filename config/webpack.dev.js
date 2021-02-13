@@ -1,7 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
-const baseConfig = require('./webpack.base.js');
+const baseConfig = require('./webpack.common.js');
 const { merge } = require('webpack-merge');
+
+// common part for production and dev
 const { cssLoaders } = require('./util');
 
 // Configure Dev Server
@@ -13,17 +15,24 @@ const configureDevServer = () => {
     liveReload: true,
     hot: true,
     publicPath: '/',
+    stats: 'errors-only',
     inline: true,
     watchContentBase: true,
   };
 };
 
 module.exports = merge(baseConfig, {
+  // This option controls if and
+  // how source maps are generated
   devtool: 'eval-source-map',
+
+  // Providing the mode configuration option tells
+  // webpack to use its built-in optimizations accordingly
   mode: 'development',
+
+  // https://webpack.js.org/configuration/target/#root
   target: 'web',
   devServer: configureDevServer(),
-  devtool: 'eval-source-map',
   module: {
     rules: [
       {
@@ -37,6 +46,11 @@ module.exports = merge(baseConfig, {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+
+    // we create a global variable that
+    // we use in pug and we can use in js
+    // https://webpack.js.org/plugins/define-plugin/
+    // In pug - var DATA = self.htmlWebpackPlugin.options.DATA
     new webpack.DefinePlugin({
       PRODUCTION: JSON.stringify(false)
     }),
