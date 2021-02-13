@@ -1,23 +1,12 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
-const OUTPUT_DIR = 'docs';
-
 // only form HtmlWebPackPlugin
 const config = [
   { site: 'index', share: 'share' },
   { site: 'about', share: 'share' },
   { site: 'contact' }
 ];
-
-// configure Resolve
-const configureResolveAlias = () => {
-  return {
-    alias: {
-      'assets': path.resolve(__dirname, '../sources/images')
-    }
-  }
-}
 
 // configure Babel Loader
 const configureBabelLoader = () => {
@@ -42,15 +31,6 @@ const configurePugLoader = () => {
   }
 }
 
-// configure Output
-const configureOutput = () => {
-  return {
-    path: path.resolve(__dirname, `../${OUTPUT_DIR}`),
-    filename: 'vendor/js/[name].[fullhash].js',
-    chunkFilename: 'vendor/js/[name].[fullhash].js',
-  }
-}
-
 // configure HtmlWebPackPlugin
 const entryHtmlPlugins = config.map(({ site, share }) => {
   return new HtmlWebPackPlugin({
@@ -60,6 +40,16 @@ const entryHtmlPlugins = config.map(({ site, share }) => {
     chunks: [site, share],
   })
 })
+
+// configure Output
+const configureOutput = () => {
+  return {
+    path: path.resolve(__dirname, '../docs'),
+    filename: 'vendor/js/[name].[fullhash].js',
+    // assetModuleFilename: 'images/static/[name].[hash][ext]',
+    publicPath: './',
+  }
+}
 
 module.exports = {
   entry: {
@@ -77,11 +67,19 @@ module.exports = {
     share: './sources/js/module/share.js'
   },
   output: configureOutput(),
-  resolve: configureResolveAlias(),
   module: {
     rules: [
+      // Images: Copy image files to build folder
+      // https://webpack.js.org/guides/asset-modules/#resource-assets
+      {
+        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/static/[name].[hash][ext]',
+        },
+      },
       configureBabelLoader(),
-      configurePugLoader(),
+      configurePugLoader()
     ],
   },
   plugins: [

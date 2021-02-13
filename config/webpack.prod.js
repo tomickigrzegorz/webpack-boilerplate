@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const path = require('path');
 const baseConfig = require('./webpack.base.js');
 const { merge } = require('webpack-merge');
 
@@ -10,22 +11,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { cssLoaders } = require('./util');
-
-// configure File Loader
-const configureFileLoader = () => {
-  return {
-    test: /\.(jpe?g|png|gif|svg)$/i,
-    loader: 'file-loader',
-    options: {
-      name: '[path][name].[ext]',
-      outputPath: (url, resourcePath, context) => {
-        if (/sources/.test(url)) {
-          return url.replace('sources', '../..');
-        }
-      }
-    },
-  }
-}
 
 // configure Optimization
 const configureOptimization = () => {
@@ -57,8 +42,17 @@ const configureSW = () => {
 const configureCopy = () => {
   return {
     patterns: [
-      { from: 'sources/assets/', to: 'assets/' },
-      { from: 'sources/images/', to: 'images/' }
+      {
+        from: 'sources/assets/',
+        to: 'assets/'
+      },
+      {
+        from: 'sources/images/',
+        to: 'images/',
+        globOptions: {
+          ignore: ['**.svg']
+        }
+      },
     ]
   }
 };
@@ -71,11 +65,16 @@ module.exports = merge(baseConfig, {
       {
         test: /\.(css|sass|scss)$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              // set path for images
+              publicPath: '../../',
+            },
+          },
           ...cssLoaders
         ],
       },
-      configureFileLoader()
     ],
   },
   optimization: configureOptimization(),

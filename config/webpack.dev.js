@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require('webpack');
 const baseConfig = require('./webpack.base.js');
 const { merge } = require('webpack-merge');
@@ -6,24 +7,19 @@ const { cssLoaders } = require('./util');
 // Configure Dev Server
 const configureDevServer = () => {
   return {
-    contentBase: './sources',
+    contentBase: path.resolve(__dirname, '../sources'),
     open: true,
     port: 3000,
-    inline: true,
-    stats: "errors-only",
+    liveReload: true,
     hot: true,
+    publicPath: '/',
+    inline: true,
+    watchContentBase: true,
   };
 };
 
-// configure File Loader
-const configureFileLoader = () => {
-  return {
-    test: /\.(jpe?g|png|gif|svg)$/i,
-    loader: 'file-loader'
-  }
-}
-
 module.exports = merge(baseConfig, {
+  devtool: 'eval-source-map',
   mode: 'development',
   target: 'web',
   devServer: configureDevServer(),
@@ -37,10 +33,10 @@ module.exports = merge(baseConfig, {
           ...cssLoaders
         ],
       },
-      configureFileLoader()
     ],
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       PRODUCTION: JSON.stringify(false)
     }),

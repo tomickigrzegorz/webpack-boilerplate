@@ -1,0 +1,21 @@
+{
+  "name": "xxxxxxx",
+  "short_name": "xxxxxxx",
+  "icons": [
+    {
+      "src": "/images/static/app_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/static/app_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "orientation": "portrait"
+}
