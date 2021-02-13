@@ -100,24 +100,24 @@ module.exports = {
 
       // OR -------------------------
 
-      {
-        test: /\.svg/,
-        type: "asset",
-        generator: {
-          // adding a hash to the file
-          // and copy to specific folder
-          filename: 'images/static/[name].[hash][ext]',
-        },
+      // {
+      //   test: /\.svg/,
+      //   type: "asset",
+      //   generator: {
+      //     // adding a hash to the file
+      //     // and copy to specific folder
+      //     filename: 'images/static/[name].[hash][ext]',
+      //   },
 
-        // depending on the size of the file, 
-        // if the file is too small, the file is inline,
-        // if the larger niche size, the file is only copied
-        parser: {
-          dataUrlCondition: {
-            maxSize: 30 * 1024, // 30 * 1024
-          }
-        },
-      },
+      //   // depending on the size of the file, 
+      //   // if the file is too small, the file is inline,
+      //   // if the larger niche size, the file is only copied
+      //   parser: {
+      //     dataUrlCondition: {
+      //       maxSize: 30 * 1024, // 30 * 1024
+      //     }
+      //   },
+      // },
 
       // ----------------------------
 
