@@ -81,14 +81,14 @@ module.exports = {
 
       // Images, fonts, e.t.c: Copy files to build folder
       // https://webpack.js.org/guides/asset-modules/#resource-assets
-      // {
-      //   test: /\.svg/,
-      //   type: 'asset/resource',
-      //   generator: {
-      //     // adding a hash to the file
-      //     filename: 'images/static/[name].[hash][ext]',
-      //   },
-      // },
+      {
+        test: /\.svg/,
+        type: 'asset/resource',
+        generator: {
+          // adding a hash to the file
+          filename: 'images/static/[name].[hash][ext]',
+        },
+      },
 
       // OR -------------------------
 
