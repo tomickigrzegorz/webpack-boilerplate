@@ -69,7 +69,8 @@ npm run prod
 - [`css-loader`](https://webpack.js.org/loaders/css-loader/) - Resolves CSS imports into JS
 - [`pug-loader`](https://github.com/pugjs/pug-loader/) - Pug loader template
 - [`style-loader`](https://webpack.js.org/loaders/style-loader/) - Inject CSS into the DOM
-- [`file-loader`](https://webpack.js.org/loaders/file-loader/) - Copy files to build folder
+- [`asset modules`](https://webpack.js.org/guides/asset-modules/#resource-assets) replace ral-loader, url-loader, file-loader
+- ~~[`file-loader`](https://webpack.js.org/loaders/file-loader/) - Copy files to build folder~~
 
 ### Plugins
 
