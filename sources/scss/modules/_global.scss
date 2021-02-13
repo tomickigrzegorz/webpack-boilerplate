@@ -28,6 +28,7 @@ a {
   margin: 2px 5px 2px;
   text-decoration: none;
   color: $black;
+
   &:hover {
     border-bottom: 2px solid red;
   }
@@ -44,5 +45,6 @@ h2 {
 
 .responsive {
   width: 100%;
+  max-width: 1000px;
   height: auto;
 }
