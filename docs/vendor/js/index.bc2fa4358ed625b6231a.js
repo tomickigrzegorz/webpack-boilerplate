@@ -1,1 +1,0 @@
-(self.webpackChunknew_site_webpack_build=self.webpackChunknew_site_webpack_build||[]).push([[826],{372:function(e,s,c){"use strict";c(29);console.log("INDEX")}},0,[[372,557]]]);
