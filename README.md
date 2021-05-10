@@ -1,17 +1,9 @@
-
-<center>
-<a href="https://github.com/webpack/webpack">
-  <img width="150" height="150" src="https://webpack.js.org/assets/icon-square-big.svg">
-</a>
-
 # Webpack Boilerplate - multiple entry
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 Minimal Webpack 5 boilerplate with Babel, core-js, Sass, Pug, ESlint and a lot mor. It also includes optimization for development and production build.
 A version with [webpack 4](https://github.com/tomik23/webpack-boilerplate/tree/webpack-4) is also available.
-
-</center>
 
 
 ## Clone the repo and install dependencies
