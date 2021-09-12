@@ -1,17 +1,20 @@
 # Webpack Boilerplate - multiple entry
 
+![npm](https://img.shields.io/npm/v/webpack?label=webpack&style=flat-square&logo=webpack)
+![npm](https://img.shields.io/npm/v/webpack-cli?label=webpack-cli&style=flat-square&logo=webpack)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 Minimal Webpack 5 boilerplate with Babel, core-js, Sass, Pug, ESlint and a lot mor. It also includes optimization for development and production build.
 A version with [webpack 4](https://github.com/tomik23/webpack-boilerplate/tree/webpack-4) is also available.
 
-
 ## Clone the repo and install dependencies
+
 ```bash
 git clone https://github.com/tomik23/webpack-boilerplate.git
 cd webpack-boilerplate
 npm i
 ```
+
 ## Usage
 
 ### Development server
@@ -71,7 +74,6 @@ npm run prod
 - [`pug-loader`](https://github.com/pugjs/pug-loader/) - Pug loader template
 - [`style-loader`](https://webpack.js.org/loaders/style-loader/) - Inject CSS into the DOM
 - [`asset modules`](https://webpack.js.org/guides/asset-modules/#resource-assets) replace ral-loader, url-loader, file-loader
-- ~~[`file-loader`](https://webpack.js.org/loaders/file-loader/) - Copy files to build folder~~
 
 ### Plugins
 
@@ -83,6 +85,7 @@ npm run prod
 - [`workbox-webpack-plugin`](https://github.com/GoogleChrome/workbox/tree/master/packages/workbox-webpack-plugin) - Workbox provides two webpack plugins: one that generates a complete service worker for you and one that generates a list of assets to precache that is injected into a service worker file.
 
 ### Assets
+
 - `.htaccess` - optimized 100/100 in google https://web.dev/measure/ of course when there are no ads ;)
 - `manifest.json` - of course you can use the `favicons-webpack-plugin` that will generate all possible elements in the manifest
 
