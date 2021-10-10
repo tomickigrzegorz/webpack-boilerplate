@@ -5,7 +5,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const config = [
   { site: 'index', share: 'share' },
   { site: 'about', share: 'share' },
-  { site: 'contact' }
+  { site: 'contact' },
 ];
 
 // configure Babel Loader
@@ -16,8 +16,8 @@ const configureBabelLoader = () => {
     use: {
       loader: 'babel-loader',
     },
-  }
-}
+  };
+};
 
 // configure Pug Loader
 const configurePugLoader = () => {
@@ -28,8 +28,8 @@ const configurePugLoader = () => {
       pretty: true,
       self: true,
     },
-  }
-}
+  };
+};
 
 // configure HtmlWebPackPlugin
 const entryHtmlPlugins = config.map(({ site, share }) => {
@@ -45,8 +45,8 @@ const entryHtmlPlugins = config.map(({ site, share }) => {
     // injecting js and css files into
     // html as well as common share.js file
     chunks: [site, share],
-  })
-})
+  });
+});
 
 // configure Output
 const configureOutput = () => {
@@ -54,31 +54,29 @@ const configureOutput = () => {
     path: path.resolve(__dirname, '../docs'),
     filename: 'vendor/js/[name].[fullhash].js',
     // assetModuleFilename: 'images/static/[name].[hash][ext]',
-    publicPath: './',
-  }
-}
+  };
+};
 
 module.exports = {
   // input files
   entry: {
     index: {
       import: './sources/js/index.js',
-      dependOn: 'share'
+      dependOn: 'share',
     },
     about: {
       import: './sources/js/about.js',
-      dependOn: 'share'
+      dependOn: 'share',
     },
     contact: {
-      import: './sources/js/contact.js'
+      import: './sources/js/contact.js',
     },
-    share: './sources/js/module/share.js'
+    share: './sources/js/module/share.js',
   },
   // configuration of output files
   output: configureOutput(),
   module: {
     rules: [
-
       // Images, fonts, e.t.c: Copy files to build folder
       // https://webpack.js.org/guides/asset-modules/#resource-assets
       {
@@ -109,7 +107,7 @@ module.exports = {
       //     filename: 'images/static/[name].[hash][ext]',
       //   },
 
-      //   // depending on the size of the file, 
+      //   // depending on the size of the file,
       //   // if the file is too small, the file is inline,
       //   // if the larger niche size, the file is only copied
       //   parser: {
@@ -131,10 +129,8 @@ module.exports = {
       },
 
       configureBabelLoader(),
-      configurePugLoader()
+      configurePugLoader(),
     ],
   },
-  plugins: [
-    ...entryHtmlPlugins
-  ]
+  plugins: [...entryHtmlPlugins],
 };
