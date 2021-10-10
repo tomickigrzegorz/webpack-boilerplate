@@ -1,11 +1,20 @@
 # Webpack Boilerplate - multiple entry
 
-![npm](https://img.shields.io/npm/v/webpack?label=webpack&style=flat-square&logo=webpack)
-![npm](https://img.shields.io/npm/v/webpack-cli?label=webpack-cli&style=flat-square&logo=webpack)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+![npm](https://img.shields.io/npm/v/webpack?label=webpack&style=for-the-badge&logo=webpack)
+![npm](https://img.shields.io/npm/v/webpack-cli?label=webpack-cli&style=for-the-badge&logo=webpack)
 
 Minimal Webpack 5 boilerplate with Babel, core-js, Sass, Pug, ESlint and a lot mor. It also includes optimization for development and production build.
 A version with [webpack 4](https://github.com/tomik23/webpack-boilerplate/tree/webpack-4) is also available.
+
+## Features
+
+- [Webpack](https://webpack.js.org/) `v5.58.1`
+- [Babel](https://babeljs.io/) `v7.15.8`
+- [Core-js](https://github.com/zloirock/core-js/) `v3.18.2`
+- [Pug](https://github.com/pugjs/) `v3.0.2`
+- [Sass](https://sass-lang.com/) `v1.42.1`
+- [PostCSS](https://postcss.org/) `v8.3.9`
+- [ESLint](https://eslint.org/) `v8.0.0`
 
 ## Clone the repo and install dependencies
 
@@ -28,16 +37,6 @@ npm run dev
 ```bash
 npm run prod
 ```
-
-## Features
-
-- [Webpack](https://webpack.js.org/)
-- [Babel](https://babeljs.io/)
-- [Core-js](https://github.com/zloirock/core-js/)
-- [Pug](https://github.com/pugjs/)
-- [Sass](https://sass-lang.com/)
-- [PostCSS](https://postcss.org/)
-- [ESLint](https://eslint.org/)
 
 ## Dependencies
 

@@ -13,21 +13,37 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 // common part for production and dev
 const { cssLoaders } = require('./util');
 
+// If you want you can enable
+// generating only one css file
+const oneFileCss = {
+  splitChunks: {
+    cacheGroups: {
+      styles: {
+        name: 'styles',
+        type: 'css/mini-extract',
+        chunks: 'all',
+        enforce: true,
+      },
+    },
+  },
+};
+
 // configure Optimization
 const configureOptimization = () => {
   return {
     minimize: true,
-    minimizer: [new TerserPlugin()]
-  }
-}
+    minimizer: [new TerserPlugin()],
+    // ...oneFileCss,
+  };
+};
 
 // configure MiniCssExtract
 const configureMiniCssExtract = () => {
   return {
     filename: 'vendor/css/[name].[fullhash].css',
     chunkFilename: 'vendor/css/[name].[fullhash].css',
-  }
-}
+  };
+};
 
 // configure Service Worker
 const configureSW = () => {
@@ -35,9 +51,9 @@ const configureSW = () => {
     clientsClaim: true,
     skipWaiting: true,
     directoryIndex: 'index.html',
-    offlineGoogleAnalytics: true
-  }
-}
+    offlineGoogleAnalytics: true,
+  };
+};
 
 // configure Copy
 const configureCopy = () => {
@@ -45,7 +61,7 @@ const configureCopy = () => {
     patterns: [
       {
         from: 'sources/assets/',
-        to: 'assets/'
+        to: 'assets/',
       },
       {
         from: 'sources/images/',
@@ -53,11 +69,11 @@ const configureCopy = () => {
         // blocking file copying by plugin webpack will
         // do it for you and rename it with a hash
         globOptions: {
-          ignore: ['**.svg']
-        }
+          ignore: ['**.svg'],
+        },
       },
-    ]
-  }
+    ],
+  };
 };
 
 module.exports = merge(baseConfig, {
@@ -77,48 +93,42 @@ module.exports = merge(baseConfig, {
               publicPath: '../../',
             },
           },
-          ...cssLoaders
+          ...cssLoaders,
         ],
       },
     ],
   },
   optimization: configureOptimization(),
   plugins: [
-    // when we run the production build then 
+    // when we run the production build then
     // the docs folder is cleared
     new CleanWebpackPlugin({
       dry: false,
-      verbose: true
+      verbose: true,
     }),
 
     // we extract scss files from js and create
     // separate files for individual pages
-    new MiniCssExtractPlugin(
-      configureMiniCssExtract()
-    ),
+    new MiniCssExtractPlugin(configureMiniCssExtract()),
 
     // we create a service-worker for our data
-    new WorkboxPlugin.GenerateSW(
-      configureSW()
-    ),
+    new WorkboxPlugin.GenerateSW(configureSW()),
 
     // we copy all necessary graphic files
     // and assets to build folder
-    new CopyWebpackPlugin(
-      configureCopy()
-    ),
+    new CopyWebpackPlugin(configureCopy()),
 
     // we create a global variable that
     // we use in pug and we can use in js
     // https://webpack.js.org/plugins/define-plugin/
     // In pug - var DATA = self.htmlWebpackPlugin.options.DATA
     new webpack.DefinePlugin({
-      PRODUCTION: JSON.stringify(true)
+      PRODUCTION: JSON.stringify(true),
     }),
 
     // Visualization of the size of js files
     new BundleAnalyzerPlugin({
-      openAnalyzer: true
+      openAnalyzer: true,
     }),
-  ]
+  ],
 });
