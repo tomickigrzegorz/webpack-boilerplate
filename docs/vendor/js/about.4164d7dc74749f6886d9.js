@@ -1,1 +1,0 @@
-(self.webpackChunknew_site_webpack_build=self.webpackChunknew_site_webpack_build||[]).push([[443],{667:function(e,s,c){"use strict";c(29);console.log("ABOUT ME")}},function(e){"use strict";var s;s=667,e(e.s=s)}]);

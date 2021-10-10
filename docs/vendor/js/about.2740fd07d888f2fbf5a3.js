@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebpack_boilerplate=self.webpackChunkwebpack_boilerplate||[]).push([[443],{667:function(e,c,l){l(29);console.log("ABOUT ME")}},function(e){var c;c=667,e(e.s=c)}]);
