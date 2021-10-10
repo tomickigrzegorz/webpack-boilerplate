@@ -9,15 +9,14 @@ const { cssLoaders } = require('./util');
 // Configure Dev Server
 const configureDevServer = () => {
   return {
-    contentBase: path.resolve(__dirname, '../sources'),
+    static: {
+      directory: path.resolve(__dirname, '../sources'),
+      publicPath: '/',
+    },
     open: true,
     port: 3000,
     liveReload: true,
     hot: true,
-    publicPath: '/',
-    stats: 'errors-only',
-    inline: true,
-    watchContentBase: true,
   };
 };
 
@@ -37,22 +36,18 @@ module.exports = merge(baseConfig, {
     rules: [
       {
         test: /\.(css|sass|scss)$/,
-        use: [
-          'style-loader',
-          ...cssLoaders
-        ],
+        use: ['style-loader', ...cssLoaders],
       },
     ],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-
+    // new webpack.HotModuleReplacementPlugin(),
     // we create a global variable that
     // we use in pug and we can use in js
     // https://webpack.js.org/plugins/define-plugin/
     // In pug - var DATA = self.htmlWebpackPlugin.options.DATA
     new webpack.DefinePlugin({
-      PRODUCTION: JSON.stringify(false)
+      PRODUCTION: JSON.stringify(false),
     }),
-  ]
+  ],
 });
