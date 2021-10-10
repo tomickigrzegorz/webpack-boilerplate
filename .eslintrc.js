@@ -7,16 +7,7 @@ module.exports = {
   extends: ['eslint:recommended'],
   plugins: ['prettier'],
   rules: {
-    'prettier/prettier': [
-      'warn',
-      {
-        semi: true,
-        singleQuote: true,
-        tabWidth: 2,
-        endOfLine: 'auto',
-        printWidth: 80,
-      },
-    ],
+    'prettier/prettier': 'error',
     'comma-dangle': ['error', 'only-multiline'],
     'linebreak-style': ['error', 'windows'],
     'no-param-reassign': [2, { props: false }],
