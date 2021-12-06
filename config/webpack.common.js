@@ -9,27 +9,27 @@ const config = [
 ];
 
 // configure Babel Loader
-const configureBabelLoader = () => {
-  return {
+const configureBabelLoader = [
+  {
     test: /\.js$/,
     exclude: /node_modules/,
     use: {
       loader: 'babel-loader',
     },
-  };
-};
+  },
+];
 
 // configure Pug Loader
-const configurePugLoader = () => {
-  return {
+const configurePugLoader = [
+  {
     test: /\.pug$/,
     loader: 'pug-loader',
     options: {
       pretty: true,
       self: true,
     },
-  };
-};
+  },
+];
 
 // configure HtmlWebPackPlugin
 const entryHtmlPlugins = config.map(({ site, share }) => {
@@ -49,12 +49,10 @@ const entryHtmlPlugins = config.map(({ site, share }) => {
 });
 
 // configure Output
-const configureOutput = () => {
-  return {
-    path: path.resolve(__dirname, '../docs'),
-    filename: 'vendor/js/[name].[fullhash].js',
-    // assetModuleFilename: 'images/static/[name].[hash][ext]',
-  };
+const configureOutput = {
+  path: path.resolve(__dirname, '../docs'),
+  filename: 'vendor/js/[name].[fullhash].js',
+  // assetModuleFilename: 'images/static/[name].[hash][ext]',
 };
 
 module.exports = {
@@ -71,10 +69,11 @@ module.exports = {
     contact: {
       import: './sources/js/contact.js',
     },
+    // common file that is added to all pages
     share: './sources/js/module/share.js',
   },
   // configuration of output files
-  output: configureOutput(),
+  output: { ...configureOutput },
   module: {
     rules: [
       // Images, fonts, e.t.c: Copy files to build folder
@@ -128,8 +127,8 @@ module.exports = {
         type: 'asset/inline',
       },
 
-      configureBabelLoader(),
-      configurePugLoader(),
+      ...configureBabelLoader,
+      ...configurePugLoader,
     ],
   },
   plugins: [...entryHtmlPlugins],

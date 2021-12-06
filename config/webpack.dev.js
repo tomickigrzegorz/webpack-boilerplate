@@ -7,17 +7,15 @@ const { merge } = require('webpack-merge');
 const { cssLoaders } = require('./util');
 
 // Configure Dev Server
-const configureDevServer = () => {
-  return {
-    static: {
-      directory: path.resolve(__dirname, '../sources'),
-      publicPath: '/',
-    },
-    open: true,
-    port: 3000,
-    liveReload: true,
-    hot: true,
-  };
+const configureDevServer = {
+  static: {
+    directory: path.resolve(__dirname, '../sources'),
+    publicPath: '/',
+  },
+  open: true,
+  port: 3000,
+  liveReload: true,
+  hot: true,
 };
 
 module.exports = merge(baseConfig, {
@@ -31,7 +29,7 @@ module.exports = merge(baseConfig, {
 
   // https://webpack.js.org/configuration/target/#root
   target: 'web',
-  devServer: configureDevServer(),
+  devServer: { ...configureDevServer },
   module: {
     rules: [
       {

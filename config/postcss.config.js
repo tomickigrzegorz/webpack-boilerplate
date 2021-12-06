@@ -1,8 +1,8 @@
 module.exports = {
   plugins: {
-    'autoprefixer': {},
-    'cssnano': {
-      safe: true
-    }
-  }
+    'postcss-preset-env': {
+      // https://github.com/csstools/postcss-preset-env
+      browsers: 'last 2 versions',
+    },
+  },
 };

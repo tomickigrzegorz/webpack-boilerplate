@@ -8,13 +8,13 @@ A version with [webpack 4](https://github.com/tomik23/webpack-boilerplate/tree/w
 
 ## Features
 
-- [Webpack](https://webpack.js.org/) `v5.58.1`
-- [Babel](https://babeljs.io/) `v7.15.8`
-- [Core-js](https://github.com/zloirock/core-js/) `v3.18.2`
+- [Webpack](https://webpack.js.org/) `v5.64.4`
+- [Babel](https://babeljs.io/) `v7.16.0`
+- [Core-js](https://github.com/zloirock/core-js/) `v3.19.3`
 - [Pug](https://github.com/pugjs/) `v3.0.2`
-- [Sass](https://sass-lang.com/) `v1.42.1`
-- [PostCSS](https://postcss.org/) `v8.3.9`
-- [ESLint](https://eslint.org/) `v8.0.0`
+- [Sass](https://sass-lang.com/) `v1.44.0`
+- [postcss-preset-env](https://github.com/csstools/postcss-preset-env) `v7.0.1`
+- [ESLint](https://eslint.org/) `v8.4.0`
 
 ## Clone the repo and install dependencies
 
@@ -65,10 +65,7 @@ npm run prod
 
 - [`babel-loader`](https://webpack.js.org/loaders/babel-loader/) - Transpile files with Babel and Webpack
 - [`sass-loader`](https://webpack.js.org/loaders/sass-loader/) - Load SCSS and compile to CSS
-- [`sass`](https://github.com/sass/sass) - Sass makes CSS fun! ;)
 - [`postcss-loader`](https://webpack.js.org/loaders/postcss-loader/) - Process CSS with PostCSS
-  - [`cssnano`](https://github.com/cssnano/cssnano) - Optimize and compress PostCSS
-  - [`autoprefixer`](https://github.com/postcss/autoprefixer) - Parse CSS and add vendor prefixes
 - [`css-loader`](https://webpack.js.org/loaders/css-loader/) - Resolves CSS imports into JS
 - [`pug-loader`](https://github.com/pugjs/pug-loader/) - Pug loader template
 - [`style-loader`](https://webpack.js.org/loaders/style-loader/) - Inject CSS into the DOM
