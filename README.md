@@ -1,8 +1,5 @@
 # Webpack Boilerplate - multiple entry
 
-![npm](https://img.shields.io/npm/v/webpack?label=webpack&style=for-the-badge&logo=webpack)
-![npm](https://img.shields.io/npm/v/webpack-cli?label=webpack-cli&style=for-the-badge&logo=webpack)
-
 Minimal Webpack 5 boilerplate with Babel, core-js, Sass, Pug, ESlint and a lot mor. It also includes optimization for development and production build.
 A version with [webpack 4](https://github.com/tomik23/webpack-boilerplate/tree/webpack-4) is also available.
 
