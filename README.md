@@ -5,13 +5,13 @@ A version with [webpack 4](https://github.com/tomik23/webpack-boilerplate/tree/w
 
 ## Features
 
-- [Webpack](https://webpack.js.org/) `v5.64.4`
-- [Babel](https://babeljs.io/) `v7.16.0`
-- [Core-js](https://github.com/zloirock/core-js/) `v3.19.3`
+- [Webpack](https://webpack.js.org/) `v5.68.0`
+- [Babel](https://babeljs.io/) `v7.17.2`
+- [Core-js](https://github.com/zloirock/core-js/) `v3.21.0`
 - [Pug](https://github.com/pugjs/) `v3.0.2`
-- [Sass](https://sass-lang.com/) `v1.44.0`
-- [postcss-preset-env](https://github.com/csstools/postcss-preset-env) `v7.0.1`
-- [ESLint](https://eslint.org/) `v8.4.0`
+- [Sass](https://sass-lang.com/) `v1.49.7`
+- [postcss-preset-env](https://github.com/csstools/postcss-preset-env) `v7.3.2`
+- [ESLint](https://eslint.org/) `v8.9.0`
 
 ## Clone the repo and install dependencies
 
