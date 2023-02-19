@@ -1,7 +1,7 @@
 # Webpack Boilerplate - multiple entry
 
 Minimal Webpack 5 boilerplate with Babel, core-js, Sass, Pug, ESlint and a lot mor. It also includes optimization for development and production build.
-A version with [webpack 4](https://github.com/tomik23/webpack-boilerplate/tree/webpack-4) is also available.
+A version with [webpack 4](https://github.com/tomickigrzegorz/webpack-boilerplate/tree/webpack-4) is also available.
 
 ## Features
 
@@ -16,7 +16,7 @@ A version with [webpack 4](https://github.com/tomik23/webpack-boilerplate/tree/w
 ## Clone the repo and install dependencies
 
 ```bash
-git clone https://github.com/tomik23/webpack-boilerplate.git
+git clone https://github.com/tomickigrzegorz/webpack-boilerplate.git
 cd webpack-boilerplate
 npm i
 ```
