@@ -5,13 +5,13 @@ A version with [webpack 4](https://github.com/tomickigrzegorz/webpack-boilerplat
 
 ## Features
 
-- [Webpack](https://webpack.js.org/) `v5.68.0`
-- [Babel](https://babeljs.io/) `v7.17.2`
-- [Core-js](https://github.com/zloirock/core-js/) `v3.21.0`
+- [Webpack](https://webpack.js.org/) `v5.88.2`
+- [Babel](https://babeljs.io/) `v7.22.17`
+- [Core-js](https://github.com/zloirock/core-js/) `v3.32.2`
 - [Pug](https://github.com/pugjs/) `v3.0.2`
-- [Sass](https://sass-lang.com/) `v1.49.7`
-- [postcss-preset-env](https://github.com/csstools/postcss-preset-env) `v7.3.2`
-- [ESLint](https://eslint.org/) `v8.9.0`
+- [Sass](https://sass-lang.com/) `v1.66.1`
+- [postcss-preset-env](https://github.com/csstools/postcss-preset-env) `v9.1.3`
+- [ESLint](https://eslint.org/) `v8.49.0`
 
 ## Clone the repo and install dependencies
 
