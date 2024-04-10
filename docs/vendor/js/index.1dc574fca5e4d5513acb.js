@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebpack_boilerplate=self.webpackChunkwebpack_boilerplate||[]).push([[57],{697:function(e,c,l){l(245);console.log("INDEX")}},function(e){var c;c=697,e(e.s=c)}]);
